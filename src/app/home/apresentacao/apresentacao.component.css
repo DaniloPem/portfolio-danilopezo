@@ -1,1 +1,59 @@
+.foto-danilo {
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  right: -25%;
+  filter: grayscale(1);
+}
 
+.apresentacao {
+  margin-top: 20%;
+  margin-left: 10%;
+}
+
+.hi {
+  font-size: 25px;
+  margin-bottom: 0;
+  color: #095D6A;
+}
+
+.nome {
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #095D6A;
+  font-weight: bolder;
+}
+
+.desenvolvedor {
+  color: #095D6A;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 10px;
+  font-size: 25px;
+}
+
+.nacionalidade {
+  color: #095D6A;
+  margin-top: 0;
+}
+
+.myProjects {
+  background-color: #F57B51;
+  width: 100px;
+  height: 35px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  height: 35px;
+  gap: 5px;
+}
+
+.links img {
+  width: 25px;
+  height: 25px;
+}
