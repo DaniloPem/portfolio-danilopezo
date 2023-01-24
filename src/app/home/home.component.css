@@ -1,0 +1,17 @@
+.home {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.apresentacao {
+  width: 60%;
+  height: 100%;
+  background-color: #FDF6F0;
+}
+
+.competencias {
+  width: 40%;
+  height: 100%;
+  background-color: #FBBC58;
+}
