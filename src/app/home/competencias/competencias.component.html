@@ -1,0 +1,9 @@
+<div class="lista-competencias">
+  <div *ngFor="let competencia of competencias" class="barra" [ngClass]="competencia.nivel">
+    <div *ngFor="let nivel of niveis" class="nivelProgresso">
+      <span>{{nivel}}</span>
+    </div>
+    <img class="imagemCompetencia" [src]="'../../../assets/Icones/' + competencia.nome + '.svg' ">
+  </div>
+</div>
+<p class="mensagem">What I know</p>

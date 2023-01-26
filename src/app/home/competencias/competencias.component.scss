@@ -1,0 +1,60 @@
+$alturaCompetenciasContenedor: 85vh;
+
+$larguraBarra: 33vw;
+
+$marginTopBarras: 2vh;
+
+$totalCompetencias: 11;
+
+$gapNiveis: 1vw;
+
+$borderBarra: 1px;
+
+$alturaBarra: calc(($alturaCompetenciasContenedor -
+($marginTopBarras + $borderBarra*2)*$totalCompetencias)/$totalCompetencias);
+
+$larguraNivel: calc(($larguraBarra - $alturaBarra - $gapNiveis*10)/10);
+
+.lista-competencias {
+  float: right;
+  width: 35vw;
+  height: $alturaCompetenciasContenedor;
+}
+
+.barra {
+  display: flex;
+  width: $larguraBarra;
+  height: $alturaBarra;
+  margin-top: $marginTopBarras;
+  gap: $gapNiveis;
+}
+
+.nivelProgresso {
+  position: relative;
+  width: $larguraNivel;
+  height: $alturaBarra;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border-radius: 20%;
+  color: #7e7e7e;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+.imagemCompetencia {
+  height: $alturaBarra;
+  border-radius: 50%;
+  background-color: #FDF6F0;
+}
+
+.mensagem {
+  color: #FDF6F0;
+  font-size: 45px;
+  font-weight: bolder;
+  position: absolute;
+  bottom: 4vh;
+  left: 5vw;
+  margin: 0;
+}
