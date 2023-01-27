@@ -16,6 +16,7 @@ $alturaBarra: calc(($alturaCompetenciasContenedor -
 $larguraNivel: calc(($larguraBarra - $alturaBarra - $gapNiveis*10)/10);
 
 .lista-competencias {
+  margin-top: 2vh;
   float: right;
   width: 35vw;
   height: $alturaCompetenciasContenedor;
