@@ -14,7 +14,7 @@ export class IdiomasComponent implements OnInit {
     { nome: 'espanhol', valor: 'español' },
   ];
   idiomaSelecionadoControl = new FormControl(this.idiomas[0]);
-  idiomaSelecionado!: string;
+  idiomaSelecionado= this.idiomaSelecionadoControl.value?.nome as string;
 
   constructor(private idiomasService: IdiomasService) {}
 

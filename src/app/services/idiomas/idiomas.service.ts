@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IdiomasService {
-  private idioma!: string;
+  private idioma: Subject<string> = new BehaviorSubject('ingles');
 
   constructor() { }
 
-  getIdioma() :string {
-    return this.idioma;
+  getIdioma(): Observable<string> {
+    return this.idioma.asObservable();
   }
 
-  setIdioma(valor: string) {
-    this.idioma = valor;
+  setIdioma(valor: string): void {
+    this.idioma.next(valor);
   }
 }
