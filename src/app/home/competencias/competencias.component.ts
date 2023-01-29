@@ -1,5 +1,6 @@
 import { IdiomasService } from './../../services/idiomas/idiomas.service';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-competencias',
@@ -18,14 +19,12 @@ export class CompetenciasComponent implements OnInit {
     {nome: 'ingles', nivel: 'n2'}
   ];
 
-  idioma!: string;
+  idioma!: Observable<string>;
 
   constructor(private idiomasService: IdiomasService) { }
 
   ngOnInit(): void {
-    this.idiomasService.getIdioma().subscribe(idioma => {
-      this.idioma = idioma;
-    });
+    this.idioma = this.idiomasService.getIdioma();
   }
 
 }

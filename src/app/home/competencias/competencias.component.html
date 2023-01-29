@@ -6,6 +6,6 @@
     <img class="imagemCompetencia" [src]="'../../../assets/Icones/' + competencia.nome + '.svg' ">
   </div>
 </div>
-<p *ngIf="idioma === 'ingles'" class="mensagem">What I know</p>
-<p *ngIf="idioma === 'portugues'" class="mensagem">O que eu sei</p>
-<p *ngIf="idioma === 'espanhol'" class="mensagem">Lo que sé</p>
+<p *ngIf="(idioma | async) === 'ingles'" class="mensagem">What I know</p>
+<p *ngIf="(idioma | async) === 'portugues'" class="mensagem">O que eu sei</p>
+<p *ngIf="(idioma | async) === 'espanhol'" class="mensagem">Lo que sé</p>
