@@ -2,23 +2,22 @@
   width: 60vw;
   height: 15vh;
   display: flex;
-  justify-content: center;
+  gap: 5vw;
+  margin-left: 5vw;
   align-items: center;
-  gap: 4vw;
 }
 
 a {
-  width: 80px;
   height: 30px;
   text-align: center;
-  font-weight: bold;
   cursor: pointer;
   color: rgb(60, 60, 60);
+  line-height: 30px;
+  font-weight: 500;
 }
 
 a:hover::before {
   content: '';
-  width: 75px;
   height: 2px;
   background-color: #F57B51;
   display: block;

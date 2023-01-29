@@ -1,0 +1,17 @@
+<mat-select [formControl]="idiomaSelecionadoControl" class="select-idioma">
+  <mat-select-trigger>
+    <div fxLayoutAlign="start center" fxLayoutGap="4px">
+      <img height="20px" [src]="'../../../assets/Icones/' + idiomaSelecionadoControl.value?.nome + '.svg'">
+      <span> {{ idiomaSelecionadoControl.value?.valor | primeiras3Letras | uppercase}} </span>
+    </div>
+  </mat-select-trigger>
+  <mat-option *ngFor="let idioma of idiomas" [value]="idioma">
+    <div fxLayoutAlign="start center" fxLayoutGap="4px">
+      <img height="20px" [src]="'../../../assets/Icones/' + idioma.nome + '.svg'">
+      <span>{{idioma.valor | uppercase}}</span>
+    </div>
+  </mat-option>
+</mat-select>
+
+
+
