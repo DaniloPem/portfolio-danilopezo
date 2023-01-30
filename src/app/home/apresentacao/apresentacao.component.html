@@ -1,14 +1,34 @@
 <app-navegacao></app-navegacao>
 
 <div class="apresentacao">
-  <div>
+  <div *ngIf="(idioma | async) === 'ingles'">
     <p class="hi">Hi,</p>
     <p class="nome">I'm DANILO PEZO</p>
     <p class="desenvolvedor">Front-End developer</p>
     <p class="nacionalidade">From Peru living in Brazil</p>
   </div>
+
+  <div *ngIf="(idioma | async) === 'portugues'">
+    <p class="hi">Oi,</p>
+    <p class="nome">Sou DANILO PEZO</p>
+    <p class="desenvolvedor">Desenvolvedor Front-End</p>
+    <p class="nacionalidade">Do Peru morando no Brasil</p>
+  </div>
+
+  <div *ngIf="(idioma | async) === 'espanhol'">
+    <p class="hi">Hola,</p>
+    <p class="nome">Soy DANILO PEZO</p>
+    <p class="desenvolvedor">Desarrollador Front-End</p>
+    <p class="nacionalidade">De Peru viviendo en Brasil</p>
+  </div>
+
   <div class="links">
-    <button class="myProjects">My projects</button>
+    <button *ngIf="(idioma | async) === 'ingles'" class="myProjects">My projects</button>
+
+    <button *ngIf="(idioma | async) === 'portugues'" class="myProjects">Meus projetos</button>
+
+    <button *ngIf="(idioma | async) === 'espanhol'" class="myProjects">Mis proyectos</button>
+
     <img src="../../../assets/Icones/github.svg">
     <img src="../../../assets/Icones/linkedin.svg">
   </div>

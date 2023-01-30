@@ -1,6 +1,20 @@
-<nav class="navegacao-contenedor">
+<nav *ngIf="(idioma | async) === 'ingles'" class="navegacao-contenedor">
   <a>HOME</a>
   <a>ABOUT</a>
   <a>PROJECTS</a>
   <a>CONTACT</a>
+</nav>
+
+<nav *ngIf="(idioma | async) === 'portugues'" class="navegacao-contenedor">
+  <a>INÍCIO</a>
+  <a>SOBRE</a>
+  <a>PROJETOS</a>
+  <a>CONTATO</a>
+</nav>
+
+<nav *ngIf="(idioma | async) === 'espanhol'" class="navegacao-contenedor">
+  <a>INICIO</a>
+  <a>SOBRE</a>
+  <a>PROYECTOS</a>
+  <a>CONTACTO</a>
 </nav>
