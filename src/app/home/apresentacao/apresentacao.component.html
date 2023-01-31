@@ -3,34 +3,44 @@
 <div class="apresentacao">
   <div *ngIf="(idioma | async) === 'ingles'">
     <p class="hi">Hi,</p>
-    <p class="nome">I'm DANILO PEZO</p>
-    <p class="desenvolvedor">Front-End developer</p>
-    <p class="nacionalidade">From Peru living in Brazil</p>
+    <h1 class="nome">I'm DANILO PEZO</h1>
+    <h2 class="desenvolvedor">Front-End developer</h2>
+    <p class="nacionalidade">From Peru, living in Brazil</p>
   </div>
 
   <div *ngIf="(idioma | async) === 'portugues'">
     <p class="hi">Oi,</p>
-    <p class="nome">Sou DANILO PEZO</p>
-    <p class="desenvolvedor">Desenvolvedor Front-End</p>
-    <p class="nacionalidade">Do Peru morando no Brasil</p>
+    <h1 class="nome">Sou DANILO PEZO</h1>
+    <h2 class="desenvolvedor">Desenvolvedor Front-End</h2>
+    <p class="nacionalidade">Do Peru, morando no Brasil</p>
   </div>
 
   <div *ngIf="(idioma | async) === 'espanhol'">
     <p class="hi">Hola,</p>
-    <p class="nome">Soy DANILO PEZO</p>
-    <p class="desenvolvedor">Desarrollador Front-End</p>
-    <p class="nacionalidade">De Peru viviendo en Brasil</p>
+    <h1 class="nome">Soy DANILO PEZO</h1>
+    <h2 class="desenvolvedor">Desarrollador Front-End</h2>
+    <p class="nacionalidade">De Peru, viviendo en Brasil</p>
   </div>
 
-  <div class="links">
+  <div class="botao-meus-projetos">
     <button *ngIf="(idioma | async) === 'ingles'" class="myProjects">My projects</button>
 
     <button *ngIf="(idioma | async) === 'portugues'" class="myProjects">Meus projetos</button>
 
     <button *ngIf="(idioma | async) === 'espanhol'" class="myProjects">Mis proyectos</button>
+  </div>
+</div>
 
-    <img src="../../../assets/Icones/github.svg">
-    <img src="../../../assets/Icones/linkedin.svg">
+<div class="redes-sociais-contenedor">
+  <h5 *ngIf="(idioma | async) === 'ingles'" class="text-redes-sociais">Find me on:</h5>
+
+  <h5 *ngIf="(idioma | async) === 'portugues'" class="text-redes-sociais">Encontre-me em:</h5>
+
+  <h5 *ngIf="(idioma | async) === 'espanhol'" class="text-redes-sociais">Encuéntrame en:</h5>
+
+  <div class="links-redes-sociais">
+    <a href="https://github.com/DaniloPem" target="_blank" rel="noreferrer noopener"><img src="../../../assets/Icones/github.svg"></a>
+    <a href="https://www.linkedin.com/in/danilo-pezo-mendoza/" target="_blank" rel="noreferrer noopener"><img src="../../../assets/Icones/linkedin.svg"></a>
   </div>
 </div>
 
