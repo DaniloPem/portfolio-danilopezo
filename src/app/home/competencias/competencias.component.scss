@@ -1,49 +1,98 @@
-$alturaCompetenciasContenedor: 85vh;
+$larguraComponenteCompetencias: 40vw;
 
-$larguraBarra: 33vw;
+$alturaComponenteCompetencias: 100vh;
 
-$marginTopBarras: 2vh;
+$alturaCompetenciasContenedor: calc($alturaComponenteCompetencias * 0.85);
 
-$totalCompetencias: 11;
+$alturaBarra: calc($alturaComponenteCompetencias * 0.04);
 
-$gapNiveis: 1vw;
+$largura-lista-competencias: $larguraComponenteCompetencias * 0.875;
 
-$borderBarra: 1px;
+$margin-top-barras: 3%;
 
-$alturaBarra: calc(($alturaCompetenciasContenedor -
-($marginTopBarras + $borderBarra*2)*$totalCompetencias)/$totalCompetencias);
+$padding-top-area-competencia: 3%;
 
-$larguraNivel: calc(($larguraBarra - $alturaBarra - $gapNiveis*10)/10);
+@mixin bloco-de-competencias ($porcentagem-de-largura, $numero-de-competencias) {
+  position: relative;
+  background-color: #ffd971;
+  border-radius: 10px;
+  width: $largura-lista-competencias * $porcentagem-de-largura;
+  @if ($numero-de-competencias % 2 == 0) {
+    height: calc($alturaBarra * (($numero-de-competencias * 3 - 1) / 2 + 1));
+  } @else {
+    height: calc($alturaBarra * ($numero-de-competencias + 2));
+  }
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+}
 
 .lista-competencias {
+  width: $largura-lista-competencias;
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 2vh;
   float: right;
-  width: 35vw;
+  margin-right: 2vw;
   height: $alturaCompetenciasContenedor;
-}
-
-.barra {
-  display: flex;
-  width: $larguraBarra;
-  height: $alturaBarra;
-  margin-top: $marginTopBarras;
-  gap: $gapNiveis;
-}
-
-.nivelProgresso {
-  position: relative;
-  width: $larguraNivel;
-  height: $alturaBarra;
-  display: flex;
   justify-content: center;
-  align-items: center;
-  border-radius: 20%;
-  color: #7e7e7e;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
-  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 3px rgba(255, 255, 255, 0.2);
+  gap: 8%;
 }
 
-.imagemCompetencia {
+.front-end-competencia {
+  @include bloco-de-competencias(1, 6);
+}
+
+.programacao-competencia {
+  @include bloco-de-competencias(0.45, 1);
+}
+
+.banco-de-dados-competencia {
+  @include bloco-de-competencias(0.45, 1);
+}
+
+.bloco-competencias-name{
+  position: absolute;
+  top: -8.5px;
+  right: 5%;
+  font-size: 14px;
+  margin: 0;
+  // background: linear-gradient();
+}
+
+.barra-competencia-contenedor {
+  display: flex;
+  width: 80%;
+  height: $alturaBarra;
+  gap: 2%;
+}
+
+.barra-progresso-contenedor {
+  position: relative;
+  width: calc(98% - $alturaBarra);
+  height: $alturaBarra * 0.4;
+  // background-color: rgba(73, 73, 73, 0.4);
+  border: 1px solid rgba(73, 73, 73, 0.6);
+  border-radius: 5px;
+}
+
+.porcentagem-progresso {
+  position: absolute;
+  font-size: 11px;
+  margin: 0;
+  left: 0;
+  top: -13px;
+}
+
+.barra-progresso {
+  height: 100%;
+  // background-color: #FDF6F0;
+  // background-color: #095D6A;
+  // background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
+  float: right;
+  border-radius: 5px;
+}
+
+.imagem-competencia {
   height: $alturaBarra;
   border-radius: 50%;
   background-color: #FDF6F0;

@@ -1,9 +1,18 @@
 <div class="lista-competencias">
-  <div *ngFor="let competencia of competencias" class="barra" [ngClass]="competencia.nivel">
-    <div *ngFor="let nivel of niveis" class="nivelProgresso">
-      <span>{{nivel}}</span>
+
+  <div *ngFor="let grupoCompetencia of competenciasWrapper" [ngClass]="grupoCompetencia.classeCss" fxLayout="column" fxLayoutAlign="space-evenly center" >
+    <span class="bloco-competencias-name">{{grupoCompetencia.nome}}</span>
+    <div *ngFor="let competencia of grupoCompetencia.competencias" class="barra-competencia-contenedor" fxLayout="row" fxLayoutAlign="space-between center">
+      <div class="barra-progresso-contenedor" fxLayout="column" fxLayoutAlign="space-around end">
+        <span class="porcentagem-progresso">{{ competencia.nivel }}</span>
+        <div class="barra-progresso" [ngStyle]="{width: competencia.nivel}"></div>
+      </div>
+      <img class="imagem-competencia" [src]="'../../../assets/Icones/' + competencia.nome + '.svg' ">
     </div>
-    <img class="imagemCompetencia" [src]="'../../../assets/Icones/' + competencia.nome + '.svg' ">
+  </div>
+
+  <div class="idiomas-competencia">
+    <div *ngFor="let competencia of idiomas" class="barra-competencia-contenedor"></div>
   </div>
 </div>
 <p *ngIf="(idioma | async) === 'ingles'" class="mensagem">What I know</p>
