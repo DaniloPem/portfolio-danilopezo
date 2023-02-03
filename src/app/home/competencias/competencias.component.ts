@@ -1,6 +1,7 @@
 import { IdiomasService } from './../../services/idiomas/idiomas.service';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { AsyncSubject, BehaviorSubject, Observable, Subject } from 'rxjs';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-competencias',
@@ -11,25 +12,33 @@ export class CompetenciasComponent implements OnInit {
 
   competenciasWrapper = [
     {
-      nome: 'Front-end',
+      nome: 'Front-End',
       competencias: [
-        { nome: 'html5', nivel: '70%' },
-        { nome: 'css3', nivel: '70%' },
-        { nome: 'angular', nivel: '50%' },
-        { nome: 'javascript', nivel: '70%' },
-        { nome: 'typescript', nivel: '70%' },
-        { nome: 'java', nivel: '30%' },
+        { nome: 'html5', nivel: '90%' },
+        { nome: 'css3', nivel: '90%' },
+        { nome: 'angular', nivel: '75%' },
+        { nome: 'javascript', nivel: '80%' },
+        { nome: 'typescript', nivel: '60%' },
+        { nome: 'java', nivel: '55%' }
       ],
       classeCss: 'front-end-competencia'
     },
     {
-      nome: 'Programacao',
-      competencias: [{ nome: 'poo', nivel: '70%' }],
+      nome: [
+        { idioma: 'ingles', valor: 'Programming'},
+        { idioma: 'portugues', valor: 'Programação'},
+        { idioma: 'espanhol', valor: 'Programación'}
+    ],
+      competencias: [{ nome: 'poo', nivel: '90%' }],
       classeCss: 'programacao-competencia'
     },
     {
-      nome: 'Banco de dados',
-      competencias: [{ nome: 'mysql', nivel: '30%' }],
+      nome: [
+        { idioma: 'ingles', valor: 'Database'},
+        { idioma: 'portugues', valor: 'Banco de Dados'},
+        { idioma: 'espanhol', valor: 'Banco de Datos'}
+    ],
+      competencias: [{ nome: 'mysql', nivel: '60%' }],
       classeCss: 'banco-de-dados-competencia'
     },
   ];
@@ -46,6 +55,18 @@ export class CompetenciasComponent implements OnInit {
   constructor(private idiomasService: IdiomasService) {}
 
   ngOnInit(): void {
-    this.idioma = this.idiomasService.getIdioma();
+    this.idioma = this.idiomasService.getIdioma()
+  }
+
+  renderizarNomeGrupoCompetencias(grupoCompetencia: any, idioma: any) {
+    const arrayNomeCompetencias: Array<any> = grupoCompetencia.nome;
+    console.log(arrayNomeCompetencias[0].idioma)
+    for (let index = 0; index < arrayNomeCompetencias.length; index++) {
+      if (arrayNomeCompetencias[index].idioma === idioma) {
+        return arrayNomeCompetencias[index].valor;
+      } else {
+        return arrayNomeCompetencias;
+      }
+    }
   }
 }

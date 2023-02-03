@@ -13,8 +13,7 @@ $margin-top-barras: 3%;
 $padding-top-area-competencia: 3%;
 
 @mixin bloco-de-competencias ($porcentagem-de-largura, $numero-de-competencias) {
-  position: relative;
-  background-color: #ffd971;
+  background-color: #12192c;
   border-radius: 10px;
   width: $largura-lista-competencias * $porcentagem-de-largura;
   @if ($numero-de-competencias % 2 == 0) {
@@ -49,13 +48,24 @@ $padding-top-area-competencia: 3%;
   @include bloco-de-competencias(0.45, 1);
 }
 
-.bloco-competencias-name{
-  position: absolute;
-  top: -8.5px;
-  right: 5%;
+.nome-grupo-competencias-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: $alturaBarra * 1.5;
+  // background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px 10px 0 0;
+}
+
+.nome-grupo-competencias {
+  color: #F37335;
   font-size: 14px;
-  margin: 0;
-  // background: linear-gradient();
+}
+
+.competencias-contenedor {
+  width: 100%;
+  height: calc(100% - $alturaBarra * 1.5);
 }
 
 .barra-competencia-contenedor {
@@ -68,7 +78,7 @@ $padding-top-area-competencia: 3%;
 .barra-progresso-contenedor {
   position: relative;
   width: calc(98% - $alturaBarra);
-  height: $alturaBarra * 0.4;
+  height: $alturaBarra * 0.25;
   // background-color: rgba(73, 73, 73, 0.4);
   border: 1px solid rgba(73, 73, 73, 0.6);
   border-radius: 5px;
@@ -80,6 +90,7 @@ $padding-top-area-competencia: 3%;
   margin: 0;
   left: 0;
   top: -13px;
+  color: #F37335;
 }
 
 .barra-progresso {
@@ -87,7 +98,8 @@ $padding-top-area-competencia: 3%;
   // background-color: #FDF6F0;
   // background-color: #095D6A;
   // background-color: rgba(255, 255, 255, 0.4);
-  background-color: rgba(0, 0, 0, 0.6);
+  // background-color: #FDF6F0;
+  background-color: #FDF6F0;
   float: right;
   border-radius: 5px;
 }
