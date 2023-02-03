@@ -2,7 +2,7 @@
 
   <div *ngFor="let grupoCompetencia of competenciasWrapper" [ngClass]="grupoCompetencia.classeCss" >
     <div class="nome-grupo-competencias-contenedor">
-      <span class="nome-grupo-competencias">{{ grupoCompetencia.nome }}</span>
+      <span class="nome-grupo-competencias">{{ renderizarNomeGrupoCompetencias(grupoCompetencia, idioma | async) }}</span>
     </div>
     <div class="competencias-contenedor" fxLayout="column" fxLayoutAlign="space-evenly center">
       <div *ngFor="let competencia of grupoCompetencia.competencias" class="barra-competencia-contenedor" fxLayout="row" fxLayoutAlign="space-between center">

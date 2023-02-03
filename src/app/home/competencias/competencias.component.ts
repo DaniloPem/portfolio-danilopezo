@@ -9,7 +9,6 @@ import { AsyncPipe } from '@angular/common';
   styleUrls: ['./competencias.component.scss'],
 })
 export class CompetenciasComponent implements OnInit {
-
   competenciasWrapper = [
     {
       nome: 'Front-End',
@@ -19,27 +18,27 @@ export class CompetenciasComponent implements OnInit {
         { nome: 'angular', nivel: '75%' },
         { nome: 'javascript', nivel: '80%' },
         { nome: 'typescript', nivel: '60%' },
-        { nome: 'java', nivel: '55%' }
+        { nome: 'java', nivel: '55%' },
       ],
-      classeCss: 'front-end-competencia'
+      classeCss: 'front-end-competencia',
     },
     {
       nome: [
-        { idioma: 'ingles', valor: 'Programming'},
-        { idioma: 'portugues', valor: 'Programação'},
-        { idioma: 'espanhol', valor: 'Programación'}
-    ],
+        { idioma: 'ingles', valor: 'Programming' },
+        { idioma: 'portugues', valor: 'Programação' },
+        { idioma: 'espanhol', valor: 'Programación' },
+      ],
       competencias: [{ nome: 'poo', nivel: '90%' }],
-      classeCss: 'programacao-competencia'
+      classeCss: 'programacao-competencia',
     },
     {
       nome: [
-        { idioma: 'ingles', valor: 'Database'},
-        { idioma: 'portugues', valor: 'Banco de Dados'},
-        { idioma: 'espanhol', valor: 'Banco de Datos'}
-    ],
+        { idioma: 'ingles', valor: 'Database' },
+        { idioma: 'portugues', valor: 'Banco de Dados' },
+        { idioma: 'espanhol', valor: 'Banco de Datos' },
+      ],
       competencias: [{ nome: 'mysql', nivel: '60%' }],
-      classeCss: 'banco-de-dados-competencia'
+      classeCss: 'banco-de-dados-competencia',
     },
   ];
   competenciasKeys = Object.keys(this.competenciasWrapper);
@@ -55,18 +54,13 @@ export class CompetenciasComponent implements OnInit {
   constructor(private idiomasService: IdiomasService) {}
 
   ngOnInit(): void {
-    this.idioma = this.idiomasService.getIdioma()
+    this.idioma = this.idiomasService.getIdioma();
   }
 
   renderizarNomeGrupoCompetencias(grupoCompetencia: any, idioma: any) {
     const arrayNomeCompetencias: Array<any> = grupoCompetencia.nome;
-    console.log(arrayNomeCompetencias[0].idioma)
-    for (let index = 0; index < arrayNomeCompetencias.length; index++) {
-      if (arrayNomeCompetencias[index].idioma === idioma) {
-        return arrayNomeCompetencias[index].valor;
-      } else {
-        return arrayNomeCompetencias;
-      }
-    }
+    return Array.isArray(arrayNomeCompetencias) ?
+     arrayNomeCompetencias.find(nomeCompetencia => nomeCompetencia.idioma === idioma).valor :
+     arrayNomeCompetencias;
   }
 }
