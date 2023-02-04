@@ -1,22 +1,7 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
- "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="104.000000pt" height="104.000000pt" viewBox="0 0 104.000000 104.000000"
- preserveAspectRatio="xMidYMid meet">
+<svg width="500" height="600" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>Layer 1</title>
+  <text transform="rotate(0.223599 250 300) matrix(1 0 0 1 0 0)" fill="#00758f" stroke="#000" stroke-width="0" x="-0.0625" y="384.5" id="svg_1" font-size="250" font-family="Noto Sans JP" text-anchor="start" xml:space="preserve">POO</text>
+ </g>
 
-<g transform="translate(0.000000,104.000000) scale(0.100000,-0.100000)"
-fill="#000000" stroke="none">
-<path d="M190 525 c0 -78 3 -95 15 -95 10 0 15 10 15 34 0 37 12 46 64 46 41
-0 56 15 56 57 0 41 -21 53 -94 53 l-56 0 0 -95z m101 75 c46 -25 7 -89 -47
--76 -19 5 -24 13 -24 40 0 43 29 58 71 36z"/>
-<path d="M464 606 c-36 -16 -44 -32 -44 -86 0 -53 26 -81 80 -86 59 -6 92 12
-107 59 11 31 10 44 -1 71 -8 19 -18 36 -23 39 -24 15 -90 16 -119 3z m94 -12
-c18 -12 22 -25 22 -69 0 -50 -2 -56 -30 -70 -39 -20 -56 -19 -80 5 -30 30 -28
-113 2 134 12 9 32 16 43 16 11 0 31 -7 43 -16z"/>
-<path d="M734 606 c-36 -16 -44 -32 -44 -86 0 -61 26 -84 95 -84 48 0 60 4 76
-23 25 30 25 101 2 130 -23 27 -88 36 -129 17z m86 -11 c28 -14 30 -20 30 -70
-0 -50 -2 -56 -30 -70 -39 -20 -56 -19 -80 5 -42 42 -16 150 35 150 9 0 29 -7
-45 -15z"/>
-</g>
 </svg>

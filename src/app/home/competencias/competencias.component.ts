@@ -9,16 +9,16 @@ import { AsyncPipe } from '@angular/common';
   styleUrls: ['./competencias.component.scss'],
 })
 export class CompetenciasComponent implements OnInit {
-  competenciasWrapper = [
+  competenciasWrapper: any[] = [
     {
       nome: 'Front-End',
       competencias: [
-        { nome: 'html5', nivel: '90%' },
-        { nome: 'css3', nivel: '90%' },
-        { nome: 'angular', nivel: '75%' },
-        { nome: 'javascript', nivel: '80%' },
-        { nome: 'typescript', nivel: '60%' },
-        { nome: 'java', nivel: '55%' },
+        { nome: 'HTML5', nivel: '90%' },
+        { nome: 'CSS3', nivel: '90%' },
+        { nome: 'Angular', nivel: '75%' },
+        { nome: 'Javascript', nivel: '80%' },
+        { nome: 'Typescript', nivel: '60%' },
+        { nome: 'Java', nivel: '55%' },
       ],
       classeCss: 'front-end-competencia',
     },
@@ -28,7 +28,17 @@ export class CompetenciasComponent implements OnInit {
         { idioma: 'portugues', valor: 'Programação' },
         { idioma: 'espanhol', valor: 'Programación' },
       ],
-      competencias: [{ nome: 'poo', nivel: '90%' }],
+      competencias: [
+        {
+          nome: 'poo',
+          nivel: '90%',
+          hover: [
+            { idioma: 'ingles', valor: 'Object-Oriented Programming' },
+            { idioma: 'portugues', valor: 'Programação Orientada a Objetos' },
+            { idioma: 'espanhol', valor: 'Programación Orientada a Objetos' },
+          ],
+        },
+      ],
       classeCss: 'programacao-competencia',
     },
     {
@@ -37,11 +47,10 @@ export class CompetenciasComponent implements OnInit {
         { idioma: 'portugues', valor: 'Banco de Dados' },
         { idioma: 'espanhol', valor: 'Banco de Datos' },
       ],
-      competencias: [{ nome: 'mysql', nivel: '60%' }],
+      competencias: [{ nome: 'MySQL', nivel: '60%' }],
       classeCss: 'banco-de-dados-competencia',
     },
   ];
-  competenciasKeys = Object.keys(this.competenciasWrapper);
 
   idiomas = [
     { nome: 'espanhol', nivel: '100%' },
@@ -57,10 +66,17 @@ export class CompetenciasComponent implements OnInit {
     this.idioma = this.idiomasService.getIdioma();
   }
 
-  renderizarNomeGrupoCompetencias(grupoCompetencia: any, idioma: any) {
-    const arrayNomeCompetencias: Array<any> = grupoCompetencia.nome;
-    return Array.isArray(arrayNomeCompetencias) ?
-     arrayNomeCompetencias.find(nomeCompetencia => nomeCompetencia.idioma === idioma).valor :
-     arrayNomeCompetencias;
+  encontrarValorEmFuncaoDoIdioma(
+    competenciaOuGrupoDeCompetencias: any,
+    idioma: any,
+    chave: string,
+    valorPadrao?: string
+  ) {
+    const arrayOndeSeEncontraraOValor = competenciaOuGrupoDeCompetencias[chave];
+    return Array.isArray(arrayOndeSeEncontraraOValor)
+      ? arrayOndeSeEncontraraOValor.find(
+          (array: any) => array.idioma === idioma
+        ).valor
+      : valorPadrao;
   }
 }

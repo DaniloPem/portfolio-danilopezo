@@ -2,7 +2,7 @@
 
   <div *ngFor="let grupoCompetencia of competenciasWrapper" [ngClass]="grupoCompetencia.classeCss" >
     <div class="nome-grupo-competencias-contenedor">
-      <span class="nome-grupo-competencias">{{ renderizarNomeGrupoCompetencias(grupoCompetencia, idioma | async) }}</span>
+      <span class="nome-grupo-competencias">{{ encontrarValorEmFuncaoDoIdioma (grupoCompetencia, idioma | async, 'nome', grupoCompetencia.nome) }}</span>
     </div>
     <div class="competencias-contenedor" fxLayout="column" fxLayoutAlign="space-evenly center">
       <div *ngFor="let competencia of grupoCompetencia.competencias" class="barra-competencia-contenedor" fxLayout="row" fxLayoutAlign="space-between center">
@@ -10,7 +10,7 @@
           <span class="porcentagem-progresso">{{ competencia.nivel }}</span>
           <div class="barra-progresso" [ngStyle]="{width: competencia.nivel}"></div>
         </div>
-        <img class="imagem-competencia" [src]="'../../../assets/Icones/' + competencia.nome + '.svg' ">
+        <img [matTooltip]="encontrarValorEmFuncaoDoIdioma (competencia, idioma | async, 'hover', competencia.nome)" matTooltipPosition="before" class="imagem-competencia" [src]="'../../../assets/Icones/' + competencia.nome.toLowerCase() + '.svg' ">
       </div>
     </div>
   </div>
