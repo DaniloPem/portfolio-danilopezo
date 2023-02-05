@@ -8,13 +8,12 @@ $alturaBarra: calc($alturaComponenteCompetencias * 0.04);
 
 $largura-lista-competencias: $larguraComponenteCompetencias * 0.875;
 
-$margin-top-barras: 3%;
-
-$padding-top-area-competencia: 3%;
+$corBarraProgresso: #00758f;
 
 @mixin bloco-de-competencias ($porcentagem-de-largura, $numero-de-competencias) {
   background-color: #12192c;
   border-radius: 10px;
+  color: #F37335;
   width: $largura-lista-competencias * $porcentagem-de-largura;
   @if ($numero-de-competencias % 2 == 0) {
     height: calc($alturaBarra * (($numero-de-competencias * 3 - 1) / 2 + 1));
@@ -22,6 +21,7 @@ $padding-top-area-competencia: 3%;
     height: calc($alturaBarra * ($numero-de-competencias + 2));
   }
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+  margin: 0;
 }
 
 .lista-competencias {
@@ -33,7 +33,8 @@ $padding-top-area-competencia: 3%;
   margin-right: 2vw;
   height: $alturaCompetenciasContenedor;
   justify-content: center;
-  gap: 8%;
+  align-content: flex-start;
+  gap: 5%;
 }
 
 .front-end-competencia {
@@ -48,18 +49,20 @@ $padding-top-area-competencia: 3%;
   @include bloco-de-competencias(0.45, 1);
 }
 
+.idiomas-competencia {
+  @include bloco-de-competencias(1, 3);
+}
+
 .nome-grupo-competencias-contenedor {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: $alturaBarra * 1.5;
-  // background-color: rgba(0, 0, 0, 0.6);
   border-radius: 10px 10px 0 0;
 }
 
 .nome-grupo-competencias {
-  color: #F37335;
   font-size: 14px;
 }
 
@@ -75,11 +78,57 @@ $padding-top-area-competencia: 3%;
   gap: 2%;
 }
 
+.barra-circular-competencia-contenedor {
+  width: 20%;
+  gap: 3px;
+}
+
+.barra-progresso-circular {
+  $color-background: #12192c;
+  $color-fill: $corBarraProgresso;
+
+  @for $i from 0 through 100 {
+  $deg: 90deg + (3.6 * $i);
+
+  &-#{$i} {
+    $direction: if($i < 51, right, left);
+    $color: if($i < 51, $color-background, $color-fill);
+
+    background:
+      linear-gradient(
+        to #{$direction},
+        #{$color} 50%,
+        transparent 50%,
+        transparent
+      ),
+      linear-gradient(
+        #{$deg},
+        $color-fill 50%,
+        $color-background 50%
+      );
+  }
+  }
+  height: $alturaBarra * 2.5;
+  width: $alturaBarra * 2.5;
+  border: 1px solid rgba(73, 73, 73, 0.6);
+  border-radius: 50%;
+}
+
+.porcentagem-barra-circular {
+  width: calc($alturaBarra * 2.5 * 0.8);
+  height: calc($alturaBarra * 2.5 * 0.8);
+  border-radius: 50%;
+  border: 1px solid rgba(73, 73, 73, 0.6);
+  background-color: #12192c;
+  text-align: center;
+  line-height: calc($alturaBarra * 2.5 * 0.8);
+  font-size: 12px;
+}
+
 .barra-progresso-contenedor {
   position: relative;
   width: calc(98% - $alturaBarra);
   height: $alturaBarra * 0.25;
-  // background-color: rgba(73, 73, 73, 0.4);
   border: 1px solid rgba(73, 73, 73, 0.6);
   border-radius: 5px;
 }
@@ -90,22 +139,21 @@ $padding-top-area-competencia: 3%;
   margin: 0;
   left: 0;
   top: -13px;
-  color: #F37335;
 }
 
 .barra-progresso {
   height: 100%;
-  // background-color: #FDF6F0;
-  // background-color: #095D6A;
-  // background-color: rgba(255, 255, 255, 0.4);
-  // background-color: #FDF6F0;
-  background-color: #FDF6F0;
+  background-color: $corBarraProgresso;
   float: right;
   border-radius: 5px;
 }
 
 .imagem-competencia {
   height: $alturaBarra;
+}
+
+.competencia-circular-nome {
+  font-size: 14px;
 }
 
 .mensagem {

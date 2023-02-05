@@ -16,9 +16,20 @@
   </div>
 
   <div class="idiomas-competencia">
-    <div *ngFor="let competencia of idiomas" class="barra-competencia-contenedor"></div>
+    <div class="nome-grupo-competencias-contenedor">
+      <span class="nome-grupo-competencias">{{ encontrarValorEmFuncaoDoIdioma (idiomas[0], idioma | async, 'nome') }}</span>
+    </div>
+    <div class="competencias-contenedor" fxLayout="row" fxLayoutAlign="space-around center" >
+      <div *ngFor="let competencia of idiomas[1].competencias" class="barra-circular-competencia-contenedor" fxLayout="column" fxLayoutAlign="space-around center" >
+        <div class="barra-progresso-circular" [ngClass]="'barra-progresso-circular-' + competencia.nivel | semPorcentagem"  fxLayout="row" fxLayoutAlign="space-evenly center">
+          <span class="porcentagem-barra-circular">{{ competencia.nivel }}</span>
+        </div>
+        <span class="competencia-circular-nome">{{ encontrarValorEmFuncaoDoIdioma (competencia, idioma | async, 'nome') }}</span>
+      </div>
+    </div>
   </div>
 </div>
+
 <p *ngIf="(idioma | async) === 'ingles'" class="mensagem">What I know</p>
 <p *ngIf="(idioma | async) === 'portugues'" class="mensagem">O que eu sei</p>
 <p *ngIf="(idioma | async) === 'espanhol'" class="mensagem">Lo que sé</p>

@@ -1,3 +1,4 @@
+import { SemPorcentagemPipe } from './../pipes/sem-porcentagem.pipe';
 import { Primeiras3LetrasPipe } from './../pipes/primeiras-3-letras.pipe';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -22,7 +23,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     CompetenciasComponent,
     HomeComponent,
     IdiomasComponent,
-    Primeiras3LetrasPipe
+    Primeiras3LetrasPipe,
+    SemPorcentagemPipe
   ],
   imports: [
     CommonModule,

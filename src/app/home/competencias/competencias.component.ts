@@ -52,10 +52,20 @@ export class CompetenciasComponent implements OnInit {
     },
   ];
 
-  idiomas = [
-    { nome: 'espanhol', nivel: '100%' },
-    { nome: 'portugues', nivel: '80%' },
-    { nome: 'ingles', nivel: '20%' },
+  idiomas = [ {
+    nome: [
+      {idioma: 'ingles', valor: 'Languages'},
+      {idioma: 'portugues', valor: 'Idiomas'},
+      {idioma: 'espanhol', valor: 'Idiomas'}
+    ]
+  },
+  {
+    competencias: [
+      { nome: [{idioma: 'ingles', valor: 'Spanish'}, {idioma: 'portugues', valor: 'Espanhol'}, {idioma: 'espanhol', valor: 'Español'}], nivel: '100%' },
+      { nome: [{idioma: 'ingles', valor: 'Portuguese'}, {idioma: 'portugues', valor: 'Português'}, {idioma: 'espanhol', valor: 'Portugués'}], nivel: '80%' },
+      { nome: [{idioma: 'ingles', valor: 'English'}, {idioma: 'portugues', valor: 'Inglês'}, {idioma: 'espanhol', valor: 'Inglés'}], nivel: '20%' },
+    ]
+  }
   ];
 
   idioma!: Observable<string>;

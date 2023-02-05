@@ -1,7 +1,7 @@
 <svg width="500" height="600" xmlns="http://www.w3.org/2000/svg">
  <g>
   <title>Layer 1</title>
-  <text transform="rotate(0.223599 250 300) matrix(1 0 0 1 0 0)" fill="#00758f" stroke="#000" stroke-width="0" x="-0.0625" y="384.5" id="svg_1" font-size="250" font-family="Noto Sans JP" text-anchor="start" xml:space="preserve">POO</text>
+  <text transform="rotate(0.223599 250 300) matrix(1 0 0 1 0 0)" fill="#FDF6F0" stroke="#000" stroke-width="0" x="-0.0625" y="384.5" id="svg_1" font-size="250" font-family="Noto Sans JP" text-anchor="start" xml:space="preserve">POO</text>
  </g>
 
 </svg>
