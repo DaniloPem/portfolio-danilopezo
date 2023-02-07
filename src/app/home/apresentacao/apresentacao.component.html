@@ -1,5 +1,3 @@
-<app-navegacao></app-navegacao>
-
 <div class="apresentacao">
   <div *ngIf="(idioma | async) === 'ingles'">
     <p class="hi">Hi,</p>
@@ -22,12 +20,10 @@
     <p class="nacionalidade">De Peru, viviendo en Brasil</p>
   </div>
 
-  <div class="botao-meus-projetos">
-    <button *ngIf="(idioma | async) === 'ingles'" class="myProjects">My projects</button>
-
-    <button *ngIf="(idioma | async) === 'portugues'" class="myProjects">Meus projetos</button>
-
-    <button *ngIf="(idioma | async) === 'espanhol'" class="myProjects">Mis proyectos</button>
+  <div class="botao-meus-projetos" [ngSwitch]="idioma | async">
+    <button *ngSwitchCase="'ingles'" class="myProjects">My projects</button>
+    <button *ngSwitchCase="'portugues'" class="myProjects">Meus projetos</button>
+    <button *ngSwitchCase="'espanhol'" class="myProjects">Mis proyectos</button>
   </div>
 </div>
 

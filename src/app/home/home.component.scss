@@ -1,0 +1,53 @@
+.navegacao {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.idiomas {
+  width: 70px;
+  height: 15vh;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.apresentacao {
+  width: 60vw;
+  height: 100vh;
+  background-color: #FDF6F0;
+  position: relative;
+}
+
+.competencias {
+  width: 40vw;
+  height: 100vh;
+  background-color: #FBBC58;
+  position: relative;
+}
+
+@media screen and (max-width: 820px){
+
+  .apresentacao {
+    width: 100vw;
+    height: 60vh;
+  }
+
+  .competencias {
+    width: 100vw;
+    height: 50vh;
+  }
+
+  .idiomas {
+    left: calc(100vw - 120px);
+  }
+}

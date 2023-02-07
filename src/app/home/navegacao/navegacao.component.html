@@ -1,20 +1,30 @@
-<nav *ngIf="(idioma | async) === 'ingles'" class="navegacao-contenedor">
-  <a>HOME</a>
-  <a>ABOUT</a>
-  <a>PROJECTS</a>
-  <a>CONTACT</a>
+<nav *ngIf="(idioma | async) === 'ingles'" class="navegacao-componente" [ngClass]="classeNavegacaoComponente">
+  <div class="links-navegacao-container" fxLayout="row" fxLayoutAlign="space-between center" >
+    <a>HOME</a>
+    <a>ABOUT</a>
+    <a>PROJECTS</a>
+    <a>CONTACT</a>
+    <app-idiomas></app-idiomas>
+  </div>
 </nav>
 
-<nav *ngIf="(idioma | async) === 'portugues'" class="navegacao-contenedor">
-  <a>INÍCIO</a>
-  <a>SOBRE</a>
-  <a>PROJETOS</a>
-  <a>CONTATO</a>
+<nav *ngIf="(idioma | async) === 'portugues'" class="navegacao-container" [ngClass]="classeNavegacaoComponente">
+  <div class="links-navegacao-container" fxLayout="row" fxLayoutAlign="space-between center" >
+    <a>INÍCIO</a>
+    <a>SOBRE</a>
+    <a>PROJETOS</a>
+    <a>CONTATO</a>
+  </div>
+  <app-idiomas></app-idiomas>
 </nav>
 
-<nav *ngIf="(idioma | async) === 'espanhol'" class="navegacao-contenedor">
-  <a>INICIO</a>
-  <a>SOBRE</a>
-  <a>PROYECTOS</a>
-  <a>CONTACTO</a>
+<nav *ngIf="(idioma | async) === 'espanhol'" class="navegacao-container" [ngClass]="classeNavegacaoComponente">
+  <div class="links-navegacao-container" fxLayout="row" fxLayoutAlign="space-between center" >
+    <a>INICIO</a>
+    <a>SOBRE</a>
+    <a>PROYECTOS</a>
+    <a>CONTACTO</a>
+  </div>
+  <app-idiomas></app-idiomas>
 </nav>
+
