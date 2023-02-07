@@ -4,8 +4,8 @@
     <a>ABOUT</a>
     <a>PROJECTS</a>
     <a>CONTACT</a>
-    <app-idiomas></app-idiomas>
   </div>
+  <app-idiomas class="idiomas"></app-idiomas>
 </nav>
 
 <nav *ngIf="(idioma | async) === 'portugues'" class="navegacao-container" [ngClass]="classeNavegacaoComponente">
@@ -15,7 +15,7 @@
     <a>PROJETOS</a>
     <a>CONTATO</a>
   </div>
-  <app-idiomas></app-idiomas>
+  <app-idiomas class="idiomas"></app-idiomas>
 </nav>
 
 <nav *ngIf="(idioma | async) === 'espanhol'" class="navegacao-container" [ngClass]="classeNavegacaoComponente">
@@ -25,6 +25,5 @@
     <a>PROYECTOS</a>
     <a>CONTACTO</a>
   </div>
-  <app-idiomas></app-idiomas>
+  <app-idiomas class="idiomas"></app-idiomas>
 </nav>
-
