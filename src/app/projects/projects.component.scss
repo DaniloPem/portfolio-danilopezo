@@ -3,3 +3,123 @@
   height: 100vh;
   background-color: #FDF6F0;
 }
+
+.titulo-contenedor {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 4vw;
+  z-index: 1;
+  transform: rotate(180deg);
+
+  & .titulo-projects {
+    margin: 0;
+    padding: 0;
+
+  }
+
+  & .titulo-web {
+    margin: 0;
+    padding: 0;
+    margin-block-start: -0.415em;
+    color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.projetos-container {
+  margin-top: 15vh;
+}
+
+.projeto-card {
+  position: relative;
+  width: 24%;
+  height: 80%;
+  background-position: 60% center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border-radius: 10px;
+  overflow: hidden;
+  color: #FDF6F0;
+
+  & .nome-projeto, .nome-projeto-hover {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  & .nome-projeto {
+    line-height: calc(75vh * 0.8);
+    transition: 0.3s;
+    z-index: 1;
+  }
+
+  & .projeto-card-hover {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    transform: translateY(101%);
+    transition: 0.3s;
+  }
+
+  & .ano-projeto {
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    font-size: 11px;
+  }
+
+  & .competencias {
+    margin: 5px 10px 0 10px;
+    width: calc(100% - 20px);
+    color: rgba(255, 255, 255, 0.6);
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  & .ver-mais-botao {
+    width: 40%;
+    height: 10%;
+    border: 2px solid #F57B51;
+    color: #F57B51;
+    background: none;
+    font-weight: bolder;
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    cursor: pointer;
+  }
+
+  & .botoes-visitar-codigo-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15%;
+
+    & a {
+      border-bottom: 2px solid #F57B51;
+      color: #FDF6F0;
+      cursor: pointer;
+    }
+
+  }
+}
+
+
+
+.projeto-card:hover .projeto-card-hover {
+  transform: translateY(0%);
+}
+
+.projeto-card:hover .nome-projeto {
+  opacity: 0;
+}

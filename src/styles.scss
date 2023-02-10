@@ -5,6 +5,10 @@ body {
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
   overflow: overlay;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
 }
 
 html, body { height: 100%; }

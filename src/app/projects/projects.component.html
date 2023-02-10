@@ -1,1 +1,26 @@
-<div class="projects-modulo"></div>
+<div class="projects-modulo" fxLayout="row">
+  <div class="titulo-contenedor" fxFlex="20" fxLayout="row" fxLayoutAlign="center center">
+    <div>
+      <h2 class="titulo-projects"> PROJECTS</h2>
+      <h2 class="titulo-web">WEB</h2>
+    </div>
+  </div>
+
+  <div fxFlex="70" class="projetos-container" div fxLayout="row" fxLayoutAlign="space-between center">
+    <div *ngFor="let projeto of projetos" class="projeto-card" [ngStyle]="{backgroundImage: 'url(' + projeto.url + ')'}">
+      <h3 class="nome-projeto">{{ projeto.nome }}</h3>
+      <div class="projeto-card-hover">
+        <h3 class="nome-projeto-hover">{{ projeto.nome }}</h3>
+        <p class="ano-projeto">{{ projeto.ano }}</p>
+        <div class="competencias" fxLayout="row" fxLayoutAlign="center center">
+          <span *ngFor="let competencia of projeto.competencias">{{ competencia }}</span>
+        </div>
+        <button class="ver-mais-botao">See more</button>
+        <div class="botoes-visitar-codigo-container" fxLayout="row" fxLayoutAlign="space-evenly center" >
+          <a>Visit</a>
+          <a>See code</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
