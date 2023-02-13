@@ -33,7 +33,7 @@
   position: relative;
   width: 24%;
   height: 80%;
-  background-position: 60% center;
+  // background-position: 60% center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -42,6 +42,27 @@
   border-radius: 10px;
   overflow: hidden;
   color: #FDF6F0;
+
+  &-#{pokemon-game} {
+    background-position: 60% center;
+  }
+
+  &-#{pokedex} {
+    background-position: 60% center;
+  }
+
+  &-#{portfolio} {
+    background-position: right center;
+  }
+
+  &-#{em-breve} {
+    background-position: 60% center;
+
+    & button, a {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
 
   & .nome-projeto, .nome-projeto-hover {
     font-size: 1.5em;

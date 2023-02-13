@@ -14,15 +14,13 @@ export class IdiomasComponent implements OnInit {
     { nome: 'espanhol', valor: 'español' },
   ];
   idiomaSelecionadoControl = new FormControl(this.idiomas[0]);
-  idiomaSelecionado= this.idiomaSelecionadoControl.value?.nome as string;
 
   constructor(private idiomasService: IdiomasService) {}
 
   ngOnInit(): void {
     this.idiomaSelecionadoControl.valueChanges.subscribe(() => {
-      this.idiomaSelecionado = this.idiomaSelecionadoControl.value?.nome as string;
-      this.idiomasService.setIdioma(this.idiomaSelecionado);
-    }
-    );
+      let idiomaSelecionado = this.idiomaSelecionadoControl.value?.nome as string;
+      this.idiomasService.setIdioma(idiomaSelecionado);
+    });
   }
 }

@@ -8,7 +8,7 @@
   <app-idiomas class="idiomas"></app-idiomas>
 </nav>
 
-<nav *ngIf="(idioma | async) === 'portugues'" class="navegacao-container" [ngClass]="classeNavegacaoComponente">
+<nav *ngIf="(idioma | async) === 'portugues'" class="navegacao-componente" [ngClass]="classeNavegacaoComponente">
   <div class="links-navegacao-container" fxLayout="row" fxLayoutAlign="space-between center" >
     <a>INÍCIO</a>
     <a>SOBRE</a>
@@ -18,7 +18,7 @@
   <app-idiomas class="idiomas"></app-idiomas>
 </nav>
 
-<nav *ngIf="(idioma | async) === 'espanhol'" class="navegacao-container" [ngClass]="classeNavegacaoComponente">
+<nav *ngIf="(idioma | async) === 'espanhol'" class="navegacao-componente" [ngClass]="classeNavegacaoComponente">
   <div class="links-navegacao-container" fxLayout="row" fxLayoutAlign="space-between center" >
     <a>INICIO</a>
     <a>SOBRE</a>

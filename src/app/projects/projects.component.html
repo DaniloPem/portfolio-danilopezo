@@ -7,7 +7,7 @@
   </div>
 
   <div fxFlex="70" class="projetos-container" div fxLayout="row" fxLayoutAlign="space-between center">
-    <div *ngFor="let projeto of projetos" class="projeto-card" [ngStyle]="{backgroundImage: 'url(' + projeto.url + ')'}">
+    <div *ngFor="let projeto of projetos" class="projeto-card" [ngClass]="'projeto-card-' + projeto.classe" [ngStyle]="{backgroundImage: 'url(' + projeto.url + ')'}">
       <h3 class="nome-projeto">{{ projeto.nome }}</h3>
       <div class="projeto-card-hover">
         <h3 class="nome-projeto-hover">{{ projeto.nome }}</h3>
