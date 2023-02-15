@@ -3,7 +3,6 @@ import { Primeiras3LetrasPipe } from './../pipes/primeiras-3-letras.pipe';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApresentacaoComponent } from './apresentacao/apresentacao.component';
-import { NavegacaoComponent } from './navegacao/navegacao.component';
 import { CompetenciasComponent } from './competencias/competencias.component';
 import { HomeComponent } from './home.component';
 import { IdiomasComponent } from './idiomas/idiomas.component';
@@ -19,7 +18,6 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     ApresentacaoComponent,
-    NavegacaoComponent,
     CompetenciasComponent,
     HomeComponent,
     IdiomasComponent,
@@ -36,7 +34,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatTooltipModule
   ],
   exports: [
-    HomeComponent
+    HomeComponent,
+    IdiomasComponent
   ]
 })
 export class HomeModule { }

@@ -1,1 +1,12 @@
-<p>descricao-projeto works!</p>
+<div class="descricao-projeto-componente" fxLayout="row">
+  <div class="imagens-projeto-container"  fxLayout="row" fxLayoutAlign="space-around center">
+    <button class="botao-retroceder" (click)="mostrarImagemAnterior()">
+      <img src="../../../assets/Icones/back.svg">
+    </button>
+    <img class="imagens-projeto" [src]="'../../../assets/Imagens-projetos/' + this.imagens[this.posicaoDaImagem] + '.gif'">
+    <button class="botao-avancar" (click)="mostrarProximaImagem()">
+      <img src="../../../assets/Icones/next.svg">
+    </button>
+  </div>
+  <div class="descricao-projeto" fxFlex></div>
+</div>

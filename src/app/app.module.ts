@@ -1,3 +1,5 @@
+import { MatDialogModule } from '@angular/material/dialog';
+import { NavigationModule } from './navigation/navigation.module';
 import { ProjectsModule } from './projects/projects.module';
 import { HomeModule } from './home/home.module';
 import { NgModule } from '@angular/core';
@@ -16,7 +18,8 @@ import { AboutModule } from './about/about.module';
     HomeModule,
     BrowserAnimationsModule,
     AboutModule,
-    ProjectsModule
+    ProjectsModule,
+    NavigationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

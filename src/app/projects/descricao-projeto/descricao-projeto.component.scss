@@ -1,0 +1,25 @@
+.descricao-projeto-componente {
+  height: 100%;
+
+
+  & .imagens-projeto-container {
+    height: 100%;
+    width: calc(70vh + 48px);
+    background-color: #FBBC58;
+    position: relative;
+
+    & .botao-retroceder, .botao-avancar {
+      border: none;
+      background: none;
+    }
+
+    & .imagens-projeto {
+      height: calc(70vh - 48px);
+      width: calc(70vh - 48px);
+    }
+  }
+
+  & .descricao-projeto {
+    background-color: rgb(190, 190, 250);
+  }
+}

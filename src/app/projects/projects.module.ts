@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectsComponent } from './projects.component';
 import { DescricaoProjetoComponent } from './descricao-projeto/descricao-projeto.component';
-
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -13,7 +13,8 @@ import { DescricaoProjetoComponent } from './descricao-projeto/descricao-projeto
   ],
   imports: [
     CommonModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatDialogModule
   ],
   exports: [
     ProjectsComponent
