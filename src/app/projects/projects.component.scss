@@ -2,6 +2,7 @@
   width: 100vw;
   height: 100vh;
   background-color: #FDF6F0;
+  // overflow: hidden;
 }
 
 .titulo-contenedor {
@@ -42,6 +43,9 @@
   border-radius: 10px;
   overflow: hidden;
   color: #FDF6F0;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: 1s;
 
   &-#{pokemon-game} {
     background-position: 60% center;
@@ -135,7 +139,10 @@
   }
 }
 
-
+.cards-visibles {
+  transform: translateY(0%);
+  opacity: 1;
+}
 
 .projeto-card:hover .projeto-card-hover {
   transform: translateY(0%);
@@ -144,3 +151,5 @@
 .projeto-card:hover .nome-projeto {
   opacity: 0;
 }
+
+

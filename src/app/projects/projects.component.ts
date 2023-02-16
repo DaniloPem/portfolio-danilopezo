@@ -1,5 +1,5 @@
 import { DescricaoProjetoComponent } from './descricao-projeto/descricao-projeto.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -51,6 +51,10 @@ export class ProjectsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngAfterViewInit(): void {
+    this.mostrarCardsLazyLoad()
+  }
+
   verMais(projeto: any) {
     this.mostrarHover = false;
     this.dialog.open(DescricaoProjetoComponent, {
@@ -60,4 +64,23 @@ export class ProjectsComponent implements OnInit {
     }).afterClosed().subscribe(() => this.mostrarHover = true);
   }
 
+  mostrarCardsLazyLoad() {
+    const projetosCards = document.querySelectorAll('.projeto-card')
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        entry.target.classList.toggle('cards-visibles', entry.isIntersecting)
+        if (entry.isIntersecting) {
+          observer.unobserve(entry.target)
+        }
+      })
+    },
+    {
+      threshold: 1,
+    }
+    )
+
+    projetosCards.forEach(card => {
+      observer.observe(card)
+    }, )
+  }
 }
