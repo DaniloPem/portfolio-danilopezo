@@ -68,14 +68,11 @@ export class ProjectsComponent implements OnInit {
     const projetosCards = document.querySelectorAll('.projeto-card')
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        entry.target.classList.toggle('cards-visibles', entry.isIntersecting)
-        if (entry.isIntersecting) {
-          observer.unobserve(entry.target)
-        }
+        if (entry.isIntersecting) entry.target.classList.toggle('cards-visibles', entry.isIntersecting)
       })
     },
     {
-      threshold: 1,
+      threshold: 0.2,
     }
     )
 

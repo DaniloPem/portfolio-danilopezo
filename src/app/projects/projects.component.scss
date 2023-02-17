@@ -43,9 +43,10 @@
   border-radius: 10px;
   overflow: hidden;
   color: #FDF6F0;
-  transform: translateY(-100%);
+  transform: translateY(-23.5vh);
   opacity: 0;
-  transition: 1s;
+  transition: 1s ease-in-out;
+  pointer-events: none;
 
   &-#{pokemon-game} {
     background-position: 60% center;
@@ -89,7 +90,7 @@
     left: 0;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
-    transform: translateY(101%);
+    transform: translateY(100%);
     transition: 0.3s;
   }
 
@@ -140,8 +141,9 @@
 }
 
 .cards-visibles {
-  transform: translateY(0%);
+  transform: translateY(0vh);
   opacity: 1;
+  pointer-events: all;
 }
 
 .projeto-card:hover .projeto-card-hover {
