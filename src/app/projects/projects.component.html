@@ -7,7 +7,7 @@
   </div>
 
   <div fxFlex="70" class="projetos-container" div fxLayout="row" fxLayoutAlign="space-between center">
-    <div *ngFor="let projeto of projetos" class="projeto-card" [ngClass]="'projeto-card-' + projeto.classe" [ngStyle]="{backgroundImage: 'url(' + projeto.background + ')'}">
+    <div *ngFor="let projeto of projetos" class="projeto-card" [ngClass]="'projeto-card-' + projeto.classe" [ngStyle]="{backgroundImage: projeto.classe === 'em-breve' ?  'none' : 'url(' + projeto.background + ')'}">
       <h3 class="nome-projeto">{{ projeto.nome }}</h3>
       <div class="projeto-card-hover" *ngIf="mostrarHover">
         <h3 class="nome-projeto-hover">{{ projeto.nome }}</h3>
@@ -15,10 +15,10 @@
         <div class="competencias" fxLayout="row" fxLayoutAlign="center center">
           <span *ngFor="let competencia of projeto.competencias">{{ competencia }}</span>
         </div>
-        <button class="ver-mais-botao" (click)="verMais(projeto)">See more</button>
+        <button class="ver-mais-botao" (click)="verMais(projeto)">View more</button>
         <div class="botoes-visitar-codigo-container" fxLayout="row" fxLayoutAlign="space-evenly center" >
           <a>Visit</a>
-          <a [href]="projeto.verCodigo" target="_blank" rel="noreferrer noopener" >See code</a>
+          <a [href]="projeto.verCodigo" target="_blank" rel="noreferrer noopener" >View code</a>
         </div>
       </div>
     </div>

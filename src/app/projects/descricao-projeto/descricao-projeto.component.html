@@ -1,12 +1,20 @@
 <div class="descricao-projeto-componente" fxLayout="row">
-  <div class="imagens-projeto-container"  fxLayout="row" fxLayoutAlign="space-around center">
-    <button class="botao-retroceder" (click)="mostrarImagemAnterior()">
-      <img src="../../../assets/Icones/back.svg">
+  <div class="imagens-projeto-container"  fxLayout="row" fxLayoutAlign="space-between center">
+    <button *ngIf="!!numeroTotalDeImagens" mat-mini-fab color="warn"  class="botao-retroceder" (click)="mostrarImagemAnterior()">
+      <mat-icon>chevron_left</mat-icon>
     </button>
-    <img class="imagens-projeto" [src]="'../../../assets/Imagens-projetos/' + this.imagens[this.posicaoDaImagem] + '.gif'">
-    <button class="botao-avancar" (click)="mostrarProximaImagem()">
-      <img src="../../../assets/Icones/next.svg">
+    <img class="imagens-projeto" [src]="'../../../assets/Imagens-projetos/' + this.projeto.imagens[this.posicaoDaImagem] + '.gif'">
+    <button *ngIf="!!numeroTotalDeImagens" mat-mini-fab color="warn"  class="botao-avancar" (click)="mostrarProximaImagem()">
+      <mat-icon>chevron_right</mat-icon>
     </button>
+    <p *ngIf="(idioma | async) === 'ingles'" class="descricao-imagem">{{ this.projeto.descricaoImagemIngles[this.posicaoDaImagem] }}</p>
+    <p *ngIf="(idioma | async) === 'espanhol'" class="descricao-imagem">{{ this.projeto.descricaoImagemEspanhol[this.posicaoDaImagem] }}</p>
+    <p *ngIf="(idioma | async) === 'portugues'" class="descricao-imagem">{{ this.projeto.descricaoImagemPortugues[this.posicaoDaImagem] }}</p>
   </div>
-  <div class="descricao-projeto" fxFlex></div>
+  <div class="descricao-projeto" fxFlex>
+    <h2 class="nome-projeto">{{ this.projeto.nome}}</h2>
+    <p class="introducao-projeto" *ngIf="(idioma | async) === 'ingles'" >{{ this.projeto.introducaoProjetoIngles }}</p>
+    <p class="introducao-projeto" *ngIf="(idioma | async) === 'espanhol'" >{{ this.projeto.introducaoProjetoEspanhol }}</p>
+    <p class="introducao-projeto" *ngIf="(idioma | async) === 'portugues'" >{{ this.projeto.introducaoProjetoPortugues }}</p>
+  </div>
 </div>

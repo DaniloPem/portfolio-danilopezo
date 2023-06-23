@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs';
+import { IdiomasService } from './../../services/idiomas/idiomas.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
@@ -8,11 +10,13 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class DescricaoProjetoComponent implements OnInit {
   posicaoDaImagem: number = 0;
-  numeroTotalDeImagens: number = this.imagens.length;
+  numeroTotalDeImagens: number = this.projeto.imagens.length;
+  idioma!: Observable<String>;
 
-  constructor(public dialogRef: MatDialogRef<DescricaoProjetoComponent>, @Inject(MAT_DIALOG_DATA) public imagens: string[]) { }
+  constructor(public dialogRef: MatDialogRef<DescricaoProjetoComponent>, @Inject(MAT_DIALOG_DATA) public projeto: any, private idiomasService: IdiomasService) { }
 
   ngOnInit(): void {
+    this.idioma = this.idiomasService.getIdioma();
   }
 
 

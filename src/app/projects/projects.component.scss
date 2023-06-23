@@ -34,7 +34,6 @@
   position: relative;
   width: 24%;
   height: 80%;
-  // background-position: 60% center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -61,6 +60,7 @@
   }
 
   &-#{em-breve} {
+    background-color: #F57B51;
     background-position: 60% center;
 
     & button, a {
@@ -121,7 +121,14 @@
     position: absolute;
     top: 40%;
     left: 30%;
+    transition: 0.3s;
     cursor: pointer;
+
+    &:hover {
+      background-color: #F57B51;
+      color: white;
+      transform: scale(1.04);
+    }
   }
 
   & .botoes-visitar-codigo-container {
@@ -134,7 +141,12 @@
     & a {
       border-bottom: 2px solid #F57B51;
       color: #FDF6F0;
+      transition: 0.3s;
       cursor: pointer;
+
+      &:hover {
+      opacity: 0.5;
+      }
     }
 
   }
