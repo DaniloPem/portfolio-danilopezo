@@ -1,29 +1,38 @@
-<nav *ngIf="(idioma | async) === 'ingles'" class="navegacao-componente" [ngClass]="classeNavegacaoComponente">
-  <div class="links-navegacao-container" fxLayout="row" fxLayoutAlign="space-between center" >
+<nav class="navegacao-componente" [ngClass]="classeNavegacaoComponente">
+  <div
+    *ngIf="(idioma | async) === 'ingles'"
+    class="links-navegacao-container"
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+  >
     <a>Home</a>
     <a>About</a>
     <a>Projects</a>
     <a>Contact</a>
   </div>
-  <app-idiomas class="idiomas"></app-idiomas>
-</nav>
 
-<nav *ngIf="(idioma | async) === 'portugues'" class="navegacao-componente" [ngClass]="classeNavegacaoComponente">
-  <div class="links-navegacao-container" fxLayout="row" fxLayoutAlign="space-between center" >
-    <a>INÍCIO</a>
-    <a>SOBRE</a>
-    <a>PROJETOS</a>
-    <a>CONTATO</a>
+  <div
+    *ngIf="(idioma | async) === 'portugues'"
+    class="links-navegacao-container"
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+  >
+    <a>Início</a>
+    <a>Sobre</a>
+    <a>Projetos</a>
+    <a>Contato</a>
   </div>
-  <app-idiomas class="idiomas"></app-idiomas>
-</nav>
 
-<nav *ngIf="(idioma | async) === 'espanhol'" class="navegacao-componente" [ngClass]="classeNavegacaoComponente">
-  <div class="links-navegacao-container" fxLayout="row" fxLayoutAlign="space-between center" >
-    <a>INICIO</a>
-    <a>SOBRE</a>
-    <a>PROYECTOS</a>
-    <a>CONTACTO</a>
+  <div
+    *ngIf="(idioma | async) === 'espanhol'"
+    class="links-navegacao-container"
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+  >
+    <a>Inicio</a>
+    <a>Sobre</a>
+    <a>Proyectos</a>
+    <a>Contacto</a>
   </div>
   <app-idiomas class="idiomas"></app-idiomas>
 </nav>

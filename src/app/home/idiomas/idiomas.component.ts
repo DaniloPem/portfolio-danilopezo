@@ -19,7 +19,8 @@ export class IdiomasComponent implements OnInit {
 
   ngOnInit(): void {
     this.idiomaSelecionadoControl.valueChanges.subscribe(() => {
-      let idiomaSelecionado = this.idiomaSelecionadoControl.value?.nome as string;
+      let idiomaSelecionado = this.idiomaSelecionadoControl.value!.nome;
+      console.log(idiomaSelecionado);
       this.idiomasService.setIdioma(idiomaSelecionado);
     });
   }

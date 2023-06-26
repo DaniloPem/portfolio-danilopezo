@@ -1,27 +1,94 @@
 <div class="projects-modulo" fxLayout="row">
-  <div class="titulo-contenedor" fxFlex="20" fxLayout="row" fxLayoutAlign="center center">
+  <div
+    class="titulo-contenedor"
+    fxFlex="20"
+    fxLayout="row"
+    fxLayoutAlign="center center"
+  >
     <div>
-      <h2 class="titulo-projects"> PROJECTS</h2>
+      <h2 class="titulo-projects">PROJECTS</h2>
       <h2 class="titulo-web">WEB</h2>
     </div>
   </div>
 
-  <div fxFlex="70" class="projetos-container" div fxLayout="row" fxLayoutAlign="space-between center">
-    <div *ngFor="let projeto of projetos" class="projeto-card" [ngClass]="'projeto-card-' + projeto.classe" [ngStyle]="{backgroundImage: projeto.classe === 'em-breve' ?  'none' : 'url(' + projeto.background + ')'}">
-      <h3 class="nome-projeto">{{ projeto.nome }}</h3>
+  <div
+    fxFlex="70"
+    class="projetos-container"
+    div
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+  >
+    <div
+      *ngFor="let projeto of projetos"
+      class="projeto-card"
+      [ngClass]="'projeto-card-' + projeto.classe"
+      [ngStyle]="{
+        backgroundImage:
+          projeto.classe === 'em-breve'
+            ? 'none'
+            : 'url(' + projeto.background + ')'
+      }"
+    >
+      <h3 class="nome-projeto" *ngIf="(idioma | async) === 'ingles'">
+        {{ !!projeto.nomeIngles ? projeto.nomeIngles : projeto.nome }}
+      </h3>
+      <h3 class="nome-projeto" *ngIf="(idioma | async) === 'espanhol'">
+        {{ !!projeto.nomeEspanhol ? projeto.nomeEspanhol : projeto.nome }}
+      </h3>
+      <h3 class="nome-projeto" *ngIf="(idioma | async) === 'portugues'">
+        {{ !!projeto.nomePortugues ? projeto.nomePortugues : projeto.nome }}
+      </h3>
       <div class="projeto-card-hover" *ngIf="mostrarHover">
-        <h3 class="nome-projeto-hover">{{ projeto.nome }}</h3>
+        <h3 class="nome-projeto-hover" *ngIf="(idioma | async) === 'ingles'">
+          {{ !!projeto.nomeIngles ? projeto.nomeIngles : projeto.nome }}
+        </h3>
+        <h3 class="nome-projeto-hover" *ngIf="(idioma | async) === 'espanhol'">
+          {{ !!projeto.nomeEspanhol ? projeto.nomeEspanhol : projeto.nome }}
+        </h3>
+        <h3 class="nome-projeto-hover" *ngIf="(idioma | async) === 'portugues'">
+          {{ !!projeto.nomePortugues ? projeto.nomePortugues : projeto.nome }}
+        </h3>
         <p class="ano-projeto">{{ projeto.ano }}</p>
         <div class="competencias" fxLayout="row" fxLayoutAlign="center center">
-          <span *ngFor="let competencia of projeto.competencias">{{ competencia }}</span>
+          <span *ngFor="let competencia of projeto.competencias">{{
+            competencia
+          }}</span>
         </div>
-        <button class="ver-mais-botao" (click)="verMais(projeto)">View more</button>
-        <div class="botoes-visitar-codigo-container" fxLayout="row" fxLayoutAlign="space-evenly center" >
-          <a>Visit</a>
-          <a [href]="projeto.verCodigo" target="_blank" rel="noreferrer noopener" >View code</a>
+        <button class="ver-mais-botao" (click)="verMais(projeto)">
+          <span *ngIf="(idioma | async) === 'ingles'">View more</span>
+          <span *ngIf="(idioma | async) === 'espanhol'">Ver más</span>
+          <span *ngIf="(idioma | async) === 'portugues'">Ver mais</span>
+        </button>
+        <div
+          class="botoes-visitar-codigo-container"
+          fxLayout="row"
+          fxLayoutAlign="space-evenly center"
+        >
+          <a
+            ><span
+              *ngIf="
+                (idioma | async) === 'ingles';
+                else portuguesEspanholVisitar
+              "
+              >Visit</span
+            ></a
+          >
+          <ng-template #portuguesEspanholVisitar>Visitar</ng-template>
+          <a
+            [href]="projeto.verCodigo"
+            target="_blank"
+            rel="noreferrer noopener"
+            ><span
+              *ngIf="
+                (idioma | async) === 'ingles';
+                else portuguesEspanholVerCodigo
+              "
+              >View code</span
+            ></a
+          >
+          <ng-template #portuguesEspanholVerCodigo>Ver código</ng-template>
         </div>
       </div>
     </div>
   </div>
 </div>
-

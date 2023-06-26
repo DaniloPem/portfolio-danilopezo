@@ -46,11 +46,31 @@
     }
   }
 
-  & .descricao-projeto {
+  & .descricao-projeto-container {
     padding-left: 24px;
+    height: 100%;
 
-    & .introducao-projeto {
-      display: inline-block;
+    & .descricao {
+      width: calc(100% - 24px);
+
+      & .introducao-projeto, .descricao-projeto {
+        display: inline-block;
+        text-align: justify;
+      }
     }
+
+    & .botoes-visitar-codigo {
+      & a {
+        border-bottom: 2px solid #F57B51;
+        transition: 0.3s;
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover {
+        opacity: 0.5;
+        }
+      }
+    }
+
   }
 }
