@@ -3,6 +3,7 @@ import { IdiomasService } from 'src/app/services/idiomas/idiomas.service';
 import { DescricaoProjetoComponent } from './descricao-projeto/descricao-projeto.component';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { EstiloNavegacaoService } from '../services/navegacao/estilo-navegacao.service';
 
 @Component({
   selector: 'app-projects',
@@ -155,14 +156,17 @@ export class ProjectsComponent implements OnInit {
 
   mostrarHover = true;
   idioma!: Observable<String>;
+  estiloNavegacao!: Observable<boolean>;
 
   constructor(
     private dialog: MatDialog,
-    private idiomasServices: IdiomasService
+    private idiomasServices: IdiomasService,
+    private estiloNavegacaoService: EstiloNavegacaoService
   ) {}
 
   ngOnInit(): void {
     this.idioma = this.idiomasServices.getIdioma();
+    this.estiloNavegacao = this.estiloNavegacaoService.getEstilo();
   }
 
   ngAfterViewInit(): void {
@@ -171,6 +175,7 @@ export class ProjectsComponent implements OnInit {
 
   verMais(projeto: any) {
     this.mostrarHover = false;
+    this.estiloNavegacaoService.setEstilo(true);
     this.dialog
       .open(DescricaoProjetoComponent, {
         data: projeto,
@@ -178,7 +183,12 @@ export class ProjectsComponent implements OnInit {
         height: '70%',
       })
       .afterClosed()
-      .subscribe(() => (this.mostrarHover = true));
+      .subscribe(
+        () => (
+          (this.mostrarHover = true),
+          this.estiloNavegacaoService.setEstilo(false)
+        )
+      );
   }
 
   mostrarCardsLazyLoad() {

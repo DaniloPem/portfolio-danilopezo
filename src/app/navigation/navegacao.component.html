@@ -1,4 +1,11 @@
-<nav class="navegacao-componente" [ngClass]="classeNavegacaoComponente">
+<nav
+  class="navegacao-componente"
+  [ngClass]="
+    (estiloNavegacao | async) === false
+      ? classeNavegacaoComponente
+      : 'navegacao-na-tela-matdialog'
+  "
+>
   <div
     *ngIf="(idioma | async) === 'ingles'"
     class="links-navegacao-container"
