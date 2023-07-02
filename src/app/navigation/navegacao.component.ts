@@ -1,5 +1,11 @@
 import { Observable } from 'rxjs';
-import { Component, HostListener, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  HostListener,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { IdiomasService } from '../services/idiomas/idiomas.service';
 import { EstiloNavegacaoService } from '../services/navegacao/estilo-navegacao.service';
 
@@ -12,6 +18,9 @@ export class NavegacaoComponent implements OnInit {
   idioma!: Observable<string>;
   classeNavegacaoComponente: string = 'sem-classe';
   estiloNavegacao!: Observable<boolean>;
+  @Output() irParaHomeEvent = new EventEmitter<void>();
+  @Output() irParaAboutEvent = new EventEmitter<void>();
+  @Output() irParaProjectsEvent = new EventEmitter<void>();
 
   constructor(
     private idiomasService: IdiomasService,
@@ -40,5 +49,17 @@ export class NavegacaoComponent implements OnInit {
         return (this.classeNavegacaoComponente = 'navegacao-na-tela-projects');
       }
     });
+  }
+
+  irParaHome() {
+    this.irParaHomeEvent.emit();
+  }
+
+  irParaAbout() {
+    this.irParaAboutEvent.emit();
+  }
+
+  irParaProjects() {
+    this.irParaProjectsEvent.emit();
   }
 }
