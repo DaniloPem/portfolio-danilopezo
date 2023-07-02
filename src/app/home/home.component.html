@@ -1,4 +1,7 @@
 <div class="home">
-  <app-apresentacao class="apresentacao"></app-apresentacao>
+  <app-apresentacao
+    (irParaProjectsEvent)="handleIrParaProjects()"
+    class="apresentacao"
+  ></app-apresentacao>
   <app-competencias class="competencias"></app-competencias>
 </div>

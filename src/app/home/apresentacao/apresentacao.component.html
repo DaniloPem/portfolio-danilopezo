@@ -21,25 +21,57 @@
   </div>
 
   <div class="botao-meus-projetos" [ngSwitch]="idioma | async">
-    <button *ngSwitchCase="'ingles'" class="myProjects">My projects</button>
-    <button *ngSwitchCase="'portugues'" class="myProjects">Meus projetos</button>
-    <button *ngSwitchCase="'espanhol'" class="myProjects">Mis proyectos</button>
+    <button
+      *ngSwitchCase="'ingles'"
+      class="myProjects"
+      (click)="irParaProjects()"
+    >
+      My projects
+    </button>
+    <button
+      *ngSwitchCase="'portugues'"
+      class="myProjects"
+      (click)="irParaProjects()"
+    >
+      Meus projetos
+    </button>
+    <button
+      *ngSwitchCase="'espanhol'"
+      class="myProjects"
+      (click)="irParaProjects()"
+    >
+      Mis proyectos
+    </button>
   </div>
 </div>
 
 <div class="redes-sociais-contenedor">
-  <h5 *ngIf="(idioma | async) === 'ingles'" class="text-redes-sociais">Find me on:</h5>
+  <h5 *ngIf="(idioma | async) === 'ingles'" class="text-redes-sociais">
+    Find me on:
+  </h5>
 
-  <h5 *ngIf="(idioma | async) === 'portugues'" class="text-redes-sociais">Encontre-me em:</h5>
+  <h5 *ngIf="(idioma | async) === 'portugues'" class="text-redes-sociais">
+    Encontre-me em:
+  </h5>
 
-  <h5 *ngIf="(idioma | async) === 'espanhol'" class="text-redes-sociais">Encuéntrame en:</h5>
+  <h5 *ngIf="(idioma | async) === 'espanhol'" class="text-redes-sociais">
+    Encuéntrame en:
+  </h5>
 
   <div class="links-redes-sociais">
-    <a href="https://github.com/DaniloPem" target="_blank" rel="noreferrer noopener"><img src="../../../assets/Icones/github.svg"></a>
-    <a href="https://www.linkedin.com/in/danilo-pezo-mendoza/" target="_blank" rel="noreferrer noopener"><img src="../../../assets/Icones/linkedin.svg"></a>
+    <a
+      href="https://github.com/DaniloPem"
+      target="_blank"
+      rel="noreferrer noopener"
+      ><img src="../../../assets/Icones/github.svg"
+    /></a>
+    <a
+      href="https://www.linkedin.com/in/danilo-pezo-mendoza/"
+      target="_blank"
+      rel="noreferrer noopener"
+      ><img src="../../../assets/Icones/linkedin.svg"
+    /></a>
   </div>
 </div>
 
 <!-- <img class="foto-danilo" src="../../../assets/Fotos/foto-danilo.png" alt="Foto-DaniloPezo"> -->
-
-
