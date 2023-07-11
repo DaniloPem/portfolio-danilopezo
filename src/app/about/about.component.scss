@@ -1,6 +1,75 @@
 .about-modulo {
   width: 100vw;
-  height: 100vh;
-  background-color: #095D6A;
-  position: relative;
+  height: 300vh;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  // height: 100vh;
+
+  .descricao-geral {
+    width: 100%;
+    height: auto;
+    position: relative;
+
+    .foto-about, .foto-about-transparente {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center 0 ;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .foto-about {
+      background-image: url(../../assets/Fotos/foto-about.jpg);
+      z-index: -1;
+    }
+
+    .foto-about-transparente {
+      background-image: url(../../assets/Fotos/foto-about-transparente.png);
+      z-index: 1;
+    }
+
+    .titulo-about-container {
+      width: 40%;
+      height: 20%;
+      z-index: 0;
+      color: white;
+
+      p {
+        font-size: max(50px, 12vw);
+        margin: 0;
+        padding: 0;
+        text-align: right;
+        margin-block-start: -0.415em;
+      }
+
+      .linea {
+        border-top: 7px solid white;
+        padding: 0;
+        height: 50px;
+      }
+    }
+
+  }
+}
+
+.titulo-about-fixed {
+  display: block;
+  position: fixed;
+  top: 22vh;
+  left: calc(52% + 8px);
+}
+
+.titulo-about-absolute {
+  display: block;
+  position: absolute;
+  top: 22vh;
+  left: 52%;
+}
+
+.titulo-about-esconder {
+  display: none;
 }
