@@ -1,6 +1,6 @@
 .about-modulo {
   width: 100vw;
-  height: 300vh;
+  height: 275vh;
   padding: 0;
   margin: 0;
   overflow: hidden;
@@ -36,7 +36,7 @@
       width: 40%;
       height: 20%;
       z-index: 0;
-      color: white;
+      color: #fff;
 
       p {
         font-size: max(50px, 12vw);
@@ -50,6 +50,29 @@
         border-top: 7px solid white;
         padding: 0;
         height: 50px;
+      }
+    }
+
+    .texto-descricao-about {
+      color: #fff;
+      position: absolute;
+      top: 70%;
+      left: 5%;
+      width: 35%;
+      height: auto;
+      display: inline-block;
+      z-index: 2;
+
+      p {
+        line-height: 22px;
+      }
+
+      .introducao-about {
+        font-size: 25px;
+      }
+
+      .desenvolvimento-about {
+        font-size: 16px;
       }
     }
 

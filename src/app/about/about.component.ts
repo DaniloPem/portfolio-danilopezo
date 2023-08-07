@@ -12,19 +12,28 @@ export class AboutComponent implements OnInit {
 
   ngOnInit(): void {
     this.classeTituloAbout = 'titulo-about-absolute';
+    // const textoAboutContainer = document.querySelector(
+    //   '#texto-about-container'
+    // );
+    const textoAboutContainer = document.getElementById(
+      'texto-about-container'
+    );
     window.addEventListener('scroll', () => {
-      let posicaoYDoTituloAbout: number = document.documentElement.scrollTop;
+      let scroll: number = document.documentElement.scrollTop;
       let alturaDaJanela: number = window.innerHeight;
-      let alturaTituloAboutContainer: number = alturaDaJanela * 0.22;
-      if (
-        posicaoYDoTituloAbout >= alturaDaJanela &&
-        posicaoYDoTituloAbout < alturaDaJanela * 3
-      ) {
-        return (this.classeTituloAbout = 'titulo-about-fixed');
-      } else if (posicaoYDoTituloAbout < alturaDaJanela) {
-        return (this.classeTituloAbout = 'titulo-about-absolute');
+
+      if (scroll >= alturaDaJanela) {
+        textoAboutContainer!.style.top = `${
+          70 - (scroll - alturaDaJanela) * 0.03
+        }%`;
+      }
+
+      if (scroll >= alturaDaJanela && scroll < alturaDaJanela * 3) {
+        this.classeTituloAbout = 'titulo-about-fixed';
+      } else if (scroll < alturaDaJanela) {
+        this.classeTituloAbout = 'titulo-about-absolute';
       } else {
-        return (this.classeTituloAbout = 'titulo-about-esconder');
+        this.classeTituloAbout = 'titulo-about-esconder';
       }
     });
   }
