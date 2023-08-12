@@ -1,5 +1,5 @@
 <div class="about-modulo" fxLayout="column" fxLayoutAlign=" none">
-  <section class="descricao-geral" fxFlex="60">
+  <section #descricaoSection class="descricao-geral" fxFlex="60">
     <div class="foto-about"></div>
     <div class="foto-about-transparente"></div>
     <div class="titulo-about-container" [ngClass]="classeTituloAbout">
@@ -21,12 +21,30 @@
         desarrollador Full-Stack.
       </p>
       <p class="desenvolvimento-about">
-        Me considero alguien tanto creativo como lógico. Desde temprana edad mis
-        intereses fueron las artes de dibujar y pintar que me ayudaron a
-        estimular mi lado imaginativo, así como también las disciplinas Lógica y
-        Matemática que ahora me asisten al programar.
+        Desde temprana edad mis aficiones fueron el arte del dibujo que me ayudó
+        a estimular mi lado imaginativo, así como también las disciplinas Lógica
+        y Matemática que ahora me asisten al programar.
       </p>
     </div>
+    <div
+      #galeriaFotos
+      class="galeria-container"
+      fxLayout="row"
+      fxLayoutAlign="start center"
+      fxLayoutGap="5px"
+    >
+      <div
+        class="foto"
+        *ngFor="let foto of fotosGaleria"
+        [ngStyle]="{
+          'background-image':
+            'url(../../../../assets/Fotos/foto-' + foto + '-galeria.jpg)'
+        }"
+        fxFlex
+      >
+        <div class="capa-foto"></div>
+      </div>
+    </div>
   </section>
-  <section fxFlex></section>
+  <section fxFlex class="competencias-about"></section>
 </div>

@@ -113,7 +113,7 @@ export class ProjectsComponent implements OnInit {
       nomeEspanhol: 'Portafolio',
       nomePortugues: 'Portfólio',
       ano: '2023',
-      background: '../../assets/Background-projetos/portfolio.png',
+      background: '../../assets/Fotos/foto-about.jpg',
       competencias: ['Angular', 'Javascript', 'HTML5', 'CSS3', 'SASS'],
       imagens: [
         'pokedex-buscar-por-nome',
