@@ -42,7 +42,7 @@ export class NavegacaoComponent implements OnInit {
         return (this.classeNavegacaoComponente = 'navegacao-na-tela-home');
       } else if (
         posicaoYDoComponenteNavegacao <=
-        alturaDaJanela * 2 - alturaDoComponenteNavegacao
+        alturaDaJanela * 3.75 - alturaDoComponenteNavegacao
       ) {
         return (this.classeNavegacaoComponente = 'navegacao-na-tela-about');
       } else {

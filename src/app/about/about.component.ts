@@ -34,15 +34,16 @@ export class AboutComponent implements OnInit, AfterViewInit {
         }%`;
       }
 
-      if (scroll >= alturaDaJanela && scroll < alturaDaJanela * 3) {
+      if (scroll > alturaDaJanela && scroll < alturaDaJanela * 3) {
         this.classeTituloAbout = 'titulo-about-fixed';
-      } else if (scroll < alturaDaJanela) {
+      } else if (scroll <= alturaDaJanela) {
         this.classeTituloAbout = 'titulo-about-absolute';
       } else {
         this.classeTituloAbout = 'titulo-about-esconder';
       }
     });
   }
+
   ngAfterViewInit(): void {
     const alturaDaJanela = window.innerHeight;
     const alturaDescricaoSection =
