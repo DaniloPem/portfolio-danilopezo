@@ -105,11 +105,18 @@
   }
 
   & .competencias-about {
-    background-image: url(../../assets/Fotos/programacao.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: rgb(19, 19, 19);
     z-index: 1;
+    position: relative;
+
+    & .competencias-container {
+      position: absolute;
+      left: 10%;
+      top: 15%;
+      width: 80%;
+      height: 80%;
+    }
+
   }
 }
 

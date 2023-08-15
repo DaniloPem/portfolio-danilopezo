@@ -5,6 +5,7 @@ import {
   ViewChild,
   AfterViewInit,
 } from '@angular/core';
+import { COMPETENCIAS_WRAPPER } from '../shared/competencias.const';
 
 @Component({
   selector: 'app-about',
@@ -16,6 +17,9 @@ export class AboutComponent implements OnInit, AfterViewInit {
   fotosGaleria: number[] = [1, 2, 3, 4, 5, 6];
   @ViewChild('galeriaFotos') galeriaFotos!: ElementRef<HTMLDivElement>;
   @ViewChild('descricaoSection') descricaoSection!: ElementRef<HTMLElement>;
+  @ViewChild('competenciasContainer')
+  competenciasContainer!: ElementRef<HTMLDivElement>;
+  competenciasWrapper: any[] = COMPETENCIAS_WRAPPER;
 
   constructor() {}
 
