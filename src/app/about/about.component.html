@@ -47,6 +47,32 @@
     </div>
   </section>
   <section fxFlex class="competencias-about">
-    <div #competenciasContainer class="competencias-container"></div>
+    <div #competenciasContainer class="competencias-container">
+      <div class="grupo-competencia" fxLayout="column">
+        <div class="nome-grupo-competencia-container">
+          <p>SKILLS</p>
+        </div>
+        <div class="lista-competencias-container" fxLayout="row">
+          <div fxFlex="50"></div>
+          <div class="lista-competencias" fxFlex>
+            <div
+              class="competencia"
+              *ngFor="let competencia of competenciasWrapper"
+            >
+              <p class="nome-competencia">
+                {{
+                  encontrarValorCompetenciaEmFuncaoDoIdioma(
+                    competencia,
+                    idioma | async,
+                    "nome",
+                    competencia.nome
+                  )
+                }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </div>

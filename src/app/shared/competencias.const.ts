@@ -2,12 +2,13 @@ export const COMPETENCIAS_WRAPPER = [
   {
     nome: 'Front-End',
     competencias: [
-      { nome: 'HTML5', nivel: '90%' },
-      { nome: 'CSS3', nivel: '90%' },
       { nome: 'Angular', nivel: '75%' },
       { nome: 'Javascript', nivel: '80%' },
       { nome: 'Typescript', nivel: '60%' },
       { nome: 'Java', nivel: '55%' },
+      { nome: 'HTML5', nivel: '90%' },
+      { nome: 'CSS3', nivel: '90%' },
+      { nome: 'SASS', nivel: '90%' },
     ],
     classeCss: 'front-end-competencia',
   },

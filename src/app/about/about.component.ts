@@ -6,6 +6,8 @@ import {
   AfterViewInit,
 } from '@angular/core';
 import { COMPETENCIAS_WRAPPER } from '../shared/competencias.const';
+import { Observable } from 'rxjs';
+import { IdiomasService } from '../services/idiomas/idiomas.service';
 
 @Component({
   selector: 'app-about',
@@ -20,10 +22,12 @@ export class AboutComponent implements OnInit, AfterViewInit {
   @ViewChild('competenciasContainer')
   competenciasContainer!: ElementRef<HTMLDivElement>;
   competenciasWrapper: any[] = COMPETENCIAS_WRAPPER;
+  idioma!: Observable<string>;
 
-  constructor() {}
+  constructor(private idiomasService: IdiomasService) {}
 
   ngOnInit(): void {
+    this.idioma = this.idiomasService.getIdioma();
     this.classeTituloAbout = 'titulo-about-absolute';
     const textoAboutContainer = document.getElementById(
       'texto-about-container'
@@ -74,5 +78,19 @@ export class AboutComponent implements OnInit, AfterViewInit {
         }%`;
       }
     });
+  }
+
+  encontrarValorCompetenciaEmFuncaoDoIdioma(
+    competenciaOuGrupoDeCompetencias: any,
+    idioma: any,
+    chave: string,
+    valorPadrao?: string
+  ) {
+    const arrayOndeSeEncontraraOValor = competenciaOuGrupoDeCompetencias[chave];
+    return Array.isArray(arrayOndeSeEncontraraOValor)
+      ? arrayOndeSeEncontraraOValor.find(
+          (array: any) => array.idioma === idioma
+        ).valor
+      : valorPadrao;
   }
 }
