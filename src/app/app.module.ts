@@ -8,20 +8,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutModule } from './about/about.module';
+import { TransformArrayPipe } from './pipes/transform-array.pipe';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     HomeModule,
     BrowserAnimationsModule,
     AboutModule,
     ProjectsModule,
-    NavigationModule
+    NavigationModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

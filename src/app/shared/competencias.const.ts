@@ -40,4 +40,39 @@ export const COMPETENCIAS_WRAPPER = [
     competencias: [{ nome: 'MySQL', nivel: '60%' }],
     classeCss: 'banco-de-dados-competencia',
   },
+  {
+    nome: [
+      { idioma: 'ingles', valor: 'Languages' },
+      { idioma: 'portugues', valor: 'Idiomas' },
+      { idioma: 'espanhol', valor: 'Idiomas' },
+    ],
+  },
+  {
+    competencias: [
+      {
+        nome: [
+          { idioma: 'ingles', valor: 'Spanish' },
+          { idioma: 'portugues', valor: 'Espanhol' },
+          { idioma: 'espanhol', valor: 'Español' },
+        ],
+        nivel: '100%',
+      },
+      {
+        nome: [
+          { idioma: 'ingles', valor: 'Portuguese' },
+          { idioma: 'portugues', valor: 'Português' },
+          { idioma: 'espanhol', valor: 'Portugués' },
+        ],
+        nivel: '80%',
+      },
+      {
+        nome: [
+          { idioma: 'ingles', valor: 'English' },
+          { idioma: 'portugues', valor: 'Inglês' },
+          { idioma: 'espanhol', valor: 'Inglés' },
+        ],
+        nivel: '20%',
+      },
+    ],
+  },
 ];

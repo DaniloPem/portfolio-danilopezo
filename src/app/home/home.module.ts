@@ -1,3 +1,4 @@
+import { TransformArrayPipe } from './../pipes/transform-array.pipe';
 import { SemPorcentagemPipe } from './../pipes/sem-porcentagem.pipe';
 import { Primeiras3LetrasPipe } from './../pipes/primeiras-3-letras.pipe';
 import { NgModule } from '@angular/core';
@@ -7,13 +8,11 @@ import { CompetenciasComponent } from './competencias/competencias.component';
 import { HomeComponent } from './home.component';
 import { IdiomasComponent } from './idiomas/idiomas.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatTooltipModule} from '@angular/material/tooltip';
-
-
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -22,7 +21,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     HomeComponent,
     IdiomasComponent,
     Primeiras3LetrasPipe,
-    SemPorcentagemPipe
+    SemPorcentagemPipe,
+    TransformArrayPipe,
   ],
   imports: [
     CommonModule,
@@ -31,11 +31,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatOptionModule,
     MatFormFieldModule,
     FlexLayoutModule,
-    MatTooltipModule
+    MatTooltipModule,
   ],
-  exports: [
-    HomeComponent,
-    IdiomasComponent
-  ]
+  exports: [HomeComponent, IdiomasComponent],
 })
-export class HomeModule { }
+export class HomeModule {}
