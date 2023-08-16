@@ -53,22 +53,41 @@
           <p>SKILLS</p>
         </div>
         <div class="lista-competencias-container" fxLayout="row">
-          <div fxFlex="50"></div>
+          <div fxFlex="30"></div>
           <div class="lista-competencias" fxFlex>
             <div
               class="competencia"
               *ngFor="let competencia of competenciasWrapper"
             >
-              <p class="nome-competencia">
-                {{
-                  encontrarValorCompetenciaEmFuncaoDoIdioma(
-                    competencia,
-                    idioma | async,
-                    "nome",
-                    competencia.nome
-                  )
-                }}
-              </p>
+              <div
+                class="nome-competencia-container"
+                fxLayout="row"
+                fxLayoutAlign="start center"
+              >
+                <div
+                  fxLayout="row"
+                  fxLayoutAlign="start center"
+                  fxLayoutGap="20%"
+                  fxFlex="90"
+                >
+                  <p class="numero-competencia">
+                    0{{ competenciasWrapper.indexOf(competencia) + 1 }}
+                  </p>
+                  <p class="nome-competencia">
+                    {{
+                      encontrarValorCompetenciaEmFuncaoDoIdioma(
+                        competencia,
+                        idioma | async,
+                        "nome",
+                        competencia.nome
+                      )
+                    }}
+                  </p>
+                </div>
+                <div fxFlex>
+                  <mat-icon class="seta">arrow_forward</mat-icon>
+                </div>
+              </div>
             </div>
           </div>
         </div>

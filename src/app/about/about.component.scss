@@ -113,19 +113,19 @@
       position: absolute;
       left: 10%;
       top: 15%;
-      width: 80%;
+      width: 90%;
       height: 80%;
 
       & .grupo-competencia {
         width: 100%;
         height: 100%;
+        cursor: pointer;
 
         & .nome-grupo-competencia-container {
           width: 100%;
-          border-bottom: 1px solid rgb(100, 100, 100);
 
           & p {
-            font-size: 70px;
+            font-size: 80px;
             color: rgb(255, 255, 255);
             margin-top: 0;
             margin-bottom: 0;
@@ -138,9 +138,30 @@
 
           & .competencia {
             width: 100%;
+            border-bottom: 1px solid rgb(80, 80, 80);
+            transition: 0.3s;
+
+            & .numero-competencia {
+              font-size: 25px;
+              font-weight: bolder;
+              color: rgb(105, 105, 105);
+            }
 
             & .nome-competencia {
               width: 100%;
+              color: white;
+            }
+
+            & .seta {
+              color: rgb(90, 90, 90);
+              transition: 0.3s;
+            }
+
+            &:hover {
+              background-color: rgb(25, 25, 25);
+            }
+
+            &:hover .seta {
               color: white;
             }
           }

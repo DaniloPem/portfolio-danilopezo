@@ -46,8 +46,6 @@ export const COMPETENCIAS_WRAPPER = [
       { idioma: 'portugues', valor: 'Idiomas' },
       { idioma: 'espanhol', valor: 'Idiomas' },
     ],
-  },
-  {
     competencias: [
       {
         nome: [
