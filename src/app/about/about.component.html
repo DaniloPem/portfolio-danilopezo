@@ -57,7 +57,7 @@
           <div class="lista-competencias" fxFlex>
             <div
               class="competencia"
-              *ngFor="let competencia of competenciasWrapper"
+              *ngFor="let grupoCompetencia of competenciasWrapper"
             >
               <div
                 class="nome-competencia-container"
@@ -71,22 +71,51 @@
                   fxFlex="90"
                 >
                   <p class="numero-competencia">
-                    0{{ competenciasWrapper.indexOf(competencia) + 1 }}
+                    0{{ competenciasWrapper.indexOf(grupoCompetencia) + 1 }}
                   </p>
-                  <p class="nome-competencia">
+                  <p class="nome-grupo-competencia">
                     {{
                       encontrarValorCompetenciaEmFuncaoDoIdioma(
-                        competencia,
+                        grupoCompetencia,
                         idioma | async,
                         "nome",
-                        competencia.nome
+                        grupoCompetencia.nome
                       )
                     }}
                   </p>
                 </div>
-                <div fxFlex>
+                <div class="seta-container" fxFlex>
                   <mat-icon class="seta">arrow_forward</mat-icon>
                 </div>
+              </div>
+
+              <div
+                class="nome-competencia-container"
+                fxLayout="row"
+                fxLayoutAlign="start center"
+              >
+                <div
+                  fxLayout="row"
+                  fxLayoutAlign="start center"
+                  fxLayoutGap="20%"
+                  fxFlex="90"
+                >
+                  <p class="numero-competencia-escondido">00</p>
+                  <p class="nome-competencia">
+                    <span
+                      *ngFor="let competencia of grupoCompetencia.competencias"
+                      >{{
+                        encontrarValorCompetenciaEmFuncaoDoIdioma(
+                          competencia,
+                          idioma | async,
+                          "hover",
+                          competencia.nome
+                        )
+                      }}</span
+                    >
+                  </p>
+                </div>
+                <div fxFlex></div>
               </div>
             </div>
           </div>

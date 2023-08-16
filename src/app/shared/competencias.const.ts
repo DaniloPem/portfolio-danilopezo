@@ -48,7 +48,7 @@ export const COMPETENCIAS_WRAPPER = [
     ],
     competencias: [
       {
-        nome: [
+        hover: [
           { idioma: 'ingles', valor: 'Spanish' },
           { idioma: 'portugues', valor: 'Espanhol' },
           { idioma: 'espanhol', valor: 'Español' },
@@ -56,7 +56,7 @@ export const COMPETENCIAS_WRAPPER = [
         nivel: '100%',
       },
       {
-        nome: [
+        hover: [
           { idioma: 'ingles', valor: 'Portuguese' },
           { idioma: 'portugues', valor: 'Português' },
           { idioma: 'espanhol', valor: 'Portugués' },
@@ -64,7 +64,7 @@ export const COMPETENCIAS_WRAPPER = [
         nivel: '80%',
       },
       {
-        nome: [
+        hover: [
           { idioma: 'ingles', valor: 'English' },
           { idioma: 'portugues', valor: 'Inglês' },
           { idioma: 'espanhol', valor: 'Inglés' },
