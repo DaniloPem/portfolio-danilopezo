@@ -58,6 +58,7 @@
             <div
               class="competencia"
               *ngFor="let grupoCompetencia of competenciasWrapper"
+              (click)="abrirGrupoCompetencia(grupoCompetencia.nome)"
             >
               <div
                 class="nome-competencia-container"
@@ -90,7 +91,8 @@
               </div>
 
               <div
-                class="nome-competencia-container"
+                *ngIf="grupoCompetenciaAberta === grupoCompetencia.nome"
+                class="descricao-competencia-container"
                 fxLayout="row"
                 fxLayoutAlign="start center"
               >
@@ -101,18 +103,15 @@
                   fxFlex="90"
                 >
                   <p class="numero-competencia-escondido">00</p>
-                  <p class="nome-competencia">
-                    <span
-                      *ngFor="let competencia of grupoCompetencia.competencias"
-                      >{{
-                        encontrarValorCompetenciaEmFuncaoDoIdioma(
-                          competencia,
-                          idioma | async,
-                          "hover",
-                          competencia.nome
-                        )
-                      }}</span
-                    >
+                  <p class="descricao-competencia">
+                    <span>{{
+                      encontrarValorCompetenciaEmFuncaoDoIdioma(
+                        grupoCompetencia,
+                        idioma | async,
+                        "descricao",
+                        grupoCompetencia.descricao
+                      )
+                    }}</span>
                   </p>
                 </div>
                 <div fxFlex></div>

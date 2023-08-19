@@ -23,6 +23,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
   competenciasContainer!: ElementRef<HTMLDivElement>;
   competenciasWrapper: any[] = COMPETENCIAS_WRAPPER;
   idioma!: Observable<string>;
+  grupoCompetenciaAberta!: any;
 
   constructor(private idiomasService: IdiomasService) {}
 
@@ -92,5 +93,12 @@ export class AboutComponent implements OnInit, AfterViewInit {
           (array: any) => array.idioma === idioma
         ).valor
       : valorPadrao;
+  }
+
+  abrirGrupoCompetencia(grupoCompetencia: any) {
+    this.grupoCompetenciaAberta =
+      this.grupoCompetenciaAberta === grupoCompetencia
+        ? null
+        : grupoCompetencia;
   }
 }

@@ -105,7 +105,6 @@
   }
 
   & .competencias-about {
-    // background-color: rgb(19, 19, 19);
     background-color: #FDF6F0;
     z-index: 1;
     position: relative;
@@ -127,7 +126,6 @@
           & p {
             font-size: 80px;
             font-weight: 150;
-            // color: rgb(255, 255, 255);
             color: black;
             margin-top: 0;
             margin-bottom: 0;
@@ -144,6 +142,7 @@
             cursor: pointer;
             transition: 0.3s;
 
+
             & .numero-competencia, .numero-competencia-escondido{
               font-size: 25px;
               font-weight: bolder;
@@ -158,19 +157,18 @@
 
             & .nome-competencia .nome-grupo-competencia {
               width: 100%;
-              // color: white;
               color: black;
               font-size: 16px;
             }
 
-            & .nome-grupo-competencia, .numero-competencia {
-              margin-bottom: 0;
-            }
-
-            & .nome-competencia {
+            & .nome-competencia, .descricao-competencia {
               margin-top: 0;
               font-size: 14px;
               color: rgb(50, 50, 50);
+            }
+
+            & .descricao-competencia {
+              margin-right: 10px;
             }
 
             & .seta-container {
@@ -178,20 +176,20 @@
               flex-direction: column;
               justify-content: center;
 
-              & .seta {
-                color: rgb(150, 150, 150);
-                transition: 0.3s;
-              }
             }
 
-            // &:hover {
-            //   // background-color: rgb(25, 25, 25);
-            //   background-color: rgba(0, 0, 0, 0.040);
-            // }
+            & .seta {
+              color: rgb(150, 150, 150);
+              transition: 0.3s;
+            }
 
             &:hover .seta {
-              // color: white;
               color: black;
+            }
+
+            .descricao-competencia-container {
+              width: 100%;
+              margin-top: -20px;
             }
           }
         }
