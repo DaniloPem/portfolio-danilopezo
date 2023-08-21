@@ -21,6 +21,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
   @ViewChild('descricaoSection') descricaoSection!: ElementRef<HTMLElement>;
   @ViewChild('competenciasContainer')
   competenciasContainer!: ElementRef<HTMLDivElement>;
+  @ViewChild('sublinhadoSkills') sublinnhadoSills!: ElementRef<HTMLDivElement>;
   competenciasWrapper: any[] = COMPETENCIAS_WRAPPER;
   idioma!: Observable<string>;
   grupoCompetenciaAberta!: any;
@@ -76,6 +77,11 @@ export class AboutComponent implements OnInit, AfterViewInit {
               (alturaDaJanela +
                 alturaDescricaoSection -
                 posicaoInicialGaleriaFotos))
+        }%`;
+
+        this.sublinnhadoSills.nativeElement.style.width = `${
+          ((scroll - posicaoInicialGaleriaFotos) * 100) /
+          (alturaDaJanela + alturaDescricaoSection - posicaoInicialGaleriaFotos)
         }%`;
       }
     });

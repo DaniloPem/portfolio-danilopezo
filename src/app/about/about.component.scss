@@ -123,12 +123,23 @@
         & .nome-grupo-competencia-container {
           width: 100%;
 
-          & p {
-            font-size: 80px;
-            font-weight: 150;
-            color: black;
-            margin-top: 0;
-            margin-bottom: 0;
+          & .nome-container {
+            display: inline-block;
+            height: auto;
+
+            & p {
+              font-size: 80px;
+              font-weight: 150;
+              color: black;
+              margin-top: 0;
+              margin-bottom: 0;
+            }
+
+            & .sublinhado-skills {
+              background-color: #F57B51;
+              // width: 50%;
+              height: 5px;
+            }
           }
         }
 
