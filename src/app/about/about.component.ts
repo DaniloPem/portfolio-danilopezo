@@ -8,6 +8,7 @@ import {
 import { COMPETENCIAS_WRAPPER } from '../shared/competencias.const';
 import { Observable } from 'rxjs';
 import { IdiomasService } from '../services/idiomas/idiomas.service';
+import { DadosComponentesService } from '../services/dados-componentes/dados-componentes.service';
 
 @Component({
   selector: 'app-about',
@@ -17,16 +18,18 @@ import { IdiomasService } from '../services/idiomas/idiomas.service';
 export class AboutComponent implements OnInit, AfterViewInit {
   classeTituloAbout: string = 'sem-classe';
   fotosGaleria: number[] = [1, 2, 3, 4, 5, 6];
+  nomesGruposCompetencias: string[] = ['skills'];
+  competenciasSkills: any[] = COMPETENCIAS_WRAPPER;
   @ViewChild('galeriaFotos') galeriaFotos!: ElementRef<HTMLDivElement>;
   @ViewChild('descricaoSection') descricaoSection!: ElementRef<HTMLElement>;
-  @ViewChild('competenciasContainer')
-  competenciasContainer!: ElementRef<HTMLDivElement>;
-  @ViewChild('sublinhadoSkills') sublinnhadoSills!: ElementRef<HTMLDivElement>;
-  competenciasWrapper: any[] = COMPETENCIAS_WRAPPER;
+  alturaDescricaoSection!: any;
+  alturaGaleriaFotos!: any;
   idioma!: Observable<string>;
-  grupoCompetenciaAberta!: any;
 
-  constructor(private idiomasService: IdiomasService) {}
+  constructor(
+    private idiomasService: IdiomasService,
+    private dadosComponentesService: DadosComponentesService
+  ) {}
 
   ngOnInit(): void {
     this.idioma = this.idiomasService.getIdioma();
@@ -56,18 +59,18 @@ export class AboutComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     const alturaDaJanela = window.innerHeight;
-    const alturaDescricaoSection =
+    this.alturaDescricaoSection =
       this.descricaoSection.nativeElement.clientHeight;
-    const alturaGaleriaFotos = this.galeriaFotos.nativeElement.clientHeight;
+    this.alturaGaleriaFotos = this.galeriaFotos.nativeElement.clientHeight;
     const posicaoInicialGaleriaFotos =
-      alturaDescricaoSection + alturaGaleriaFotos;
+      this.alturaDescricaoSection + this.alturaGaleriaFotos;
 
     window.addEventListener('scroll', () => {
       let scroll: number = document.documentElement.scrollTop;
 
       if (
         scroll >= posicaoInicialGaleriaFotos &&
-        scroll <= alturaDaJanela + alturaDescricaoSection
+        scroll <= alturaDaJanela + this.alturaDescricaoSection
       ) {
         this.galeriaFotos.nativeElement.style.bottom = `${
           19 *
@@ -75,36 +78,10 @@ export class AboutComponent implements OnInit, AfterViewInit {
           (1 -
             (scroll - posicaoInicialGaleriaFotos) /
               (alturaDaJanela +
-                alturaDescricaoSection -
+                this.alturaDescricaoSection -
                 posicaoInicialGaleriaFotos))
-        }%`;
-
-        this.sublinnhadoSills.nativeElement.style.width = `${
-          ((scroll - posicaoInicialGaleriaFotos) * 100) /
-          (alturaDaJanela + alturaDescricaoSection - posicaoInicialGaleriaFotos)
         }%`;
       }
     });
-  }
-
-  encontrarValorCompetenciaEmFuncaoDoIdioma(
-    competenciaOuGrupoDeCompetencias: any,
-    idioma: any,
-    chave: string,
-    valorPadrao?: string
-  ) {
-    const arrayOndeSeEncontraraOValor = competenciaOuGrupoDeCompetencias[chave];
-    return Array.isArray(arrayOndeSeEncontraraOValor)
-      ? arrayOndeSeEncontraraOValor.find(
-          (array: any) => array.idioma === idioma
-        ).valor
-      : valorPadrao;
-  }
-
-  abrirGrupoCompetencia(grupoCompetencia: any) {
-    this.grupoCompetenciaAberta =
-      this.grupoCompetenciaAberta === grupoCompetencia
-        ? null
-        : grupoCompetencia;
   }
 }

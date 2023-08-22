@@ -1,5 +1,5 @@
 <div class="about-modulo" fxLayout="column" fxLayoutAlign=" none">
-  <section #descricaoSection class="descricao-geral" fxFlex="60">
+  <section #descricaoSection class="descricao-geral" fxFlex="40">
     <div class="foto-about"></div>
     <div class="foto-about-transparente"></div>
     <div class="titulo-about-container" [ngClass]="classeTituloAbout">
@@ -46,83 +46,15 @@
       </div>
     </div>
   </section>
-  <section fxFlex class="competencias-about">
-    <div #competenciasContainer class="competencias-container">
-      <div class="grupo-competencia" fxLayout="column">
-        <div class="nome-grupo-competencia-container">
-          <div class="nome-container">
-            <p>SKILLS</p>
-            <div #sublinhadoSkills class="sublinhado-skills"></div>
-          </div>
-        </div>
-        <div class="lista-competencias-container" fxLayout="row">
-          <div fxFlex="30"></div>
-          <div class="lista-competencias" fxFlex>
-            <div
-              class="competencia"
-              *ngFor="let grupoCompetencia of competenciasWrapper"
-              (click)="abrirGrupoCompetencia(grupoCompetencia.nome)"
-            >
-              <div
-                class="nome-competencia-container"
-                fxLayout="row"
-                fxLayoutAlign="start center"
-              >
-                <div
-                  fxLayout="row"
-                  fxLayoutAlign="start center"
-                  fxLayoutGap="20%"
-                  fxFlex="90"
-                >
-                  <p class="numero-competencia">
-                    0{{ competenciasWrapper.indexOf(grupoCompetencia) + 1 }}
-                  </p>
-                  <p class="nome-grupo-competencia">
-                    {{
-                      encontrarValorCompetenciaEmFuncaoDoIdioma(
-                        grupoCompetencia,
-                        idioma | async,
-                        "nome",
-                        grupoCompetencia.nome
-                      )
-                    }}
-                  </p>
-                </div>
-                <div class="seta-container" fxFlex>
-                  <mat-icon class="seta">arrow_forward</mat-icon>
-                </div>
-              </div>
 
-              <div
-                *ngIf="grupoCompetenciaAberta === grupoCompetencia.nome"
-                class="descricao-competencia-container"
-                fxLayout="row"
-                fxLayoutAlign="start center"
-              >
-                <div
-                  fxLayout="row"
-                  fxLayoutAlign="start center"
-                  fxLayoutGap="20%"
-                  fxFlex="90"
-                >
-                  <p class="numero-competencia-escondido">00</p>
-                  <p class="descricao-competencia">
-                    <span>{{
-                      encontrarValorCompetenciaEmFuncaoDoIdioma(
-                        grupoCompetencia,
-                        idioma | async,
-                        "descricao",
-                        grupoCompetencia.descricao
-                      )
-                    }}</span>
-                  </p>
-                </div>
-                <div fxFlex></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <section fxFlex="25" class="competencias-about">
+    <app-grupo-competencias
+      [alturaDescricaoSection]="alturaDescricaoSection"
+      [alturaGaleriaFotos]="alturaGaleriaFotos"
+      [nomeGrupoCompetencia]="nomesGruposCompetencias[0] | uppercase"
+      [listaCompetencias]="competenciasSkills"
+    ></app-grupo-competencias>
   </section>
+
+  <section fxFlex></section>
 </div>
