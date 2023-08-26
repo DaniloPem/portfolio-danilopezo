@@ -1,6 +1,6 @@
 .about-modulo {
   width: 100vw;
-  height: 420vh;
+  height: 370vh;
   padding: 0;
   margin: 0;
   position: relative;
@@ -105,20 +105,19 @@
   }
 
   & .competencias-about {
-    width: 100%;
+    width: 200vw;
     height: 105vh;
     background-color: #FDF6F0;
     z-index: 1;
     position: sticky;
     top: 0;
+    overflow-x: hidden;
+    transition: transform 0.5s ease-in-out;
 
 
     & .grupo-componente-skills {
       width: 100%;
       height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
       will-change: transform;
     }
 
@@ -160,13 +159,6 @@
 .pagina-em-branco {
   width: 100%;
   background-color: #FDF6F0;
-
-}
-
-.pagina-em-branco-1 {
-  height: 50vh;
-}
-
-.pagina-em-branco-2 {
   height: 100vh;
 }
+

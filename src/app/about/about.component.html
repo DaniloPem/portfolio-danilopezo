@@ -47,8 +47,21 @@
     </div>
   </section>
 
-  <section class="competencias-about">
-    <div #grupoSkills class="grupo-componente-skills">
+  <section
+    #grupoCompetenciasContainer
+    class="competencias-about"
+    fxLayout="row"
+    fxLayoutAlign="start none"
+  >
+    <div #grupoSkills class="grupo-componente-skills" fxFlex="50">
+      <app-grupo-competencias
+        [alturaDescricaoSection]="alturaDescricaoSection"
+        [alturaGaleriaFotos]="alturaGaleriaFotos"
+        [nomeGrupoCompetencia]="nomesGruposCompetencias[0] | uppercase"
+        [listaCompetencias]="competenciasSkills"
+      ></app-grupo-competencias>
+    </div>
+    <div class="grupo-componente-skills" fxFlex="50">
       <app-grupo-competencias
         [alturaDescricaoSection]="alturaDescricaoSection"
         [alturaGaleriaFotos]="alturaGaleriaFotos"
@@ -65,12 +78,5 @@
       <div class="redes-sociais-container"></div>
     </div> -->
   </section>
-  <section
-    #scrollHorizontal
-    class="pagina-em-branco pagina-em-branco-1"
-  ></section>
-  <section
-    #posicaoCompetenciasExperiencia
-    class="pagina-em-branco pagina-em-branco-2"
-  ></section>
+  <section #scrollHorizontal class="pagina-em-branco"></section>
 </div>

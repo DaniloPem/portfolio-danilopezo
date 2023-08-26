@@ -23,9 +23,11 @@ export class AboutComponent implements OnInit, AfterViewInit {
   @ViewChild('aboutModulo') aboutModulo!: ElementRef<HTMLDivElement>;
   @ViewChild('galeriaFotos') galeriaFotos!: ElementRef<HTMLDivElement>;
   @ViewChild('descricaoSection') descricaoSection!: ElementRef<HTMLElement>;
+  @ViewChild('grupoCompetenciasContainer')
+  grupoCompetenciasContainer!: ElementRef<HTMLElement>;
   @ViewChild('grupoSkills') grupoSkills!: ElementRef<HTMLDivElement>;
-  @ViewChild('divisaoCompetencias')
-  divisaoCompetencias!: ElementRef<HTMLDivElement>;
+  // @ViewChild('divisaoCompetencias')
+  // divisaoCompetencias!: ElementRef<HTMLDivElement>;
   @ViewChild('posicaoCompetenciasExperiencia')
   posicaoCompetenciasExperiencia!: ElementRef<HTMLElement>;
   alturaDescricaoSection!: any;
@@ -90,15 +92,12 @@ export class AboutComponent implements OnInit, AfterViewInit {
         }%`;
       }
 
-      if (
-        scroll >= this.alturaDescricaoSection + alturaGrupoSkills &&
-        scroll <= alturaAboutModulo
-      ) {
-        let porcentagemScroll =
-          ((scroll - (this.alturaDescricaoSection + alturaGrupoSkills)) * 130) /
-          (alturaAboutModulo -
-            (this.alturaDescricaoSection + alturaGrupoSkills));
-        this.divisaoCompetencias.nativeElement.style.transform = `translate3d(${-porcentagemScroll}vw,0,0)`;
+      if (scroll >= alturaDaJanela * 1.5 + this.alturaDescricaoSection) {
+        this.grupoCompetenciasContainer.nativeElement.style.transform =
+          'translateX(-100vw)';
+      } else {
+        this.grupoCompetenciasContainer.nativeElement.style.transform =
+          'translateX(0)';
       }
     });
   }
