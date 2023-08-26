@@ -1,13 +1,13 @@
 .about-modulo {
   width: 100vw;
-  height: 412.5vh;
+  height: 420vh;
   padding: 0;
   margin: 0;
-  overflow: hidden;
+  position: relative;
 
   & .descricao-geral {
     width: 100%;
-    height: auto;
+    height: 165vh;
     position: relative;
 
     & .foto-about, .foto-about-transparente {
@@ -105,9 +105,37 @@
   }
 
   & .competencias-about {
+    width: 100%;
+    height: 105vh;
     background-color: #FDF6F0;
     z-index: 1;
-    position: relative;
+    position: sticky;
+    top: 0;
+
+
+    & .grupo-componente-skills {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      will-change: transform;
+    }
+
+    & .divisao-competencias {
+      width: 100vw;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      will-change: transform;
+
+      & .redes-sociais-container {
+        width: 25%;
+        height: 100%;
+        background-color: #FBBC58;
+      }
+    }
   }
 }
 
@@ -127,4 +155,18 @@
 
 .titulo-about-esconder {
   display: none;
+}
+
+.pagina-em-branco {
+  width: 100%;
+  background-color: #FDF6F0;
+
+}
+
+.pagina-em-branco-1 {
+  height: 50vh;
+}
+
+.pagina-em-branco-2 {
+  height: 100vh;
 }

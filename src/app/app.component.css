@@ -1,0 +1,19 @@
+body {
+  scroll-snap-type: mandatory;
+  overflow: auto;
+}
+
+#home {
+  scroll-snap-align: start;
+
+}
+
+#about {
+  scroll-snap-align: start;
+
+}
+
+#projects {
+  scroll-snap-align: start;
+
+}

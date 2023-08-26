@@ -1,5 +1,5 @@
-<div class="about-modulo" fxLayout="column" fxLayoutAlign=" none">
-  <section #descricaoSection class="descricao-geral" fxFlex="40">
+<div #aboutModulo class="about-modulo" fxLayout="column" fxLayoutAlign=" none">
+  <section #descricaoSection class="descricao-geral">
     <div class="foto-about"></div>
     <div class="foto-about-transparente"></div>
     <div class="titulo-about-container" [ngClass]="classeTituloAbout">
@@ -47,14 +47,30 @@
     </div>
   </section>
 
-  <section fxFlex="25" class="competencias-about">
-    <app-grupo-competencias
-      [alturaDescricaoSection]="alturaDescricaoSection"
-      [alturaGaleriaFotos]="alturaGaleriaFotos"
-      [nomeGrupoCompetencia]="nomesGruposCompetencias[0] | uppercase"
-      [listaCompetencias]="competenciasSkills"
-    ></app-grupo-competencias>
+  <section class="competencias-about">
+    <div #grupoSkills class="grupo-componente-skills">
+      <app-grupo-competencias
+        [alturaDescricaoSection]="alturaDescricaoSection"
+        [alturaGaleriaFotos]="alturaGaleriaFotos"
+        [nomeGrupoCompetencia]="nomesGruposCompetencias[0] | uppercase"
+        [listaCompetencias]="competenciasSkills"
+      ></app-grupo-competencias>
+    </div>
+    <!-- <div
+      #divisaoCompetencias
+      class="divisao-competencias"
+      fxLayout="row"
+      fxLayoutAlign="start none"
+    >
+      <div class="redes-sociais-container"></div>
+    </div> -->
   </section>
-
-  <section fxFlex></section>
+  <section
+    #scrollHorizontal
+    class="pagina-em-branco pagina-em-branco-1"
+  ></section>
+  <section
+    #posicaoCompetenciasExperiencia
+    class="pagina-em-branco pagina-em-branco-2"
+  ></section>
 </div>

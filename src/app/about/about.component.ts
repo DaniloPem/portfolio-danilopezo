@@ -20,8 +20,14 @@ export class AboutComponent implements OnInit, AfterViewInit {
   fotosGaleria: number[] = [1, 2, 3, 4, 5, 6];
   nomesGruposCompetencias: string[] = ['skills'];
   competenciasSkills: any[] = COMPETENCIAS_WRAPPER;
+  @ViewChild('aboutModulo') aboutModulo!: ElementRef<HTMLDivElement>;
   @ViewChild('galeriaFotos') galeriaFotos!: ElementRef<HTMLDivElement>;
   @ViewChild('descricaoSection') descricaoSection!: ElementRef<HTMLElement>;
+  @ViewChild('grupoSkills') grupoSkills!: ElementRef<HTMLDivElement>;
+  @ViewChild('divisaoCompetencias')
+  divisaoCompetencias!: ElementRef<HTMLDivElement>;
+  @ViewChild('posicaoCompetenciasExperiencia')
+  posicaoCompetenciasExperiencia!: ElementRef<HTMLElement>;
   alturaDescricaoSection!: any;
   alturaGaleriaFotos!: any;
   idioma!: Observable<string>;
@@ -59,15 +65,16 @@ export class AboutComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     const alturaDaJanela = window.innerHeight;
+    const alturaAboutModulo = this.aboutModulo.nativeElement.clientHeight;
     this.alturaDescricaoSection =
       this.descricaoSection.nativeElement.clientHeight;
     this.alturaGaleriaFotos = this.galeriaFotos.nativeElement.clientHeight;
     const posicaoInicialGaleriaFotos =
       this.alturaDescricaoSection + this.alturaGaleriaFotos;
+    const alturaGrupoSkills = this.grupoSkills.nativeElement.clientHeight;
 
     window.addEventListener('scroll', () => {
       let scroll: number = document.documentElement.scrollTop;
-
       if (
         scroll >= posicaoInicialGaleriaFotos &&
         scroll <= alturaDaJanela + this.alturaDescricaoSection
@@ -81,6 +88,17 @@ export class AboutComponent implements OnInit, AfterViewInit {
                 this.alturaDescricaoSection -
                 posicaoInicialGaleriaFotos))
         }%`;
+      }
+
+      if (
+        scroll >= this.alturaDescricaoSection + alturaGrupoSkills &&
+        scroll <= alturaAboutModulo
+      ) {
+        let porcentagemScroll =
+          ((scroll - (this.alturaDescricaoSection + alturaGrupoSkills)) * 130) /
+          (alturaAboutModulo -
+            (this.alturaDescricaoSection + alturaGrupoSkills));
+        this.divisaoCompetencias.nativeElement.style.transform = `translate3d(${-porcentagemScroll}vw,0,0)`;
       }
     });
   }
