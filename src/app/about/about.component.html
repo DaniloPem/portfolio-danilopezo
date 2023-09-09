@@ -57,7 +57,14 @@
       <app-grupo-competencias
         [alturaDescricaoSection]="alturaDescricaoSection"
         [alturaGaleriaFotos]="alturaGaleriaFotos"
-        [nomeGrupoCompetencia]="nomesGruposCompetencias[0] | uppercase"
+        [nomeGrupoCompetencia]="
+          encontrarValorCompetenciaEmFuncaoDoIdioma(
+            nomesGruposCompetencias[0],
+            idioma | async,
+            'nome',
+            nomesGruposCompetencias[0].nome
+          ) | uppercase
+        "
         [listaCompetencias]="competenciasSkills"
       ></app-grupo-competencias>
     </div>
@@ -66,7 +73,14 @@
         <app-grupo-competencias
           [alturaDescricaoSection]="alturaDescricaoSection"
           [alturaGaleriaFotos]="alturaGaleriaFotos"
-          [nomeGrupoCompetencia]="nomesGruposCompetencias[1] | uppercase"
+          [nomeGrupoCompetencia]="
+            encontrarValorCompetenciaEmFuncaoDoIdioma(
+              nomesGruposCompetencias[1],
+              idioma | async,
+              'nome',
+              nomesGruposCompetencias[0].nome
+            ) | uppercase
+          "
           [listaCompetencias]="competenciasExperiencia"
         ></app-grupo-competencias>
       </div>
@@ -74,7 +88,14 @@
         <app-grupo-competencias
           [alturaDescricaoSection]="alturaDescricaoSection"
           [alturaGaleriaFotos]="alturaGaleriaFotos"
-          [nomeGrupoCompetencia]="nomesGruposCompetencias[0] | uppercase"
+          [nomeGrupoCompetencia]="
+            encontrarValorCompetenciaEmFuncaoDoIdioma(
+              nomesGruposCompetencias[2],
+              idioma | async,
+              'nome',
+              nomesGruposCompetencias[0].nome
+            ) | uppercase
+          "
           [listaCompetencias]="competenciasFormacao"
         ></app-grupo-competencias>
       </div>

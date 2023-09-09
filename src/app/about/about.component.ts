@@ -11,6 +11,7 @@ import { IdiomasService } from '../services/idiomas/idiomas.service';
 import { DadosComponentesService } from '../services/dados-componentes/dados-componentes.service';
 import { EXPERIENCIA_WRAPPER } from '../shared/experiencia.const';
 import { FORMACAO_WRAPPER } from '../shared/formacao.const';
+import { NOME_GRUPOS_COMPETENCIAS } from '../shared/nome-grupos-competencias.const';
 
 @Component({
   selector: 'app-about',
@@ -20,7 +21,7 @@ import { FORMACAO_WRAPPER } from '../shared/formacao.const';
 export class AboutComponent implements OnInit, AfterViewInit {
   classeTituloAbout: string = 'sem-classe';
   fotosGaleria: number[] = [1, 2, 3, 4, 5, 6];
-  nomesGruposCompetencias: string[] = ['skills', 'it experience'];
+  nomesGruposCompetencias: any[] = NOME_GRUPOS_COMPETENCIAS;
   competenciasSkills: any[] = COMPETENCIAS_WRAPPER;
   competenciasExperiencia: any[] = EXPERIENCIA_WRAPPER;
   competenciasFormacao: any[] = FORMACAO_WRAPPER;
@@ -30,8 +31,6 @@ export class AboutComponent implements OnInit, AfterViewInit {
   @ViewChild('grupoCompetenciasContainer')
   grupoCompetenciasContainer!: ElementRef<HTMLElement>;
   @ViewChild('grupoSkills') grupoSkills!: ElementRef<HTMLDivElement>;
-  // @ViewChild('divisaoCompetencias')
-  // divisaoCompetencias!: ElementRef<HTMLDivElement>;
   @ViewChild('posicaoCompetenciasExperiencia')
   posicaoCompetenciasExperiencia!: ElementRef<HTMLElement>;
   alturaDescricaoSection!: any;
@@ -71,7 +70,6 @@ export class AboutComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     const alturaDaJanela = window.innerHeight;
-    const alturaAboutModulo = this.aboutModulo.nativeElement.clientHeight;
     this.alturaDescricaoSection =
       this.descricaoSection.nativeElement.clientHeight;
     this.alturaGaleriaFotos = this.galeriaFotos.nativeElement.clientHeight;
@@ -104,5 +102,19 @@ export class AboutComponent implements OnInit, AfterViewInit {
           'translateX(0)';
       }
     });
+  }
+
+  encontrarValorCompetenciaEmFuncaoDoIdioma(
+    competenciaOuGrupoDeCompetencias: any,
+    idioma: any,
+    chave: string,
+    valorPadrao?: string
+  ) {
+    const arrayOndeSeEncontraraOValor = competenciaOuGrupoDeCompetencias[chave];
+    return Array.isArray(arrayOndeSeEncontraraOValor)
+      ? arrayOndeSeEncontraraOValor.find(
+          (array: any) => array.idioma === idioma
+        ).valor
+      : valorPadrao;
   }
 }

@@ -24,7 +24,7 @@ export class GrupoCompetenciasComponent implements OnInit {
   idioma!: Observable<string>;
   @Input() alturaDescricaoSection!: number;
   @Input() alturaGaleriaFotos!: number;
-  @Input() nomeGrupoCompetencia!: string;
+  @Input() nomeGrupoCompetencia!: any;
   @Input() listaCompetencias!: any[];
 
   constructor(
