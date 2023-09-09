@@ -6,11 +6,15 @@
       : 'navegacao-na-tela-matdialog'
   "
 >
+  <div class="code-by" fxLayout="row" fxLayoutAlign="center center">
+    <p>&#169; Code by Danilo</p>
+  </div>
   <div
     *ngIf="(idioma | async) === 'ingles'"
     class="links-navegacao-container"
     fxLayout="row"
-    fxLayoutAlign="space-between center"
+    fxLayoutAlign="end center"
+    fxLayoutGap="20px"
   >
     <a (click)="irParaHome()">Home</a>
     <a (click)="irParaAbout()">About</a>
@@ -22,7 +26,8 @@
     *ngIf="(idioma | async) === 'portugues'"
     class="links-navegacao-container"
     fxLayout="row"
-    fxLayoutAlign="space-between center"
+    fxLayoutAlign="end center"
+    fxLayoutGap="20px"
   >
     <a (click)="irParaHome()">Início</a>
     <a (click)="irParaAbout()">Sobre</a>
@@ -34,7 +39,8 @@
     *ngIf="(idioma | async) === 'espanhol'"
     class="links-navegacao-container"
     fxLayout="row"
-    fxLayoutAlign="space-between center"
+    fxLayoutAlign="end center"
+    fxLayoutGap="20px"
   >
     <a (click)="irParaHome()">Inicio</a>
     <a (click)="irParaAbout()">Sobre</a>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
 .navegacao-componente {
   width: 60vw;
   height: 15vh;
@@ -9,12 +11,22 @@
   left: 0;
   z-index: 5;
 
+  & .code-by {
+    position: absolute;
+    top: 0;
+    left: 7%;
+    font-family: 'Satisfy', cursive;
+    font-size: 16px;
+    height: 100%;
+  }
+
   & a {
     height: 30px;
     text-align: center;
     cursor: pointer;
+    font-size: 14px;
     line-height: 30px;
-    font-weight: 500;
+    font-family: sans-serif;
 
     &:hover::before {
       content: '';
@@ -25,9 +37,7 @@
     }
 
     &:hover {
-      transform: scale(1.03);
       transition: 0.2s;
-      color: black;
     }
   }
 }
@@ -47,7 +57,8 @@
 .links-navegacao-container {
   width: 65%;
   height: 100%;
-  margin-left: 7%;
+  float: right;
+  margin-right: 115px;
 }
 
 .navegacao-na-tela-home {
@@ -85,6 +96,7 @@
     margin: 0;
     width: 50%;
   }
+
 }
 
 
