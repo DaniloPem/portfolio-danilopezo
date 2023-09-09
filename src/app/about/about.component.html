@@ -53,7 +53,7 @@
     fxLayout="row"
     fxLayoutAlign="start none"
   >
-    <div #grupoSkills class="grupo-componente-skills" fxFlex="50">
+    <div #grupoSkills class="grupo-componente" fxFlex="50">
       <app-grupo-competencias
         [alturaDescricaoSection]="alturaDescricaoSection"
         [alturaGaleriaFotos]="alturaGaleriaFotos"
@@ -61,22 +61,24 @@
         [listaCompetencias]="competenciasSkills"
       ></app-grupo-competencias>
     </div>
-    <div class="grupo-componente-skills" fxFlex="50">
-      <app-grupo-competencias
-        [alturaDescricaoSection]="alturaDescricaoSection"
-        [alturaGaleriaFotos]="alturaGaleriaFotos"
-        [nomeGrupoCompetencia]="nomesGruposCompetencias[0] | uppercase"
-        [listaCompetencias]="competenciasSkills"
-      ></app-grupo-competencias>
+    <div class="grupo-componente" fxFlex="50">
+      <div class="experiencia-componente">
+        <app-grupo-competencias
+          [alturaDescricaoSection]="alturaDescricaoSection"
+          [alturaGaleriaFotos]="alturaGaleriaFotos"
+          [nomeGrupoCompetencia]="nomesGruposCompetencias[1] | uppercase"
+          [listaCompetencias]="competenciasExperiencia"
+        ></app-grupo-competencias>
+      </div>
+      <div class="formacao-componente">
+        <app-grupo-competencias
+          [alturaDescricaoSection]="alturaDescricaoSection"
+          [alturaGaleriaFotos]="alturaGaleriaFotos"
+          [nomeGrupoCompetencia]="nomesGruposCompetencias[0] | uppercase"
+          [listaCompetencias]="competenciasFormacao"
+        ></app-grupo-competencias>
+      </div>
     </div>
-    <!-- <div
-      #divisaoCompetencias
-      class="divisao-competencias"
-      fxLayout="row"
-      fxLayoutAlign="start none"
-    >
-      <div class="redes-sociais-container"></div>
-    </div> -->
   </section>
   <section #scrollHorizontal class="pagina-em-branco"></section>
 </div>

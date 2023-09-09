@@ -87,7 +87,7 @@ export const COMPETENCIAS_WRAPPER = [
       {
         idioma: 'espanhol',
         valor:
-          'Conocimiento básico de MySQL capaz de crear banco de dados, alterar tablas, insertar y consultar datos y gestiionar copias de seguridad.',
+          'Conocimiento básico de MySQL capaz de crear banco de dados, alterar tablas, insertar y consultar datos y gestionar copias de seguridad.',
       },
     ],
   },

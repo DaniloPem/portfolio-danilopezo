@@ -1,76 +1,74 @@
-<div class="separacao-section-componente">
-  <div #competenciasContainer class="competencias-container">
-    <div class="grupo-competencia" fxLayout="column">
-      <div class="nome-grupo-competencia-container">
-        <div class="nome-container">
-          <p>{{ nomeGrupoCompetencia }}</p>
-          <div #sublinhadoSkills class="sublinhado-skills"></div>
-        </div>
+<div #competenciasContainer class="competencias-container">
+  <div class="grupo-competencia">
+    <div class="nome-grupo-competencia-container">
+      <div class="nome-container">
+        <p>{{ nomeGrupoCompetencia }}</p>
+        <div #sublinhadoSkills class="sublinhado-skills"></div>
       </div>
-      <div class="lista-competencias-container" fxLayout="row">
-        <div fxFlex="30"></div>
-        <div class="lista-competencias" fxFlex>
+    </div>
+    <div class="lista-competencias-container" fxLayout="row">
+      <div fxFlex="30"></div>
+      <div class="lista-competencias" fxFlex>
+        <div
+          class="competencia"
+          *ngFor="let grupoCompetencia of listaCompetencias"
+          (click)="abrirGrupoCompetencia(grupoCompetencia.nome)"
+        >
           <div
-            class="competencia"
-            *ngFor="let grupoCompetencia of listaCompetencias"
-            (click)="abrirGrupoCompetencia(grupoCompetencia.nome)"
+            class="nome-competencia-container"
+            fxLayout="row"
+            fxLayoutAlign="start center"
           >
             <div
-              class="nome-competencia-container"
               fxLayout="row"
               fxLayoutAlign="start center"
+              fxLayoutGap="20%"
+              fxFlex="90"
             >
-              <div
-                fxLayout="row"
-                fxLayoutAlign="start center"
-                fxLayoutGap="20%"
-                fxFlex="90"
-              >
-                <p class="numero-competencia">
-                  0{{ listaCompetencias.indexOf(grupoCompetencia) + 1 }}
-                </p>
-                <p class="nome-grupo-competencia">
-                  {{
-                    encontrarValorCompetenciaEmFuncaoDoIdioma(
-                      grupoCompetencia,
-                      idioma | async,
-                      "nome",
-                      grupoCompetencia.nome
-                    )
-                  }}
-                </p>
-              </div>
-              <div class="seta-container" fxFlex>
-                <mat-icon class="seta">arrow_forward</mat-icon>
-              </div>
+              <p class="numero-competencia">
+                0{{ listaCompetencias.indexOf(grupoCompetencia) + 1 }}
+              </p>
+              <p class="nome-grupo-competencia">
+                {{
+                  encontrarValorCompetenciaEmFuncaoDoIdioma(
+                    grupoCompetencia,
+                    idioma | async,
+                    "nome",
+                    grupoCompetencia.nome
+                  )
+                }}
+              </p>
             </div>
+            <div class="seta-container" fxFlex>
+              <mat-icon class="seta">arrow_forward</mat-icon>
+            </div>
+          </div>
 
+          <div
+            *ngIf="grupoCompetenciaAberta === grupoCompetencia.nome"
+            class="descricao-competencia-container"
+            fxLayout="row"
+            fxLayoutAlign="start center"
+          >
             <div
-              *ngIf="grupoCompetenciaAberta === grupoCompetencia.nome"
-              class="descricao-competencia-container"
               fxLayout="row"
               fxLayoutAlign="start center"
+              fxLayoutGap="20%"
+              fxFlex="90"
             >
-              <div
-                fxLayout="row"
-                fxLayoutAlign="start center"
-                fxLayoutGap="20%"
-                fxFlex="90"
-              >
-                <p class="numero-competencia-escondido">00</p>
-                <p class="descricao-competencia">
-                  <span>{{
-                    encontrarValorCompetenciaEmFuncaoDoIdioma(
-                      grupoCompetencia,
-                      idioma | async,
-                      "descricao",
-                      grupoCompetencia.descricao
-                    )
-                  }}</span>
-                </p>
-              </div>
-              <div fxFlex></div>
+              <p class="numero-competencia-escondido">00</p>
+              <p class="descricao-competencia">
+                <span>{{
+                  encontrarValorCompetenciaEmFuncaoDoIdioma(
+                    grupoCompetencia,
+                    idioma | async,
+                    "descricao",
+                    grupoCompetencia.descricao
+                  )
+                }}</span>
+              </p>
             </div>
+            <div fxFlex></div>
           </div>
         </div>
       </div>

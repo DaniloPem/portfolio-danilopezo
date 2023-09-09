@@ -115,10 +115,30 @@
     transition: transform 0.5s ease-in-out;
 
 
-    & .grupo-componente-skills {
+    & .grupo-componente {
       width: 100%;
       height: 100%;
+      position: relative;
       will-change: transform;
+    }
+
+      .experiencia-componente {
+        width: 100%;
+        display: inline-block;
+        height: 30%;
+        position: relative;
+      }
+
+      .formacao-componente {
+        width: 100%;
+        display: inline-block;
+        height: auto;
+        position: relative;
+      }
+
+    & .grupo-componente-container {
+      width: 100%;
+      height: 100%;
     }
 
     & .divisao-competencias {

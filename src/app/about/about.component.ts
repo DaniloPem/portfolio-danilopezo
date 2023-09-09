@@ -9,6 +9,8 @@ import { COMPETENCIAS_WRAPPER } from '../shared/competencias.const';
 import { Observable } from 'rxjs';
 import { IdiomasService } from '../services/idiomas/idiomas.service';
 import { DadosComponentesService } from '../services/dados-componentes/dados-componentes.service';
+import { EXPERIENCIA_WRAPPER } from '../shared/experiencia.const';
+import { FORMACAO_WRAPPER } from '../shared/formacao.const';
 
 @Component({
   selector: 'app-about',
@@ -18,8 +20,10 @@ import { DadosComponentesService } from '../services/dados-componentes/dados-com
 export class AboutComponent implements OnInit, AfterViewInit {
   classeTituloAbout: string = 'sem-classe';
   fotosGaleria: number[] = [1, 2, 3, 4, 5, 6];
-  nomesGruposCompetencias: string[] = ['skills'];
+  nomesGruposCompetencias: string[] = ['skills', 'it experience'];
   competenciasSkills: any[] = COMPETENCIAS_WRAPPER;
+  competenciasExperiencia: any[] = EXPERIENCIA_WRAPPER;
+  competenciasFormacao: any[] = FORMACAO_WRAPPER;
   @ViewChild('aboutModulo') aboutModulo!: ElementRef<HTMLDivElement>;
   @ViewChild('galeriaFotos') galeriaFotos!: ElementRef<HTMLDivElement>;
   @ViewChild('descricaoSection') descricaoSection!: ElementRef<HTMLElement>;
