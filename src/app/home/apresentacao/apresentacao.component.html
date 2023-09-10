@@ -1,22 +1,58 @@
 <div class="apresentacao">
   <div *ngIf="(idioma | async) === 'ingles'">
     <p class="hi">Hi,</p>
-    <h1 class="nome">I'm DANILO PEZO</h1>
-    <h2 class="desenvolvedor">Front-End developer</h2>
+    <span
+      class="nome"
+      fxLayout="row"
+      fxLayoutAlign="start center"
+      fxLayoutGap="10px"
+    >
+      <span>I'm</span>
+      <span class="word-slider">
+        <span class="word" [class.slide-up]="showDanilo">Danilo Pezo</span>
+        <span class="word developer" [class.slide-down]="!showDanilo"
+          >Front-End developer</span
+        >
+      </span>
+    </span>
     <p class="nacionalidade">From Peru, living in Brazil</p>
   </div>
 
   <div *ngIf="(idioma | async) === 'portugues'">
     <p class="hi">Oi,</p>
-    <h1 class="nome">Sou DANILO PEZO</h1>
-    <h2 class="desenvolvedor">Desenvolvedor Front-End</h2>
+    <span
+      class="nome"
+      fxLayout="row"
+      fxLayoutAlign="start center"
+      fxLayoutGap="10px"
+    >
+      <span>Sou</span>
+      <span class="word-slider">
+        <span class="word" [class.slide-up]="showDanilo">Danilo Pezo</span>
+        <span class="word developer" [class.slide-down]="!showDanilo"
+          >desenvolvedor Front-End</span
+        >
+      </span>
+    </span>
     <p class="nacionalidade">Do Peru, morando no Brasil</p>
   </div>
 
   <div *ngIf="(idioma | async) === 'espanhol'">
     <p class="hi">Hola,</p>
-    <h1 class="nome">Soy DANILO PEZO</h1>
-    <h2 class="desenvolvedor">Desarrollador Front-End</h2>
+    <span
+      class="nome"
+      fxLayout="row"
+      fxLayoutAlign="start center"
+      fxLayoutGap="10px"
+    >
+      <span>Soy</span>
+      <span class="word-slider">
+        <span class="word" [class.slide-up]="showDanilo">Danilo Pezo</span>
+        <span class="word developer" [class.slide-down]="!showDanilo"
+          >desarrollador Front-End</span
+        >
+      </span>
+    </span>
     <p class="nacionalidade">De Perú, viviendo en Brasil</p>
   </div>
 

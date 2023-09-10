@@ -9,3 +9,15 @@
   align-items: center;
 }
 
+::ng-deep {
+  .select-branco .mat-select-value-text {
+    color : white;
+   }
+  }
+
+  ::ng-deep {
+    .select-preto .mat-select-value-text {
+      color : black;
+     }
+    }
+

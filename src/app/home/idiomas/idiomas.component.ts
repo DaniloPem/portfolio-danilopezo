@@ -15,12 +15,31 @@ export class IdiomasComponent implements OnInit {
   ];
   idiomaSelecionadoControl = new FormControl(this.idiomas[0]);
 
+  colorSelect: string = 'select-preto';
+
   constructor(private idiomasService: IdiomasService) {}
 
   ngOnInit(): void {
     this.idiomaSelecionadoControl.valueChanges.subscribe(() => {
       let idiomaSelecionado = this.idiomaSelecionadoControl.value!.nome;
       this.idiomasService.setIdioma(idiomaSelecionado);
+    });
+
+    window.addEventListener('scroll', () => {
+      let posicaoYDoComponenteNavegacao: number =
+        document.documentElement.scrollTop;
+      let alturaDaJanela: number = window.innerHeight;
+      let alturaDoComponenteNavegacao: number = alturaDaJanela * 0.15;
+      if (
+        posicaoYDoComponenteNavegacao >
+          alturaDaJanela - alturaDoComponenteNavegacao &&
+        posicaoYDoComponenteNavegacao <=
+          alturaDaJanela * 4.5 - alturaDoComponenteNavegacao
+      ) {
+        this.colorSelect = 'select-branco';
+      } else {
+        this.colorSelect = 'select-preto';
+      }
     });
   }
 }

@@ -1,4 +1,8 @@
-<mat-select [formControl]="idiomaSelecionadoControl" class="select-idioma">
+<mat-select
+  [formControl]="idiomaSelecionadoControl"
+  class="select-idioma"
+  [ngClass]="colorSelect"
+>
   <mat-select-trigger>
     <div fxLayoutAlign="start center" fxLayoutGap="4px">
       <img

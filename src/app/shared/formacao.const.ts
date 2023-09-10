@@ -14,15 +14,15 @@ export const FORMACAO_WRAPPER = [
     descricao: [
       {
         idioma: 'ingles',
-        valor: '',
+        valor: 'Expected completion date for the year 2025.',
       },
       {
         idioma: 'portugues',
-        valor: '',
+        valor: 'Data prevista de conclusão para o ano de 2025.',
       },
       {
         idioma: 'espanhol',
-        valor: '',
+        valor: 'Término previsto para el año 2025.',
       },
     ],
   },

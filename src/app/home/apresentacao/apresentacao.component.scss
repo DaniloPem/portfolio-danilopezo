@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
+
 .foto-danilo {
   width: 50%;
   position: absolute;
@@ -16,26 +18,55 @@
 .hi {
   font-size: 25px;
   margin-bottom: 0;
-  color: #095D6A;
+  // color: #095D6A;
+
+}
+
+.word-slider {
+  position: relative;
+  overflow: hidden;
+  width: 600px;
+  height: 61px;
+}
+
+.word {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 1s ease-in-out;
+  background-color: #FDF6F0;
+}
+
+.slide-up {
+  transform: translateY(-100%);
+}
+
+.slide-down {
+  transform: translateY(100%);
+}
+
+.developer {
+  font-family: 'PT Sans Narrow', sans-serif !important;
 }
 
 .nome {
   font-size: 50px;
   margin-top: 0;
   margin-bottom: 0;
-  color: #095D6A;
-  font-weight: bolder;
+  // color: #095D6A;
+  // font-weight: bolder;
+
 }
 
 .desenvolvedor {
-  color: #095D6A;
-  font-weight: bold;
+  // color: #095D6A;
+  // font-weight: bold;
   margin: 0;
   font-size: 25px;
 }
 
 .nacionalidade {
-  color: #095D6A;
+  // color: #095D6A;
   margin-top: 5px;
 }
 

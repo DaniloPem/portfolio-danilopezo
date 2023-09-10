@@ -10,11 +10,15 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 export class ApresentacaoComponent implements OnInit {
   idioma!: Observable<string>;
   @Output() irParaProjectsEvent = new EventEmitter<void>();
+  showDanilo: boolean = true;
 
   constructor(private idiomasService: IdiomasService) {}
 
   ngOnInit(): void {
     this.idioma = this.idiomasService.getIdioma();
+    setInterval(() => {
+      this.showDanilo = !this.showDanilo;
+    }, 2000);
   }
 
   irParaProjects() {
