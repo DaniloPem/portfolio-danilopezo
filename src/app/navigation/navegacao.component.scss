@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 
 .navegacao-componente {
   width: 60vw;
   height: 15vh;
-  background-color: #FDF6F0;
+  background-color: #fdf6f0;
   color: rgb(60, 60, 60);
   position: relative;
   position: fixed;
@@ -15,7 +15,7 @@
     position: absolute;
     top: 0;
     left: 7%;
-    font-family: 'Satisfy', cursive;
+    font-family: "Satisfy", cursive;
     font-size: 16px;
     height: 100%;
   }
@@ -27,17 +27,23 @@
     font-size: 14px;
     line-height: 30px;
     font-family: sans-serif;
+    position: relative;
 
-    &:hover::before {
-      content: '';
-      height: 2px;
-      background-color: #F57B51;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: #f57b51;
       display: block;
       margin: 0 auto;
+      transition: all 0.3s ease;
     }
 
-    &:hover {
-      transition: 0.2s;
+    &:hover::before {
+      width: 100%;
     }
   }
 }
@@ -63,7 +69,7 @@
 
 .navegacao-na-tela-home {
   width: 60vw;
-  background-color: #FDF6F0;
+  background-color: #fdf6f0;
   transition: 0.3s;
   color: rgb(60, 60, 60);
 }
@@ -76,7 +82,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #FDF6F0;
+  color: #fdf6f0;
 
   & .links-navegacao-container {
     margin: 0;
@@ -84,9 +90,10 @@
   }
 }
 
-.navegacao-na-tela-projects, .navegacao-na-tela-matdialog {
+.navegacao-na-tela-projects,
+.navegacao-na-tela-matdialog {
   width: 100vw;
-  background-color: #FDF6F0;
+  background-color: #fdf6f0;
   transition: 0.3s;
   display: flex;
   justify-content: center;
@@ -97,8 +104,4 @@
     margin: 0;
     width: 50%;
   }
-
 }
-
-
-

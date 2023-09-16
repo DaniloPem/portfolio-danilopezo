@@ -1,10 +1,13 @@
 import { Observable } from 'rxjs';
 import {
   Component,
+  ElementRef,
   EventEmitter,
   HostListener,
   OnInit,
   Output,
+  ViewChild,
+  AfterViewInit,
 } from '@angular/core';
 import { IdiomasService } from '../services/idiomas/idiomas.service';
 import { EstiloNavegacaoService } from '../services/navegacao/estilo-navegacao.service';
@@ -30,25 +33,45 @@ export class NavegacaoComponent implements OnInit {
   ngOnInit(): void {
     this.idioma = this.idiomasService.getIdioma();
     this.estiloNavegacao = this.estiloNavegacaoService.getEstilo();
+  }
+
+  ngAfterViewInit(): void {
     window.addEventListener('scroll', () => {
       let posicaoYDoComponenteNavegacao: number =
         document.documentElement.scrollTop;
       let alturaDaJanela: number = window.innerHeight;
       let alturaDoComponenteNavegacao: number = alturaDaJanela * 0.15;
-      if (
-        posicaoYDoComponenteNavegacao <=
-        alturaDaJanela - alturaDoComponenteNavegacao
-      ) {
-        return (this.classeNavegacaoComponente = 'navegacao-na-tela-home');
-      } else if (
-        posicaoYDoComponenteNavegacao <=
-        alturaDaJanela * 4.5 - alturaDoComponenteNavegacao
-      ) {
-        return (this.classeNavegacaoComponente = 'navegacao-na-tela-about');
-      } else {
-        return (this.classeNavegacaoComponente = 'navegacao-na-tela-projects');
-      }
+      this.classeSegundoAPosicaoScroll(
+        posicaoYDoComponenteNavegacao,
+        alturaDaJanela,
+        alturaDoComponenteNavegacao
+      );
     });
+  }
+
+  classeSegundoAPosicaoScroll(
+    posicaoYDoComponenteNavegacao: number,
+    alturaDaJanela: number,
+    alturaDoComponenteNavegacao: number
+  ) {
+    if (
+      posicaoYDoComponenteNavegacao <=
+      alturaDaJanela - alturaDoComponenteNavegacao
+    ) {
+      return (this.classeNavegacaoComponente = 'navegacao-na-tela-home');
+    } else if (
+      posicaoYDoComponenteNavegacao <=
+      alturaDaJanela * 4.5 - alturaDoComponenteNavegacao
+    ) {
+      return (this.classeNavegacaoComponente = 'navegacao-na-tela-about');
+    } else if (
+      posicaoYDoComponenteNavegacao <=
+      alturaDaJanela * 5.5 - alturaDoComponenteNavegacao
+    ) {
+      return (this.classeNavegacaoComponente = 'navegacao-na-tela-projects');
+    } else {
+      return (this.classeNavegacaoComponente = 'navegacao-na-tela-contact');
+    }
   }
 
   irParaHome() {
