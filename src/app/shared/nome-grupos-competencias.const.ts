@@ -1,7 +1,7 @@
 export const NOME_GRUPOS_COMPETENCIAS = [
   {
     nome: [
-      { idioma: 'ingles', valor: 'skills' },
+      { idioma: 'ingles', valor: 'job skills' },
       { idioma: 'portugues', valor: 'competências' },
       { idioma: 'espanhol', valor: 'competencias' },
     ],

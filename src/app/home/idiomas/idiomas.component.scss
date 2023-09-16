@@ -11,13 +11,12 @@
 
 ::ng-deep {
   .select-branco .mat-select-value-text {
-    color : white;
-   }
+    color: white;
   }
+}
 
-  ::ng-deep {
-    .select-preto .mat-select-value-text {
-      color : black;
-     }
-    }
-
+::ng-deep {
+  .select-preto .mat-select-value-text {
+    color: black;
+  }
+}
