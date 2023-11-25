@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
 
 .foto-danilo {
   width: 50%;
@@ -19,7 +19,6 @@
   font-size: 25px;
   margin-bottom: 0;
   // color: #095D6A;
-
 }
 
 .word-slider {
@@ -34,7 +33,7 @@
   top: 0;
   left: 0;
   transition: transform 1s ease-in-out;
-  background-color: #FDF6F0;
+  background-color: #fdf6f0;
 }
 
 .slide-up {
@@ -45,38 +44,28 @@
   transform: translateY(100%);
 }
 
-.developer {
-  font-family: 'PT Sans Narrow', sans-serif !important;
-}
-
 .nome {
   font-size: 50px;
   margin-top: 0;
   margin-bottom: 0;
-  // color: #095D6A;
-  // font-weight: bolder;
-
 }
 
 .desenvolvedor {
-  // color: #095D6A;
-  // font-weight: bold;
   margin: 0;
   font-size: 25px;
 }
 
 .nacionalidade {
-  // color: #095D6A;
   margin-top: 5px;
 }
 
 .myProjects {
-  background-color: #F57B51;
+  background-color: #f57b51;
   width: 110px;
   height: 35px;
   border-radius: calc(35px / 2);
   border: none;
-  color: #FDF6F0;
+  color: #fdf6f0;
   cursor: pointer;
   font-weight: bold;
 }
