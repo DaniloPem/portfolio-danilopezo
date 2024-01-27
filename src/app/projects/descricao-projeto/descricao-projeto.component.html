@@ -90,7 +90,7 @@
       fxLayout="row"
       fxLayoutAlign="space-evenly center"
     >
-      <a
+      <a *ngIf="this.projeto.classe != 'portfolio'"
         ><span
           *ngIf="(idioma | async) === 'ingles'; else portuguesEspanholVisitar"
           >Visit</span
