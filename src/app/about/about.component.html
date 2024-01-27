@@ -3,10 +3,18 @@
     <div class="foto-about"></div>
     <div class="foto-about-transparente"></div>
     <div class="titulo-about-container" [ngClass]="classeTituloAbout">
-      <p class="título-about">ABOUT</p>
+      <span *ngIf="(idioma | async) === 'ingles'">ABOUT</span>
+      <span
+        *ngIf="
+          (idioma | async) === 'espanhol' || (idioma | async) === 'portugues'
+        "
+        >SOBRE</span
+      >
       <div fxLayout="row" fxLayoutAlign="space-between center">
         <div fxFlex class="linea"></div>
-        <p>ME</p>
+        <span *ngIf="(idioma | async) === 'ingles'">ME</span>
+        <span *ngIf="(idioma | async) === 'espanhol'">MÍ</span>
+        <span *ngIf="(idioma | async) === 'portugues'">MIM</span>
       </div>
     </div>
     <app-sobre-mim></app-sobre-mim>
