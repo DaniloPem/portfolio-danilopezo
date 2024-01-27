@@ -1,0 +1,22 @@
+.texto-descricao-about {
+  color: #fff;
+  position: absolute;
+  top: 70%;
+  left: 5%;
+  width: 35%;
+  height: auto;
+  display: inline-block;
+  z-index: 2;
+
+  & p {
+    line-height: 22px;
+  }
+
+  & .introducao-about {
+    font-size: 25px;
+  }
+
+  & .desenvolvimento-about {
+    font-size: 16px;
+  }
+}

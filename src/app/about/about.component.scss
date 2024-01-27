@@ -10,11 +10,12 @@
     height: 165vh;
     position: relative;
 
-    & .foto-about, .foto-about-transparente {
+    & .foto-about,
+    .foto-about-transparente {
       width: 100%;
       height: 100%;
       background-size: cover;
-      background-position: center 0 ;
+      background-position: center 0;
       background-repeat: no-repeat;
       position: absolute;
       top: 0;
@@ -52,29 +53,6 @@
       }
     }
 
-    & .texto-descricao-about {
-      color: #fff;
-      position: absolute;
-      top: 70%;
-      left: 5%;
-      width: 35%;
-      height: auto;
-      display: inline-block;
-      z-index: 2;
-
-      & p {
-        line-height: 22px;
-      }
-
-      & .introducao-about {
-        font-size: 25px;
-      }
-
-      & .desenvolvimento-about {
-        font-size: 16px;
-      }
-    }
-
     & .galeria-container {
       position: absolute;
       bottom: -19%;
@@ -107,13 +85,12 @@
   & .competencias-about {
     width: 200vw;
     height: 105vh;
-    background-color: #FDF6F0;
+    background-color: #fdf6f0;
     z-index: 1;
     position: sticky;
     top: 0;
     overflow-x: hidden;
     transition: transform 0.5s ease-in-out;
-
 
     & .grupo-componente {
       width: 100%;
@@ -122,19 +99,19 @@
       will-change: transform;
     }
 
-      .experiencia-componente {
-        width: 100%;
-        display: inline-block;
-        height: 30%;
-        position: relative;
-      }
+    .experiencia-componente {
+      width: 100%;
+      display: inline-block;
+      height: 30%;
+      position: relative;
+    }
 
-      .formacao-componente {
-        width: 100%;
-        display: inline-block;
-        height: auto;
-        position: relative;
-      }
+    .formacao-componente {
+      width: 100%;
+      display: inline-block;
+      height: auto;
+      position: relative;
+    }
 
     & .grupo-componente-container {
       width: 100%;
@@ -152,7 +129,7 @@
       & .redes-sociais-container {
         width: 25%;
         height: 100%;
-        background-color: #FBBC58;
+        background-color: #fbbc58;
       }
     }
   }
@@ -178,7 +155,6 @@
 
 .pagina-em-branco {
   width: 100%;
-  background-color: #FDF6F0;
+  background-color: #fdf6f0;
   height: 100vh;
 }
-
