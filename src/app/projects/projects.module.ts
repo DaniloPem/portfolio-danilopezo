@@ -4,24 +4,18 @@ import { CommonModule } from '@angular/common';
 import { ProjectsComponent } from './projects.component';
 import { DescricaoProjetoComponent } from './descricao-projeto/descricao-projeto.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  declarations: [
-    ProjectsComponent,
-    DescricaoProjetoComponent,
-  ],
+  declarations: [ProjectsComponent, DescricaoProjetoComponent],
   imports: [
     CommonModule,
     FlexLayoutModule,
     MatDialogModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
   ],
-  exports: [
-    ProjectsComponent
-  ]
+  exports: [ProjectsComponent],
 })
-export class ProjectsModule { }
+export class ProjectsModule {}
