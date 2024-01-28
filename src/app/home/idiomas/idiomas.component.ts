@@ -31,10 +31,12 @@ export class IdiomasComponent implements OnInit {
       let alturaDaJanela: number = window.innerHeight;
       let alturaDoComponenteNavegacao: number = alturaDaJanela * 0.15;
       if (
-        posicaoYDoComponenteNavegacao >
+        (posicaoYDoComponenteNavegacao >
           alturaDaJanela - alturaDoComponenteNavegacao &&
-        posicaoYDoComponenteNavegacao <=
-          alturaDaJanela * 4.5 - alturaDoComponenteNavegacao
+          posicaoYDoComponenteNavegacao <=
+            alturaDaJanela * 4.5 - alturaDoComponenteNavegacao) ||
+        posicaoYDoComponenteNavegacao >=
+          alturaDaJanela * 5.75 - alturaDoComponenteNavegacao
       ) {
         this.colorSelect = 'select-branco';
       } else {

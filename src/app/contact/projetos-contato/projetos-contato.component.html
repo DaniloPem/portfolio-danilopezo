@@ -1,0 +1,35 @@
+<div class="lista-projetos-container">
+  <h3 class="titulo-projetos" *ngIf="(idioma | async) === 'ingles'">
+    Projects
+  </h3>
+  <h3 class="titulo-projetos" *ngIf="(idioma | async) === 'espanhol'">
+    Proyectos
+  </h3>
+  <h3 class="titulo-projetos" *ngIf="(idioma | async) === 'portugues'">
+    Projetos
+  </h3>
+  <ng-container *ngFor="let projeto of listaDeProjetos">
+    <span *ngIf="projeto.classe != 'em-breve'" class="lista-de-projetos">
+      <a class="projeto" href="" target="_blank" rel="noreferrer noopener"
+        ><span *ngIf="(idioma | async) === 'ingles'">{{
+          !!projeto.nomeIngles ? projeto.nomeIngles : projeto.nome
+        }}</span>
+        <span *ngIf="(idioma | async) === 'espanhol'">{{
+          !!projeto.nomeEspanhol ? projeto.nomeEspanhol : projeto.nome
+        }}</span>
+        <span *ngIf="(idioma | async) === 'portugues'">{{
+          !!projeto.nomePortugues ? projeto.nomePortugues : projeto.nome
+        }}</span>
+      </a>
+    </span>
+  </ng-container>
+  <span class="lista-de-projetos">
+    <a
+      class="projeto"
+      href="https://github.com/DaniloPem"
+      target="_blank"
+      rel="noreferrer noopener"
+      >Github
+    </a>
+  </span>
+</div>

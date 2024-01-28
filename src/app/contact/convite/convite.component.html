@@ -1,0 +1,26 @@
+<span class="convite-container">
+  <h2 class="titulo-convite" *ngIf="(idioma | async) === 'espanhol'">
+    ¿Está interesado en trabajar conmigo?
+  </h2>
+  <h2 class="titulo-convite" *ngIf="(idioma | async) === 'portugues'">
+    Você está interessado em trabalhar comigo?
+  </h2>
+  <h2 class="titulo-convite" *ngIf="(idioma | async) === 'ingles'">
+    Are you interested in working with me?
+  </h2>
+  <p class="convite-descricao" *ngIf="(idioma | async) === 'espanhol'">
+    Si está buscando un colaborador confiable y dedicado, estoy aquí para
+    trabajar juntos. ¡No dudes en ponerte en contacto si deseas colaborar
+    conmigo o simplemente entablar una charla!
+  </p>
+  <p class="convite-descricao" *ngIf="(idioma | async) === 'portugues'">
+    Se você procura um colaborador confiável e dedicado, estou aqui para
+    trabalhar juntos. Não hesite em entrar em contato se quiser colaborar comigo
+    ou apenas iniciar um bate-papo!
+  </p>
+  <p class="convite-descricao" *ngIf="(idioma | async) === 'ingles'">
+    If you are looking for a reliable and dedicated collaborator, I am here to
+    work together. Don't hesitate to get in touch if you want to collaborate
+    with me or just start a chat!
+  </p>
+</span>

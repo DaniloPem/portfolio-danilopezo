@@ -1,0 +1,33 @@
+<div class="dados-detalhes-container">
+  <h3 class="titulo-dados-detalhes" *ngIf="(idioma | async) === 'ingles'">
+    Contact
+  </h3>
+  <h3 class="titulo-dados-detalhes" *ngIf="(idioma | async) === 'espanhol'">
+    Contacto
+  </h3>
+  <h3 class="titulo-dados-detalhes" *ngIf="(idioma | async) === 'portugues'">
+    Contato
+  </h3>
+  <a
+    class="dado"
+    href="mailto:dpezomendoza@gmail.com"
+    target="_blank"
+    rel="noreferrer noopener"
+    >dpezomendoza@gmail.com
+  </a>
+  <a
+    class="dado"
+    href="https://www.linkedin.com/in/danilo-pezo-mendoza"
+    target="_blank"
+    rel="noreferrer noopener"
+    >LinkedIn
+  </a>
+  <span
+    class="dado"
+    *ngIf="(idioma | async) === 'ingles'; else brasilNotEnglish"
+    >Londrina, Brazil</span
+  >
+  <ng-template #brasilNotEnglish
+    ><span class="dado">Londrina, Brasil</span></ng-template
+  >
+</div>

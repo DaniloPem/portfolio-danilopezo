@@ -66,7 +66,7 @@ export class NavegacaoComponent implements OnInit {
       return (this.classeNavegacaoComponente = 'navegacao-na-tela-about');
     } else if (
       posicaoYDoComponenteNavegacao <=
-      alturaDaJanela * 5.5 - alturaDoComponenteNavegacao
+      alturaDaJanela * 5.75 - alturaDoComponenteNavegacao
     ) {
       return (this.classeNavegacaoComponente = 'navegacao-na-tela-projects');
     } else {

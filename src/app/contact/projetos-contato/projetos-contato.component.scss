@@ -1,0 +1,25 @@
+.lista-projetos-container {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+
+  .titulo-projetos {
+    color: white;
+  }
+
+  .lista-de-projetos {
+    margin-bottom: 10px;
+  }
+
+  .projeto {
+    text-decoration: none;
+    color: rgb(212, 210, 210);
+  }
+}

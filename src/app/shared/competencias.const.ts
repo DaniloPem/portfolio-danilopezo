@@ -51,17 +51,17 @@ export const COMPETENCIAS_WRAPPER = [
       {
         idioma: 'ingles',
         valor:
-          'Own and academic projects developed with Object-Oriented Programming model, applying its concepts, pillars and methodologies. Also, starting in the Back-End area with basic knowledge of JAVA and continuing with the training.',
+          'Own and academic projects developed with Object-Oriented Programming model, applying its concepts, pillars and methodologies. Also, starting in the Back-End area with basic knowledge of JAVA and Spring.',
       },
       {
         idioma: 'portugues',
         valor:
-          'Projetos próprios e acadêmicos desenvolvidos com o modelo de Programação Orientada a Objetos, aplicando seus conceitos, pilares e metodologias. Também, iniciando na área de Back-End com conhecimentos básicos de JAVA e continuando com a formação.',
+          'Projetos próprios e acadêmicos desenvolvidos com o modelo de Programação Orientada a Objetos, aplicando seus conceitos, pilares e metodologias. Também, iniciando na área de Back-End com conhecimentos básicos de JAVA e Spring.',
       },
       {
         idioma: 'espanhol',
         valor:
-          'Proyectos propios y académicos desarrollados con el modelo de Programación Orientada a Objetos, aplicando sus conceptos, pilares y metodologías. Así mismo, iniciando en el área de Back-End con conocimiento básico de JAVA y continuando con la formación.',
+          'Proyectos propios y académicos desarrollados con el modelo de Programación Orientada a Objetos, aplicando sus conceptos, pilares y metodologías. Así mismo, iniciando en el área de Back-End con conocimiento básico de JAVA y Spring.',
       },
     ],
   },

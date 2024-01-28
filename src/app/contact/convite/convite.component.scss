@@ -1,0 +1,25 @@
+.convite-container {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  .titulo-convite {
+    color: white;
+    font-size: 5vw;
+    margin: 17% 5px 0 5%;
+  }
+
+  .convite-descricao {
+    width: 50%;
+    font-size: 13px;
+    color: rgb(212, 210, 210);
+    position: absolute;
+    right: 10px;
+    bottom: 9%;
+  }
+}

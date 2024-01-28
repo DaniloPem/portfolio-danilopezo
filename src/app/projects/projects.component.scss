@@ -1,8 +1,7 @@
 .projects-modulo {
   width: 100vw;
   height: 100vh;
-  background-color: #FDF6F0;
-  // overflow: hidden;
+  background-color: #fdf6f0;
 }
 
 .titulo-contenedor {
@@ -15,7 +14,6 @@
   & .titulo-projects {
     margin: 0;
     padding: 0;
-
   }
 
   & .titulo-web {
@@ -41,7 +39,7 @@
   background-size: cover;
   border-radius: 10px;
   overflow: hidden;
-  color: #FDF6F0;
+  color: #fdf6f0;
   transform: translateY(-23.5vh);
   opacity: 0;
   transition: 1s ease-in-out;
@@ -60,16 +58,18 @@
   }
 
   &-#{em-breve} {
-    background-color: #F57B51;
+    background-color: #f57b51;
     background-position: 60% center;
 
-    & button, a {
+    & button,
+    a {
       opacity: 0;
       pointer-events: none;
     }
   }
 
-  & .nome-projeto, .nome-projeto-hover {
+  & .nome-projeto,
+  .nome-projeto-hover {
     font-size: 1.5em;
     text-align: center;
     margin-bottom: 0;
@@ -114,8 +114,8 @@
   & .ver-mais-botao {
     width: 40%;
     height: 10%;
-    border: 2px solid #F57B51;
-    color: #F57B51;
+    border: 2px solid #f57b51;
+    color: #f57b51;
     background: none;
     font-weight: bolder;
     position: absolute;
@@ -125,7 +125,7 @@
     cursor: pointer;
 
     &:hover {
-      background-color: #F57B51;
+      background-color: #f57b51;
       color: white;
       transform: scale(1.04);
     }
@@ -139,17 +139,16 @@
     height: 15%;
 
     & a {
-      border-bottom: 2px solid #F57B51;
-      color: #FDF6F0;
+      border-bottom: 2px solid #f57b51;
+      color: #fdf6f0;
       transition: 0.3s;
       cursor: pointer;
       text-decoration: none;
 
       &:hover {
-      opacity: 0.5;
+        opacity: 0.5;
       }
     }
-
   }
 }
 
@@ -166,5 +165,3 @@
 .projeto-card:hover .nome-projeto {
   opacity: 0;
 }
-
-

@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutModule } from './about/about.module';
 import { TransformArrayPipe } from './pipes/transform-array.pipe';
+import { ContactModule } from './contact/contact.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { TransformArrayPipe } from './pipes/transform-array.pipe';
     AboutModule,
     ProjectsModule,
     NavigationModule,
+    ContactModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

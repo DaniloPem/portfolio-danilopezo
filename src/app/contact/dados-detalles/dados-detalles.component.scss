@@ -1,0 +1,21 @@
+.dados-detalhes-container {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 0;
+  bottom: 0;
+  left: 10px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+
+  .titulo-dados-detalhes {
+    color: white;
+  }
+
+  .dado {
+    text-decoration: none;
+    color: rgb(212, 210, 210);
+    margin-bottom: 10px;
+  }
+}

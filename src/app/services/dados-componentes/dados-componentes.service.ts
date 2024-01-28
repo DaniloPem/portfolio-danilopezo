@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class DadosComponentesService {
   alturaDescricaoSection!: number;
   alturaGaleriaFotos!: number;
+  listaDeProjetos!: any[];
 
   constructor() {}
 
@@ -23,5 +24,13 @@ export class DadosComponentesService {
 
   setAlturaGaleriaFotos(valor: number): void {
     this.alturaGaleriaFotos = valor;
+  }
+
+  getListaDeProjetos(): any[] {
+    return this.listaDeProjetos;
+  }
+
+  setListaDePorjetos(valor: any[]): any {
+    this.listaDeProjetos = valor;
   }
 }

@@ -1,0 +1,17 @@
+.contact-component-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #12192c;
+  display: flex;
+  flex-flow: wrap;
+
+  .convite,
+  .dados-do-contato,
+  .projetos,
+  .contato {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+  }
+}

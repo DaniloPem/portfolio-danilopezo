@@ -8,6 +8,7 @@ import { POKEMON_GAME } from './lista-de-projetos/pokemon-game';
 import { POKEDEX } from './lista-de-projetos/pokedex';
 import { PORTFOLIO } from './lista-de-projetos/portfolio';
 import { COMING_SOON } from './lista-de-projetos/coming-soon';
+import { DadosComponentesService } from '../services/dados-componentes/dados-componentes.service';
 
 @Component({
   selector: 'app-projects',
@@ -24,12 +25,15 @@ export class ProjectsComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private idiomasServices: IdiomasService,
-    private estiloNavegacaoService: EstiloNavegacaoService
+    private estiloNavegacaoService: EstiloNavegacaoService,
+    private dadosComponentesService: DadosComponentesService
   ) {}
 
   ngOnInit(): void {
     this.idioma = this.idiomasServices.getIdioma();
     this.estiloNavegacao = this.estiloNavegacaoService.getEstilo();
+    this.dadosComponentesService =
+      this.dadosComponentesService.setListaDePorjetos(this.projetos);
   }
 
   ngAfterViewInit(): void {
