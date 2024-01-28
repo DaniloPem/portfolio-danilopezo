@@ -24,6 +24,7 @@ export class NavegacaoComponent implements OnInit {
   @Output() irParaHomeEvent = new EventEmitter<void>();
   @Output() irParaAboutEvent = new EventEmitter<void>();
   @Output() irParaProjectsEvent = new EventEmitter<void>();
+  @Output() irParaContactEvent = new EventEmitter<void>();
 
   constructor(
     private idiomasService: IdiomasService,
@@ -84,5 +85,9 @@ export class NavegacaoComponent implements OnInit {
 
   irParaProjects() {
     this.irParaProjectsEvent.emit();
+  }
+
+  irParaContact() {
+    this.irParaContactEvent.emit();
   }
 }

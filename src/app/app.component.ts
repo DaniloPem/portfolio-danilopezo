@@ -19,4 +19,8 @@ export class AppComponent {
   irParaProjects() {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
   }
+
+  irParaContact() {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  }
 }

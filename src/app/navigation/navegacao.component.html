@@ -19,7 +19,7 @@
     <a #home (click)="irParaHome()">Home</a>
     <a #about (click)="irParaAbout()">About</a>
     <a #projects (click)="irParaProjects()">Projects</a>
-    <a #contact>Contact</a>
+    <a #contact (click)="irParaContact()">Contact</a>
   </div>
 
   <div
@@ -32,7 +32,7 @@
     <a (click)="irParaHome()">Início</a>
     <a (click)="irParaAbout()">Sobre</a>
     <a (click)="irParaProjects()">Projetos</a>
-    <a>Contato</a>
+    <a (click)="irParaContact()">Contato</a>
   </div>
 
   <div
@@ -45,7 +45,7 @@
     <a (click)="irParaHome()">Inicio</a>
     <a (click)="irParaAbout()">Sobre</a>
     <a (click)="irParaProjects()">Proyectos</a>
-    <a>Contacto</a>
+    <a (click)="irParaContact()">Contacto</a>
   </div>
   <app-idiomas class="idiomas"></app-idiomas>
 </nav>
