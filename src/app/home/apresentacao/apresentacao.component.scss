@@ -18,7 +18,6 @@
 .hi {
   font-size: 25px;
   margin-bottom: 0;
-  // color: #095D6A;
 }
 
 .word-slider {
@@ -68,10 +67,24 @@
   color: #fdf6f0;
   cursor: pointer;
   font-weight: bold;
+  transition: 0.3s;
+}
+
+.myProjects:hover {
+  transform: scale(1.04);
 }
 
 .botao-meus-projetos {
   height: 35px;
+}
+
+.botao-cv {
+  font-weight: bold;
+  cursor: pointer;
+  height: 35px;
+  margin-left: 10px;
+  border-radius: calc(35px / 2);
+  border: 1px solid #f57b51;
 }
 
 .redes-sociais-contenedor {
