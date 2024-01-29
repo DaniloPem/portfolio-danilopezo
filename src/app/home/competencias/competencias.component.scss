@@ -10,10 +10,10 @@ $largura-lista-competencias: $larguraComponenteCompetencias * 0.875;
 
 $corBarraProgresso: #00758f;
 
-@mixin bloco-de-competencias ($porcentagem-de-largura, $numero-de-competencias) {
+@mixin bloco-de-competencias($porcentagem-de-largura, $numero-de-competencias) {
   background-color: #12192c;
   border-radius: 10px;
-  color: #F37335;
+  color: #f37335;
   width: $largura-lista-competencias * $porcentagem-de-largura;
   @if ($numero-de-competencias % 2 == 0) {
     height: calc($alturaBarra * (($numero-de-competencias * 3 - 1) / 2 + 1));
@@ -42,7 +42,7 @@ $corBarraProgresso: #00758f;
 }
 
 .programacao-competencia {
-  @include bloco-de-competencias(0.45, 1);
+  @include bloco-de-competencias(0.45, 3.5);
 }
 
 .banco-de-dados-competencia {
@@ -88,25 +88,20 @@ $corBarraProgresso: #00758f;
   $color-fill: $corBarraProgresso;
 
   @for $i from 0 through 100 {
-  $deg: 90deg + (3.6 * $i);
+    $deg: 90deg + (3.6 * $i);
 
-  &-#{$i} {
-    $direction: if($i < 51, right, left);
-    $color: if($i < 51, $color-background, $color-fill);
+    &-#{$i} {
+      $direction: if($i < 51, right, left);
+      $color: if($i < 51, $color-background, $color-fill);
 
-    background:
-      linear-gradient(
-        to #{$direction},
-        #{$color} 50%,
-        transparent 50%,
-        transparent
-      ),
-      linear-gradient(
-        #{$deg},
-        $color-fill 50%,
-        $color-background 50%
-      );
-  }
+      background: linear-gradient(
+          to #{$direction},
+          #{$color} 50%,
+          transparent 50%,
+          transparent
+        ),
+        linear-gradient(#{$deg}, $color-fill 50%, $color-background 50%);
+    }
   }
   height: $alturaBarra * 2.5;
   width: $alturaBarra * 2.5;
@@ -157,7 +152,7 @@ $corBarraProgresso: #00758f;
 }
 
 .mensagem {
-  color: #FDF6F0;
+  color: #fdf6f0;
   font-size: 45px;
   font-weight: bolder;
   position: absolute;

@@ -35,7 +35,7 @@ export class CompetenciasComponent implements OnInit {
             { idioma: 'portugues', valor: 'Português' },
             { idioma: 'espanhol', valor: 'Portugués' },
           ],
-          nivel: '80%',
+          nivel: '100%',
         },
         {
           nome: [

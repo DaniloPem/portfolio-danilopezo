@@ -5,7 +5,6 @@ export const COMPETENCIAS_WRAPPER = [
       { nome: 'Angular', nivel: '75%' },
       { nome: 'Javascript', nivel: '80%' },
       { nome: 'Typescript', nivel: '60%' },
-      { nome: 'Java', nivel: '55%' },
       { nome: 'HTML5', nivel: '90%' },
       { nome: 'CSS3', nivel: '90%' },
       { nome: 'SASS', nivel: '90%' },
@@ -31,9 +30,9 @@ export const COMPETENCIAS_WRAPPER = [
   },
   {
     nome: [
-      { idioma: 'ingles', valor: 'Programming' },
-      { idioma: 'portugues', valor: 'Programação' },
-      { idioma: 'espanhol', valor: 'Programación' },
+      { idioma: 'ingles', valor: 'Programming / Back-End' },
+      { idioma: 'portugues', valor: 'Programação / Back-End' },
+      { idioma: 'espanhol', valor: 'Programación / Back-End' },
     ],
     competencias: [
       {
@@ -43,6 +42,24 @@ export const COMPETENCIAS_WRAPPER = [
           { idioma: 'ingles', valor: 'Object-Oriented Programming' },
           { idioma: 'portugues', valor: 'Programação Orientada a Objetos' },
           { idioma: 'espanhol', valor: 'Programación Orientada a Objetos' },
+        ],
+      },
+      {
+        nome: 'java',
+        nivel: '50%',
+        hover: [
+          { idioma: 'ingles', valor: 'Java' },
+          { idioma: 'portugues', valor: 'Java' },
+          { idioma: 'espanhol', valor: 'Java' },
+        ],
+      },
+      {
+        nome: 'Spring',
+        nivel: '50%',
+        hover: [
+          { idioma: 'ingles', valor: 'Spring' },
+          { idioma: 'portugues', valor: 'Spring' },
+          { idioma: 'espanhol', valor: 'Spring' },
         ],
       },
     ],
@@ -112,7 +129,7 @@ export const COMPETENCIAS_WRAPPER = [
           { idioma: 'portugues', valor: 'Português' },
           { idioma: 'espanhol', valor: 'Portugués' },
         ],
-        nivel: '80%',
+        nivel: '100%',
       },
       {
         hover: [
