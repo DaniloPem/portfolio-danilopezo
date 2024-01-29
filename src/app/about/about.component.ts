@@ -54,7 +54,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
 
       if (scroll >= alturaDaJanela) {
         textoAboutContainer!.style.top = `${
-          70 - (scroll - alturaDaJanela) * 0.04
+          50 - (scroll - alturaDaJanela) * 0.04
         }%`;
       }
 

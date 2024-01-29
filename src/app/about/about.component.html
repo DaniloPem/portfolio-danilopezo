@@ -10,11 +10,15 @@
         "
         >SOBRE</span
       >
-      <div fxLayout="row" fxLayoutAlign="space-between center">
+      <div
+        fxLayout="row"
+        fxLayoutAlign="space-between center"
+        class="palavra-mim-container"
+      >
         <div fxFlex class="linea"></div>
-        <span *ngIf="(idioma | async) === 'ingles'">ME</span>
-        <span *ngIf="(idioma | async) === 'espanhol'">MÍ</span>
-        <span *ngIf="(idioma | async) === 'portugues'">MIM</span>
+        <span fxFlex="0.01" *ngIf="(idioma | async) === 'ingles'">ME</span>
+        <span fxFlex="0.01" *ngIf="(idioma | async) === 'espanhol'">MÍ</span>
+        <span fxFlex="0.01" *ngIf="(idioma | async) === 'portugues'">MIM</span>
       </div>
     </div>
     <app-sobre-mim></app-sobre-mim>
