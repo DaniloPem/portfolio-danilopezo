@@ -11,6 +11,10 @@
   left: 0;
   z-index: 5;
 
+  .menu-mobile {
+    display: none;
+  }
+
   & .code-by {
     position: absolute;
     top: 0;
@@ -103,5 +107,33 @@
   & .links-navegacao-container {
     margin: 0;
     width: 50%;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .navegacao-componente {
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #links-navegacao-container {
+    display: none !important;
+  }
+
+  .code-by {
+    font-size: min(10px, 12vw) !important;
+  }
+
+  .menu-mobile {
+    display: block !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+  button {
+    border: none !important;
+    background-color: none !important;
   }
 }
