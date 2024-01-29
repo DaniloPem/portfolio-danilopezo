@@ -52,5 +52,6 @@ export const POKEMON_GAME = {
   descricaoDoProjetoEspanhol:
     'En el juego, recorrerás un escenario con tu personaje encontrando pokémons salvajes, donde podrás batallar y capturarlos a todos. Escogerás un pokémon inicial que será tu primer compañero en la aventura. Y si necesitas curar a tus pokemones u obtener más pokebolas, la enfermera Joy te ayudará.',
   classe: 'pokemon-game',
+  visitar: 'https://danilopem.github.io/pokemon-game/src/page/home/home.html',
   verCodigo: 'https://github.com/DaniloPem/pokemon-game',
 };

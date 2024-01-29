@@ -22,4 +22,5 @@ export const PORTFOLIO = {
   descricaoDoProjetoEspanhol:
     'Proyecto desarrollado para exibir mis proyectos personales y para práctica de Angular en modelo de site con las funcionalidades de menú, modelos gráficos, traducción en 3 idiomas (inglés, portugués y español), efectos de transición, scroll y hover, cajas de diálogo, animaciones y múltiples modelos de CSS.',
   classe: 'portfolio',
+  verCodigo: 'https://github.com/DaniloPem/portfolio-danilopezo',
 };

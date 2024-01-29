@@ -90,7 +90,11 @@
       fxLayout="row"
       fxLayoutAlign="space-evenly center"
     >
-      <a *ngIf="this.projeto.classe != 'portfolio'"
+      <a
+        [href]="projeto.visitar"
+        target="_blank"
+        rel="noreferrer noopener"
+        *ngIf="this.projeto.classe != 'portfolio'"
         ><span
           *ngIf="(idioma | async) === 'ingles'; else portuguesEspanholVisitar"
           >Visit</span

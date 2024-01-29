@@ -36,5 +36,6 @@ export const POKEDEX = {
   descricaoDoProjetoEspanhol:
     'En la pokédex, podrás buscar todos los pokémons de todas las generaciones filtrando por nombre y tipo. Al clicar en un pokémon, verás toda su información como debilidades, fortalezas, ataques y otros datos también.',
   classe: 'pokedex',
+  visitar: 'https://danilopem.github.io/pokedex/',
   verCodigo: 'https://github.com/DaniloPem/pokedex',
 };
