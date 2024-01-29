@@ -5,22 +5,10 @@ export const PORTFOLIO = {
   ano: '2023',
   background: '../../assets/Fotos/foto-about.jpg',
   competencias: ['Angular', 'Javascript', 'HTML5', 'CSS3', 'SASS'],
-  imagens: ['pokedex-buscar-por-nome'],
-  descricaoImagemIngles: [
-    'User registration and choosing starter pokemon',
-    'Finding wild pokemon',
-    'Pokemon battle',
-  ],
-  descricaoImagemEspanhol: [
-    'Registro del usuario y elección del pokemon inical',
-    'Encontrando pokemon salvaje',
-    'Batalla pokemon',
-  ],
-  descricaoImagemPortugues: [
-    'Cadastro do usuario e escolha do pokemon inicial',
-    'Achando pokemon selvagem',
-    'Batalha pokemon',
-  ],
+  imagens: ['portfolio'],
+  descricaoImagemIngles: ['Portfolio'],
+  descricaoImagemEspanhol: ['Portafolio'],
+  descricaoImagemPortugues: ['Portfólio'],
   introducaoProjetoIngles:
     'Project developed in Angular, Typescript, HTML and SASS.',
   introducaoProjetoEspanhol:
