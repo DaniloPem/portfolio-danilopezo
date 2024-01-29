@@ -132,8 +132,17 @@
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
   }
+
   button {
     border: none !important;
-    background-color: none !important;
+    background-color: #00000000 !important;
+  }
+
+  .select-branco {
+    color: white !important;
+  }
+
+  .select-preto {
+    color: black !important;
   }
 }

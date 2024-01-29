@@ -21,6 +21,7 @@ export class NavegacaoComponent implements OnInit {
   idioma!: Observable<string>;
   classeNavegacaoComponente: string = 'sem-classe';
   estiloNavegacao!: Observable<boolean>;
+  colorSelect: string = 'select-preto';
   @Output() irParaHomeEvent = new EventEmitter<void>();
   @Output() irParaAboutEvent = new EventEmitter<void>();
   @Output() irParaProjectsEvent = new EventEmitter<void>();
@@ -59,18 +60,22 @@ export class NavegacaoComponent implements OnInit {
       posicaoYDoComponenteNavegacao <=
       alturaDaJanela - alturaDoComponenteNavegacao
     ) {
+      this.colorSelect = 'select-preto';
       return (this.classeNavegacaoComponente = 'navegacao-na-tela-home');
     } else if (
       posicaoYDoComponenteNavegacao <=
       alturaDaJanela * 4.5 - alturaDoComponenteNavegacao
     ) {
+      this.colorSelect = 'select-branco';
       return (this.classeNavegacaoComponente = 'navegacao-na-tela-about');
     } else if (
       posicaoYDoComponenteNavegacao <=
       alturaDaJanela * 5.75 - alturaDoComponenteNavegacao
     ) {
+      this.colorSelect = 'select-preto';
       return (this.classeNavegacaoComponente = 'navegacao-na-tela-projects');
     } else {
+      this.colorSelect = 'select-branco';
       return (this.classeNavegacaoComponente = 'navegacao-na-tela-contact');
     }
   }

@@ -53,7 +53,7 @@
 
   <span *ngIf="(idioma | async) === 'ingles'" class="menu-mobile">
     <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>menu</mat-icon>
+      <mat-icon [ngClass]="colorSelect">menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
       <a mat-menu-item #home (click)="irParaHome()">Home</a>
@@ -65,7 +65,7 @@
 
   <span *ngIf="(idioma | async) === 'portugues'" class="menu-mobile">
     <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>menu</mat-icon>
+      <mat-icon [ngClass]="colorSelect">menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
       <a mat-menu-item (click)="irParaHome()">Início</a>
@@ -77,7 +77,7 @@
 
   <span *ngIf="(idioma | async) === 'espanhol'" class="menu-mobile">
     <button mat-icon-button [matMenuTriggerFor]="menu" class="botao-menu">
-      <mat-icon>menu</mat-icon>
+      <mat-icon [ngClass]="colorSelect">menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
       <a mat-menu-item (click)="irParaHome()">Inicio</a>
@@ -87,5 +87,5 @@
     </mat-menu>
   </span>
 
-  <app-idiomas class="idiomas"></app-idiomas>
+  <app-idiomas class="idiomas" [ngClass]="colorSelect"></app-idiomas>
 </nav>
