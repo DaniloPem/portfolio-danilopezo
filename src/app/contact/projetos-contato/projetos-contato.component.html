@@ -10,7 +10,11 @@
   </h3>
   <ng-container *ngFor="let projeto of listaDeProjetos">
     <span *ngIf="projeto.classe != 'em-breve'" class="lista-de-projetos">
-      <a class="projeto" href="" target="_blank" rel="noreferrer noopener"
+      <a
+        class="projeto"
+        [href]="projeto.verCodigo"
+        target="_blank"
+        rel="noreferrer noopener"
         ><span *ngIf="(idioma | async) === 'ingles'">{{
           !!projeto.nomeIngles ? projeto.nomeIngles : projeto.nome
         }}</span>
