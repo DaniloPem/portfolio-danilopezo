@@ -16,15 +16,23 @@
 }
 
 .hi {
-  font-size: 25px;
+  font-size: 1.9vw;
+  margin-bottom: 0;
+}
+
+.nome {
+  font-size: 3.5vw;
+  margin-top: 0;
   margin-bottom: 0;
 }
 
 .word-slider {
   position: relative;
   overflow: hidden;
-  width: 600px;
-  height: 61px;
+  width: 60vw;
+  height: 3.5vw;
+  padding: 0;
+  margin: 0;
 }
 
 .word {
@@ -33,6 +41,8 @@
   left: 0;
   transition: transform 1s ease-in-out;
   background-color: #fdf6f0;
+  padding: 0;
+  margin: 0;
 }
 
 .slide-up {
@@ -43,15 +53,9 @@
   transform: translateY(100%);
 }
 
-.nome {
-  font-size: 50px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.desenvolvedor {
+.developer {
   margin: 0;
-  font-size: 25px;
+  padding: 0;
 }
 
 .nacionalidade {
