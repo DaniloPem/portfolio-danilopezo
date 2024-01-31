@@ -7,6 +7,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   @Output() irParaProjectsEvent = new EventEmitter<void>();
+  avisoAberto = true;
 
   constructor() {}
 
@@ -14,5 +15,9 @@ export class HomeComponent implements OnInit {
 
   handleIrParaProjects() {
     this.irParaProjectsEvent.emit();
+  }
+
+  fecharAviso() {
+    this.avisoAberto = false;
   }
 }

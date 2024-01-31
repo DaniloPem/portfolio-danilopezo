@@ -4,10 +4,11 @@
     class="apresentacao"
   ></app-apresentacao>
   <app-competencias class="competencias"></app-competencias>
-  <!-- <div class="aviso-responsividade">
+  <div *ngIf="avisoAberto === true" class="aviso-responsividade">
+    <button (click)="fecharAviso()" class="botao-fechar-asviso">X</button>
     <span
       >Estou trabalhando na responsividade. Para uma melhor experiência, entrar
       no site pelo seu computador. Obrigado pela atenção.</span
     >
-  </div> -->
+  </div>
 </div>
