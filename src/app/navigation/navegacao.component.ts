@@ -37,18 +37,28 @@ export class NavegacaoComponent implements OnInit {
     this.estiloNavegacao = this.estiloNavegacaoService.getEstilo();
   }
 
-  ngAfterViewInit(): void {
-    window.addEventListener('scroll', () => {
-      let posicaoYDoComponenteNavegacao: number =
-        document.documentElement.scrollTop;
-      let alturaDaJanela: number = window.innerHeight;
-      let alturaDoComponenteNavegacao: number = alturaDaJanela * 0.15;
-      this.classeSegundoAPosicaoScroll(
-        posicaoYDoComponenteNavegacao,
-        alturaDaJanela,
-        alturaDoComponenteNavegacao
-      );
-    });
+  ngAfterViewInit(): void {}
+
+  @HostListener('window:scroll')
+  onScroll() {
+    this.handleScroll();
+  }
+
+  @HostListener('document:touchmove')
+  touchmove() {
+    this.handleScroll();
+  }
+
+  handleScroll() {
+    let posicaoYDoComponenteNavegacao: number =
+      document.documentElement.scrollTop;
+    let alturaDaJanela: number = window.innerHeight;
+    let alturaDoComponenteNavegacao: number = alturaDaJanela * 0.15;
+    this.classeSegundoAPosicaoScroll(
+      posicaoYDoComponenteNavegacao,
+      alturaDaJanela,
+      alturaDoComponenteNavegacao
+    );
   }
 
   classeSegundoAPosicaoScroll(
