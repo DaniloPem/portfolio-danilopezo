@@ -1,12 +1,7 @@
 <div class="apresentacao">
   <div *ngIf="(idioma | async) === 'ingles'">
     <p class="hi">Hi,</p>
-    <span
-      class="nome"
-      fxLayout="row"
-      fxLayoutAlign="start start"
-      fxLayoutGap="10px"
-    >
+    <span class="nome" fxLayout="row" fxLayoutAlign="start start">
       <span>I'm</span>
       <span class="word-slider">
         <span class="word" [class.slide-up]="showDanilo">Danilo Pezo</span>
@@ -20,12 +15,7 @@
 
   <div *ngIf="(idioma | async) === 'portugues'">
     <p class="hi">Oi,</p>
-    <span
-      class="nome"
-      fxLayout="row"
-      fxLayoutAlign="start start"
-      fxLayoutGap="10px"
-    >
+    <span class="nome" fxLayout="row" fxLayoutAlign="start start">
       <span>Sou</span>
       <span class="word-slider">
         <span class="word" [class.slide-up]="showDanilo">Danilo Pezo</span>
@@ -39,12 +29,7 @@
 
   <div *ngIf="(idioma | async) === 'espanhol'">
     <p class="hi">Hola,</p>
-    <span
-      class="nome"
-      fxLayout="row"
-      fxLayoutAlign="start start"
-      fxLayoutGap="10px"
-    >
+    <span class="nome" fxLayout="row" fxLayoutAlign="start start">
       <span>Soy</span>
       <span class="word-slider">
         <span class="word" [class.slide-up]="showDanilo">Danilo Pezo</span>

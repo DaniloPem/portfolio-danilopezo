@@ -27,6 +27,7 @@ $tamanho-fonte-do-titulo-mobile: 18px;
   font-size: $tamanho-fonte-do-titulo;
   margin-top: 0;
   margin-bottom: 0;
+  gap: 10px;
 }
 
 .word-slider {
@@ -67,8 +68,8 @@ $tamanho-fonte-do-titulo-mobile: 18px;
 
 .myProjects {
   background-color: #f57b51;
-  width: 110px;
-  height: 35px;
+  // width: 110px;
+  height: 100%;
   border-radius: calc(35px / 2);
   border: none;
   color: #fdf6f0;
@@ -88,15 +89,20 @@ $tamanho-fonte-do-titulo-mobile: 18px;
 .botao-cv {
   font-weight: bold;
   cursor: pointer;
-  height: 35px;
+  height: 100%;
   margin-left: 10px;
   border-radius: calc(35px / 2);
   border: 1px solid #f57b51;
+  transition: 0.3s;
+}
+
+.botao-cv:hover {
+  transform: scale(1.04);
 }
 
 .redes-sociais-contenedor {
   position: absolute;
-  top: 85%;
+  top: 87%;
   left: 7%;
 }
 
@@ -112,16 +118,50 @@ $tamanho-fonte-do-titulo-mobile: 18px;
 }
 
 .links-redes-sociais img {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  // height: 25px;
 }
 
 @media screen and (max-width: 1050px) {
   .word-slider {
-    height: $tamanho-fonte-do-titulo-mobile;
+    max-height: 5em;
+    height: calc(0.9em + 1.3vw);
+    min-height: 0.9em;
+    width: 100vw;
   }
 
   .nome {
-    font-size: $tamanho-fonte-do-titulo-mobile;
+    font-size: clamp(0.9em, 1.6em + 1.5vw, 5em);
+    gap: 8px;
+  }
+
+  .hi,
+  .nacionalidade {
+    font-size: clamp(0.5em, 0.5em + 1.5vw, 1.1em);
+  }
+
+  .text-redes-sociais {
+    font-size: clamp(0.4em, 0.4em + 1vw, 0.8em);
+  }
+
+  // .links-redes-sociais img {
+  //   width: 25px;
+  //   height: 25px;
+  // }
+
+  .myProjects,
+  .botao-cv,
+  .botao-meus-projetos {
+    max-height: 35px;
+    height: calc(1.4em + 1vw);
+    min-height: 1.4em;
+    font-size: clamp(0.6em, 0.6em + 0.9vw, 0.9em);
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .nome {
+    font-size: clamp(0.9em, 0.9em + 1.5vw, 5em);
+    gap: 8px;
   }
 }
