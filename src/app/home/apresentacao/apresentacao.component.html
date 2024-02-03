@@ -41,7 +41,12 @@
     <p class="nacionalidade">De Perú, viviendo en Brasil</p>
   </div>
 
-  <div class="botao-meus-projetos" [ngSwitch]="idioma | async">
+  <div
+    class="botao-meus-projetos"
+    fxLayout="row"
+    fxLayoutAlign="start none"
+    [ngSwitch]="idioma | async"
+  >
     <button
       *ngSwitchCase="'ingles'"
       class="myProjects"
@@ -67,7 +72,10 @@
       href="../../../assets/CV/Curriculo_Danilo_Pezo.pdf"
       download="CV-Danilo-Pezo"
     >
-      <button *ngSwitchCase="'ingles'" class="botao-cv">Curriculum</button>
+      <button *ngSwitchCase="'ingles'" class="botao-cv">
+        Resume
+        <img class="icone-baixar" src="../../../assets/Icones/baixar.png" />
+      </button>
       <button *ngSwitchCase="'espanhol'" class="botao-cv">Currículo</button>
       <button *ngSwitchCase="'portugues'" class="botao-cv">Currículo</button>
     </a>
