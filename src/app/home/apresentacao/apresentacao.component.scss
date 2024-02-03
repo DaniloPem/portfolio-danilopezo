@@ -135,7 +135,6 @@ $tamanho-fonte-do-titulo-mobile: 18px;
 
 .links-redes-sociais img {
   width: 20px;
-  // height: 25px;
 }
 
 @media screen and (max-width: 1050px) {
@@ -167,6 +166,14 @@ $tamanho-fonte-do-titulo-mobile: 18px;
     height: calc(1.8em + 1vw);
     min-height: 1.8em;
     font-size: clamp(0.6em, 0.6em + 0.9vw, 0.9em);
+  }
+
+  .botao-cv:hover {
+    @include botao-no-componente-home(#fdf6f0);
+  }
+
+  .myProjects:hover {
+    @include botao-no-componente-home(#f57b51);
   }
 
   .icone-baixar {

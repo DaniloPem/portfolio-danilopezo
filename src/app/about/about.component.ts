@@ -4,6 +4,7 @@ import {
   OnInit,
   ViewChild,
   AfterViewInit,
+  HostListener,
 } from '@angular/core';
 import { COMPETENCIAS_WRAPPER } from '../shared/competencias.const';
 import { Observable } from 'rxjs';
@@ -18,7 +19,7 @@ import { NOME_GRUPOS_COMPETENCIAS } from '../shared/nome-grupos-competencias.con
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
 })
-export class AboutComponent implements OnInit, AfterViewInit {
+export class AboutComponent implements OnInit {
   classeTituloAbout: string = 'sem-classe';
   fotosGaleria: number[] = [1, 2, 3, 4, 5, 6];
   nomesGruposCompetencias: any[] = NOME_GRUPOS_COMPETENCIAS;
@@ -43,65 +44,133 @@ export class AboutComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
-    this.idioma = this.idiomasService.getIdioma();
     this.classeTituloAbout = 'titulo-about-absolute';
+    this.idioma = this.idiomasService.getIdioma();
+    this.handleScrollTituloComponenteAbout();
+    this.handleScrollDescricaoComponenteAbout();
+  }
+
+  @HostListener('document:scroll')
+  onScroll() {
+    this.handleScrollTituloComponenteAbout();
+    this.handleScrollGaleriaFotos();
+    this.handleScrollComponenteCompetencias();
+    this.handleScrollDescricaoComponenteAbout();
+  }
+
+  @HostListener('document:touchmove')
+  touchMove() {
+    this.handleScrollTituloComponenteAbout();
+    this.handleScrollGaleriaFotos();
+    this.handleScrollComponenteCompetencias();
+    this.handleScrollDescricaoComponenteAbout();
+  }
+
+  handleScrollTituloComponenteAbout() {
+    let alturaDaJanela: number = window.innerHeight;
+    let scroll: number = document.documentElement.scrollTop;
+
+    this.classePosicaoTituloSegundoScroll(scroll, alturaDaJanela);
+  }
+
+  classePosicaoTituloSegundoScroll(scroll: number, alturaDaJanela: number) {
+    if (scroll > alturaDaJanela && scroll < alturaDaJanela * 3) {
+      this.classeTituloAbout = 'titulo-about-fixed';
+    } else if (scroll <= alturaDaJanela) {
+      this.classeTituloAbout = 'titulo-about-absolute';
+    } else {
+      this.classeTituloAbout = 'titulo-about-esconder';
+    }
+  }
+
+  handleScrollDescricaoComponenteAbout() {
     const textoAboutContainer = document.getElementById(
       'texto-about-container'
     );
     const alturaDaJanela: number = window.innerHeight;
-    window.addEventListener('scroll', () => {
-      let scroll: number = document.documentElement.scrollTop;
+    let scroll: number = document.documentElement.scrollTop;
 
-      if (scroll >= alturaDaJanela) {
-        textoAboutContainer!.style.top = `${
-          50 - (scroll - alturaDaJanela) * 0.04
-        }%`;
-      }
-
-      if (scroll > alturaDaJanela && scroll < alturaDaJanela * 3) {
-        this.classeTituloAbout = 'titulo-about-fixed';
-      } else if (scroll <= alturaDaJanela) {
-        this.classeTituloAbout = 'titulo-about-absolute';
-      } else {
-        this.classeTituloAbout = 'titulo-about-esconder';
-      }
-    });
+    this.posicaoDescricaoAboutSegundoScroll(
+      scroll,
+      alturaDaJanela,
+      textoAboutContainer
+    );
   }
 
-  ngAfterViewInit(): void {
-    const alturaDaJanela = window.innerHeight;
+  posicaoDescricaoAboutSegundoScroll(
+    scroll: number,
+    alturaDaJanela: number,
+    textoAboutContainer: HTMLElement | null
+  ) {
+    if (scroll >= alturaDaJanela) {
+      textoAboutContainer!.style.top = `${
+        50 - (scroll - alturaDaJanela) * 0.04
+      }%`;
+    }
+  }
+
+  handleScrollGaleriaFotos() {
+    let alturaDaJanela = window.innerHeight;
     this.alturaDescricaoSection =
       this.descricaoSection.nativeElement.clientHeight;
     this.alturaGaleriaFotos = this.galeriaFotos.nativeElement.clientHeight;
     const posicaoInicialGaleriaFotos =
       this.alturaDescricaoSection + this.alturaGaleriaFotos;
-    const alturaGrupoSkills = this.grupoSkills.nativeElement.clientHeight;
+    let scroll = document.documentElement.scrollTop;
+    this.posicaoDaGaleriaFotosSegundoScroll(
+      scroll,
+      posicaoInicialGaleriaFotos,
+      alturaDaJanela,
+      this.alturaDescricaoSection
+    );
+  }
 
-    window.addEventListener('scroll', () => {
-      let scroll: number = document.documentElement.scrollTop;
-      if (
-        scroll >= posicaoInicialGaleriaFotos &&
-        scroll <= alturaDaJanela + this.alturaDescricaoSection
-      ) {
-        this.galeriaFotos.nativeElement.style.bottom = `${
-          19 *
-          -1 *
-          (1 -
-            (scroll - posicaoInicialGaleriaFotos) /
-              (alturaDaJanela +
-                this.alturaDescricaoSection -
-                posicaoInicialGaleriaFotos))
-        }%`;
-      }
+  posicaoDaGaleriaFotosSegundoScroll(
+    scroll: any,
+    posicaoInicialGaleriaFotos: any,
+    alturaDaJanela: number,
+    alturaDescricaoSection: any
+  ) {
+    if (
+      scroll >= posicaoInicialGaleriaFotos &&
+      scroll <= alturaDaJanela + alturaDescricaoSection
+    ) {
+      this.galeriaFotos.nativeElement.style.bottom = `${
+        19 *
+        -1 *
+        (1 -
+          (scroll - posicaoInicialGaleriaFotos) /
+            (alturaDaJanela +
+              alturaDescricaoSection -
+              posicaoInicialGaleriaFotos))
+      }%`;
+    }
+  }
 
-      if (scroll >= alturaDaJanela * 1.5 + this.alturaDescricaoSection) {
-        this.grupoCompetenciasContainer.nativeElement.style.transform =
-          'translateX(-100vw)';
-      } else {
-        this.grupoCompetenciasContainer.nativeElement.style.transform =
-          'translateX(0)';
-      }
-    });
+  handleScrollComponenteCompetencias() {
+    let alturaDaJanela = window.innerHeight;
+    this.alturaDescricaoSection =
+      this.descricaoSection.nativeElement.clientHeight;
+    let scroll: number = document.documentElement.scrollTop;
+    this.posicaoDoComponenteCompetenciasSegundoScroll(
+      scroll,
+      alturaDaJanela,
+      this.alturaDescricaoSection
+    );
+  }
+
+  posicaoDoComponenteCompetenciasSegundoScroll(
+    scroll: any,
+    alturaDaJanela: number,
+    alturaDescricaoSection: any
+  ) {
+    if (scroll >= alturaDaJanela * 1.5 + alturaDescricaoSection) {
+      this.grupoCompetenciasContainer.nativeElement.style.transform =
+        'translateX(-100vw)';
+    } else {
+      this.grupoCompetenciasContainer.nativeElement.style.transform =
+        'translateX(0)';
+    }
   }
 
   encontrarValorCompetenciaEmFuncaoDoIdioma(

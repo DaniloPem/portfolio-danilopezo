@@ -37,15 +37,13 @@ export class NavegacaoComponent implements OnInit {
     this.estiloNavegacao = this.estiloNavegacaoService.getEstilo();
   }
 
-  ngAfterViewInit(): void {}
-
-  @HostListener('window:scroll')
+  @HostListener('document:scroll')
   onScroll() {
     this.handleScroll();
   }
 
   @HostListener('document:touchmove')
-  touchmove() {
+  touchMove() {
     this.handleScroll();
   }
 
